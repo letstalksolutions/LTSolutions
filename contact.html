@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with LT.Solutions to discuss your transformation challenges and explore how our proven methodology can help you achieve your objectives.">
+  <title>Contact Us | LT.Solutions</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+  <!-- Main Stylesheet -->
+  <link href="styles.css" rel="stylesheet">
+  <!-- Main java script -->
+  <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <a href="index.html" class="nav__logo" aria-label="LT.Solutions home">
+                    <img src="images/lts-logo.svg" alt="LT.Solutions - Business transformation consultancy" width="250" height="auto">
+                </a>
+
+                <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="nav__toggle-bar"></span>
+                    <span class="nav__toggle-bar"></span>
+                    <span class="nav__toggle-bar"></span>
+                </button>
+
+                <ul class="nav__menu">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="services.html" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="approach.html" class="nav__link">Our Methodology</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">About Us</a></li>
+                    <li class="nav__item"><a href="contact.html" class="nav__link nav__link--active nav__link--cta" aria-current="page">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-hero__title">Let's Start a Conversation</h1>
+            <p class="page-hero__subtitle">Whether you're exploring transformation opportunities or facing specific challenges, we're here to help you find the right path forward.</p>
+        </div>
+    </section>
+
+    <!-- Section: Contact Form -->
+    <section class="section section--white">
+        <div class="container">
+            <div class="contact-form-wrapper">
+                <h2 class="contact-form-wrapper__title">Get in Touch</h2>
+                <p class="contact-form__hook">Every transformation begins with a conversation.</p>
+
+                <!-- POST /contact endpoint to be configured in Phase 5 -->
+                <form class="contact-form" id="contactForm" method="post">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Your Name <span class="required" aria-label="required">*</span></label>
+                        <input type="text" id="name" name="name" class="form-input" required aria-required="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address <span class="required" aria-label="required">*</span></label>
+                        <input type="email" id="email" name="email" class="form-input" required aria-required="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company" class="form-label">Company / Organisation</label>
+                        <input type="text" id="company" name="company" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone Number (optional)</label>
+                        <input type="tel" id="phone" name="phone" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="help-type" class="form-label">How can we help you? <span class="required" aria-label="required">*</span></label>
+                        <select id="help-type" name="help-type" class="form-input" required aria-required="true">
+                            <option value="">Please select...</option>
+                            <option value="discovery">Discovery & Diagnosis</option>
+                            <option value="planning">Strategic Planning & Roadmapping</option>
+                            <option value="implementation">Implementation Support</option>
+                            <option value="knowledge">Knowledge Transfer & Training</option>
+                            <option value="full">End-to-End Transformation</option>
+                            <option value="other">General Enquiry</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message / Tell us about your challenge <span class="required" aria-label="required">*</span></label>
+                        <textarea id="message" name="message" class="form-textarea" rows="6" required aria-required="true"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <p class="form-privacy">We respect your privacy. Your information will only be used to respond to your enquiry and will never be shared with third parties.</p>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--large btn--full-width">Send Message</button>
+                </form>
+            </div>
+
+            <aside class="contact-sidebar">
+                <div class="contact-info-card">
+                    <h2 class="contact-info-card__title">Alternative Contact Methods</h2>
+
+                    <div class="contact-info-item">
+                        <svg class="contact-info-item__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div>
+                            <h3 class="contact-info-item__label">Email Us</h3>
+                            <a href="mailto:hello@ltsolutions.com" class="contact-info-item__link">hello@ltsolutions.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <svg class="contact-info-item__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <div>
+                            <h3 class="contact-info-item__label">Connect With Us</h3>
+                            <a href="https://www.linkedin.com/company/ltsolutions" target="_blank" rel="noopener" class="contact-info-item__link">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Section: What Happens Next -->
+    <section class="section section--mist">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">What to Expect</h2>
+            </div>
+
+            <div class="process-steps">
+                <article class="process-step">
+                    <div class="process-step__number" aria-hidden="true">1</div>
+                    <div class="process-step__content">
+                        <h3 class="process-step__title">Initial Conversation</h3>
+                        <p class="process-step__text">We'll schedule a brief call to understand your challenges and explore whether we're a good fit.</p>
+                    </div>
+                </article>
+
+                <article class="process-step">
+                    <div class="process-step__number" aria-hidden="true">2</div>
+                    <div class="process-step__content">
+                        <h3 class="process-step__title">Discovery Discussion</h3>
+                        <p class="process-step__text">If appropriate, we'll arrange a more detailed discussion to understand your situation and discuss potential approaches.</p>
+                    </div>
+                </article>
+
+                <article class="process-step">
+                    <div class="process-step__number" aria-hidden="true">3</div>
+                    <div class="process-step__content">
+                        <h3 class="process-step__title">Proposal</h3>
+                        <p class="process-step__text">We'll develop a tailored proposal outlining how we can support your transformation journey.</p>
+                    </div>
+                </article>
+
+                <article class="process-step">
+                    <div class="process-step__number" aria-hidden="true">4</div>
+                    <div class="process-step__content">
+                        <h3 class="process-step__title">Engagement</h3>
+                        <p class="process-step__text">Once aligned, we begin work—starting with thorough discovery to ensure we're building on solid foundations.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+ <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-branding">
+          <img src="images/logo-footer.png" alt="LT.Solutions logo" class="footer-logo">
+          <p class="footer-tagline">Scaling isn’t only about knowledge; it’s about adapting it strategically.</p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="services.html#discovery">Discovery & Diagnosis</a></li>
+              <li><a href="services.html#mapping">Mapping the Path</a></li>
+              <li><a href="services.html#implementation">Implementation & Integration</a></li>
+              <li><a href="services.html#knowledge">Knowledge Transfer</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="approach.html">Our Methodology</a></li>
+              <li><a href="case-studies.html">Case Studies</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Connect</h3>
+            <ul>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="https://linkedin.com/company/lt-solutions" target="_blank" rel="noopener">LinkedIn</a></li>
+              <li><a href="mailto:hello@ltsolutions.com">hello@ltsolutions.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 LT.Solutions. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
