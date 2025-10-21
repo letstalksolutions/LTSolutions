@@ -1,5 +1,5 @@
 /* ============================================
-   LT.Solutions Website JavaScript - Phase 4
+   LT.Solutions Website JavaScript - Phase 4 Enhanced
    ============================================ */
 
 // Wait for DOM to be fully loaded
@@ -37,7 +37,36 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   /* ============================================
-     2. SMOOTH SCROLL FOR ANCHOR LINKS
+     2. PARALLAX EFFECT FOR HERO BRAND ELEMENTS
+     ============================================ */
+  const brandElements = document.querySelectorAll('.hero-brand-element');
+
+  if (brandElements.length > 0 && window.matchMedia('(min-width: 769px)').matches) {
+    let ticking = false;
+
+    function updateParallax() {
+      const scrolled = window.pageYOffset;
+      const parallaxSpeed = 0.5;
+
+      brandElements.forEach((element, index) => {
+        const speed = parallaxSpeed * (index + 1) * 0.3;
+        const yPos = scrolled * speed;
+        element.style.transform = `translateY(${yPos}px)`;
+      });
+
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    });
+  }
+
+  /* ============================================
+     3. SMOOTH SCROLL FOR ANCHOR LINKS
      ============================================ */
   const anchorLinks = document.querySelectorAll('a[href^="#"]');
 
@@ -66,38 +95,13 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   /* ============================================
-     3. SCROLL REVEAL ANIMATION
+     4. SCROLL REVEAL ANIMATION
      ============================================ */
-  const revealElements = document.querySelectorAll('.reveal');
-
-  // Check if user prefers reduced motion
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (!prefersReducedMotion && revealElements.length > 0) {
-    const revealObserver = new IntersectionObserver(
-      function(entries) {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            // Optionally unobserve after revealing
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      }
-    );
-
-    revealElements.forEach(el => revealObserver.observe(el));
-  } else {
-    // If reduced motion preferred, show all elements immediately
-    revealElements.forEach(el => el.classList.add('active'));
-  }
+  // Animation disabled - all elements show immediately via CSS
+  // Can be re-enabled in future phases if needed
 
   /* ============================================
-     4. ACTIVE NAV HIGHLIGHTING
+     5. ACTIVE NAV HIGHLIGHTING
      ============================================ */
   const sections = document.querySelectorAll('section[id]');
   const navItems = document.querySelectorAll('.nav__link');
@@ -124,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('scroll', highlightNavOnScroll);
 
   /* ============================================
-     5. HEADER SHADOW ON SCROLL
+     6. HEADER SHADOW ON SCROLL
      ============================================ */
   const header = document.querySelector('.site-header');
 
@@ -139,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   /* ============================================
-     6. FORM VALIDATION
+     7. FORM VALIDATION
      ============================================ */
   const contactForm = document.querySelector('.contact-form');
 
@@ -268,70 +272,62 @@ document.addEventListener('DOMContentLoaded', function() {
   function showFormSuccess() {
     const form = document.querySelector('.contact-form');
 
-    // Create success message
-    const successMessage = document.createElement('div');
-    successMessage.className = 'form-success';
-    successMessage.innerHTML = `
-      <div style="
-        background-color: #d4edda;
-        border: 1px solid #c3e6cb;
-        color: #155724;
-        padding: 1rem;
-        border-radius: 4px;
-        margin-bottom: 1rem;
-        text-align: center;
-      ">
-        <strong>Thank you!</strong> Your message has been received. We'll get back to you soon.
-      </div>
-    `;
+    // Create success message using DOM methods (CSP-compliant)
+    const successDiv = document.createElement('div');
+    successDiv.className = 'form-success';
+    successDiv.style.cssText = 'background-color: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 1rem; border-radius: 4px; margin-bottom: 1rem; text-align: center;';
+
+    const strongEl = document.createElement('strong');
+    strongEl.textContent = 'Thank you!';
+
+    const textNode = document.createTextNode(' Your message has been received. We will get back to you soon.');
+
+    successDiv.appendChild(strongEl);
+    successDiv.appendChild(textNode);
 
     // Insert at top of form
-    form.insertBefore(successMessage, form.firstChild);
+    form.insertBefore(successDiv, form.firstChild);
 
     // Reset form
     form.reset();
 
     // Remove success message after 5 seconds
     setTimeout(function() {
-      successMessage.remove();
+      successDiv.remove();
     }, 5000);
 
     // Scroll to success message
-    successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    successDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
   /* ============================================
-     7. ADD SCROLL REVEAL CLASSES TO ELEMENTS
+     8. SCROLL REVEAL - DISABLED
      ============================================ */
-  // Automatically add 'reveal' class to main content sections
-  // This can be customized based on which elements you want to animate
+  // Scroll reveal animations disabled for now
+  // All elements show immediately via CSS
 
-  const elementsToReveal = [
-    '.service-card',
-    '.value-card',
-    '.phase-card',
-    '.project-highlight',
-    '.principle-card',
-    '.industry-card',
-    '.content-block',
-    '.feature-box'
-  ];
+  /* ============================================
+     9. FLIP CARD INTERACTIONS
+     ============================================ */
+  const flipCards = document.querySelectorAll('.service-card-flip');
+  console.log('Found flip cards:', flipCards.length);
 
-  elementsToReveal.forEach(selector => {
-    const elements = document.querySelectorAll(selector);
-    elements.forEach((el, index) => {
-      // Add reveal class if not already present
-      if (!el.classList.contains('reveal')) {
-        el.classList.add('reveal');
-        // Add stagger delay for multiple items
-        el.style.transitionDelay = `${index * 0.1}s`;
+  flipCards.forEach(card => {
+    card.addEventListener('click', function(e) {
+      console.log('Card clicked!', e.target);
+      // Don't flip if clicking on a link
+      if (e.target.tagName === 'A') {
+        console.log('Link clicked, not flipping');
+        return;
       }
+      this.classList.toggle('flipped');
+      console.log('Card flipped! Has flipped class:', this.classList.contains('flipped'));
     });
   });
 
   /* ============================================
-     8. INITIALIZE EVERYTHING
+     10. INITIALIZE EVERYTHING
      ============================================ */
-  console.log('LT.Solutions website initialized! 🚀');
+  console.log('🎨 LT.Solutions - The Living Brand Experience initialized! 🚀');
 
 });
