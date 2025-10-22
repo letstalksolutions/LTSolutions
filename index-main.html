@@ -16,12 +16,20 @@
   <script defer src="script.js"></script>
 </head>
 <body>
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__track">
+      <div class="scroll-progress__bar"></div>
+      <div class="scroll-progress__indicator"></div>
+    </div>
+  </div>
+
   <!-- Header -->
   <header class="site-header" role="banner">
     <div class="container">
       <nav class="nav" role="navigation" aria-label="Main navigation">
         <a href="index.html" class="nav__logo" aria-label="LT.Solutions home">
-          <img src="images/lts-logo.svg" alt="LT.Solutions - Atlassian consultancy" width="180" height="50">
+          <img src="images/logo-full.png" alt="LT.Solutions - Atlassian consultancy" width="200" height="55">
         </a>
 
         <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -41,7 +49,7 @@
   </header>
 
   <!-- Hero Section with Living Brand Elements -->
-  <section class="page-hero">
+  <section class="page-hero section--dark">
     <!-- Floating Brand Particles (Desktop Only) -->
     <div class="hero-brand-particles" aria-hidden="true">
       <div class="hero-brand-element hero-brand-element--lt">LT.</div>
@@ -50,19 +58,18 @@
     </div>
 
     <div class="container page-hero__content">
-      <h1 class="page-hero__title">Smarter Atlassian ecosystems built to last.</h1>
+      <span class="section-tag">Atlassian Expertise</span>
+      <h1 class="page-hero__title">Smarter Atlassian ecosystems <br><span class="gradient-text">built to last</span></h1>
       <p class="page-hero__subtitle">Hands-on Atlassian expertise to modernise workflows, automate operations, and empower your teams.</p>
       <div class="page-hero__cta">
-        <a href="contact.html" class="btn btn--primary">Start the Conversation</a>
-        <a href="approach.html" class="btn btn--secondary">Explore Our Approach</a>
+        <a href="contact.html" class="btn btn--primary btn--large btn--glow">Start the Conversation</a>
+        <a href="approach.html" class="btn btn--secondary btn--large btn--glow">Explore Our Approach</a>
       </div>
     </div>
 
-    <!-- Animated Tagline Ticker -->
-    <div class="hero-tagline">
-      <span class="hero-tagline__text">Hands-on Atlassian Expertise</span>
-      <span class="hero-tagline__separator">•</span>
-      <span class="hero-tagline__text">Designed to Scale</span>
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <span></span>
     </div>
   </section>
 
@@ -73,27 +80,34 @@
 
   <div class="container">
     <div class="section__header">
+      <span class="section-tag">Why Partner With LT.Solutions</span>
       <h2 class="section__title">Practical expertise. Real results. Knowledge that stays.</h2>
       <p class="section__intro">At LT.Solutions, transformation is never just about technology. It is about clarity, capability, and confidence. We combine hands-on Atlassian expertise with a structured approach that helps your teams work smarter, scale faster, and stay independent.</p>
     </div>
 
     <div class="grid grid--3col">
       <div class="value-card reveal">
-        <div class="value-card__number" aria-hidden="true">01</div>
-        <h3 class="value-card__title">Built on Experience</h3>
-        <p class="value-card__text">Fourteen years of real-world problem-solving means we understand the pressure of broken tools and tight deadlines. We have been there, and we know what it takes to move from firefighting to future-proofing.</p>
+        <img src="images/built-on-experience.svg" alt="" class="value-card__header-icon" aria-hidden="true">
+        <div class="value-card__content">
+          <h3 class="value-card__title">Built on Experience</h3>
+          <p class="value-card__text">Fourteen years of real-world problem-solving means we understand the pressure of broken tools and tight deadlines. We have been there, and we know what it takes to move from firefighting to future-proofing.</p>
+        </div>
       </div>
 
       <div class="value-card reveal">
-        <div class="value-card__number" aria-hidden="true">02</div>
-        <h3 class="value-card__title">Designed to Empower</h3>
-        <p class="value-card__text">We go beyond delivery. Every engagement builds your internal capability so your teams can sustain progress long after we have stepped back.</p>
+        <img src="images/designed-to-empower.svg" alt="" class="value-card__header-icon" aria-hidden="true">
+        <div class="value-card__content">
+          <h3 class="value-card__title">Designed to Empower</h3>
+          <p class="value-card__text">We go beyond delivery. Every engagement builds your internal capability so your teams can sustain progress long after we have stepped back.</p>
+        </div>
       </div>
 
       <div class="value-card reveal">
-        <div class="value-card__number" aria-hidden="true">03</div>
-        <h3 class="value-card__title">Tailored for You</h3>
-        <p class="value-card__text">No two organisations are the same. We shape our framework around your context, creating smart, scalable solutions that fit your ways of working.</p>
+        <img src="images/tailored-for-you.svg" alt="" class="value-card__header-icon" aria-hidden="true">
+        <div class="value-card__content">
+          <h3 class="value-card__title">Tailored for You</h3>
+          <p class="value-card__text">No two organisations are the same. We shape our framework around your context, creating smart, scalable solutions that fit your ways of working.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -106,6 +120,7 @@
   <section class="section section--mist">
     <div class="container">
       <div class="section__header">
+        <span class="section-tag">What We Offer</span>
         <h2 class="section__title">Hands-on services that drive smarter IT operations</h2>
         <p class="section__subtitle">We specialise in practical Atlassian implementation, clean workflows, automation, and capability building.</p>
       </div>
@@ -203,101 +218,55 @@
   <!-- Brand Separator Line -->
   <div class="brand-separator" aria-hidden="true"></div>
 
-  <!-- Wave Divider -->
-  <div class="wave-divider" aria-hidden="true">
-    <img src="images/divider-wave.svg" alt="" class="wave-divider__image">
-  </div>
-
   <!-- Section: Methodology Overview -->
-  <section class="section section--navy">
+  <section class="section section--dark">
     <div class="container">
       <div class="section__header">
-        <h2 class="section__title" style="color: var(--color-white);">Our Four-Phase Framework</h2>
-        <p class="section__intro" style="color: var(--color-white); opacity: 0.9;">At LT.Solutions, every project follows a clear path designed to understand your context, define priorities, implement improvements, and build lasting capability. This framework ensures every engagement is efficient, collaborative, and outcome-driven.</p>
+        <span class="section-tag">How We Work</span>
+        <h2 class="section__title">Our Four-Phase Framework</h2>
+        <p class="section__intro">At LT.Solutions, every project follows a clear path designed to understand your context, define priorities, implement improvements, and build lasting capability. This framework ensures every engagement is efficient, collaborative, and outcome-driven.</p>
       </div>
 
       <div class="methodology-grid methodology-grid--4col">
         <!-- Phase 1 -->
-        <div class="phase-card reveal">
+        <a href="approach.html#discovery-diagnosis" class="phase-card glass-card reveal phase-card--clickable">
           <div class="phase-card__header">
             <span class="phase-card__number">Phase 1</span>
             <h3 class="phase-card__title">Discovery & Diagnosis</h3>
           </div>
-          <p class="phase-card__text">Every organisation has its own rhythm, and my first step is to understand yours. I take the pulse of your IT operations, how your teams work, where bottlenecks occur, and what success really looks like for you. This phase is about listening, observing, and untangling complexity so we can see the bigger picture with clarity.</p>
-        </div>
+          <p class="phase-card__tagline">Understanding your context, operations, and success criteria.</p>
+        </a>
 
         <!-- Phase 2 -->
-        <div class="phase-card reveal">
+        <a href="approach.html#mapping-the-path" class="phase-card glass-card reveal phase-card--clickable">
           <div class="phase-card__header">
             <span class="phase-card__number">Phase 2</span>
             <h3 class="phase-card__title">Mapping the Path</h3>
           </div>
-          <p class="phase-card__text">Once I understand your current state, I map out a practical and realistic path forward. This is not about over-engineering; it is about setting clear priorities, highlighting quick wins, and defining a framework that aligns with your long-term strategy. By the end of this stage, we know where we are going and how we will get there.</p>
-        </div>
+          <p class="phase-card__tagline">Defining clear priorities and practical frameworks for progress.</p>
+        </a>
 
         <!-- Phase 3 -->
-        <div class="phase-card reveal">
+        <a href="approach.html#implementation-integration" class="phase-card glass-card reveal phase-card--clickable">
           <div class="phase-card__header">
             <span class="phase-card__number">Phase 3</span>
             <h3 class="phase-card__title">Implementation & Integration</h3>
           </div>
-          <p class="phase-card__text">This is where plans turn into action. I introduce new workflows, automation, and structures into your ITSM environment, connecting the dots between people, processes, and tools. My focus is on seamless integration: improvements that fit naturally into your team's daily work without disruption.</p>
-        </div>
+          <p class="phase-card__tagline">Introducing workflows and automation that fit naturally.</p>
+        </a>
 
         <!-- Phase 4 -->
-        <div class="phase-card reveal">
+        <a href="approach.html#knowledge-transfer-delivery" class="phase-card glass-card reveal phase-card--clickable">
           <div class="phase-card__header">
             <span class="phase-card__number">Phase 4</span>
             <h3 class="phase-card__title">Knowledge Transfer & Delivery</h3>
           </div>
-          <p class="phase-card__text">Delivery is not just about systems going live; it is about ensuring your team can take ownership of them. Every engagement includes documentation, training, and knowledge transfer so your people walk away confident, skilled, and ready to manage the system long after my involvement. This ensures you are not dependent on me but empowered to keep building smarter.</p>
-        </div>
+          <p class="phase-card__tagline">Building capability so your team stays independent.</p>
+        </a>
       </div>
 
       <div class="section__cta">
         <a href="approach.html" class="btn btn--primary">Explore Our Full Methodology</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Brand Separator Line -->
-  <div class="brand-separator" aria-hidden="true"></div>
-
-  <!-- Section: Featured Service Packages -->
-  <section class="section section--white">
-    <!-- Brand Watermark -->
-    <div class="section-watermark" aria-hidden="true">LT.</div>
-
-    <div class="container">
-      <div class="section__header">
-        <h2 class="section__title">Choose the right starting point for your organisation</h2>
-        <p class="section__intro">Whether you are laying foundations, optimising operations, or scaling globally, our structured packages deliver predictable outcomes and measurable value. Each follows our four-phase approach but is shaped around your needs.</p>
-      </div>
-
-      <div class="grid grid--4col">
-        <div class="package-card reveal">
-          <h3 class="package-card__title">Foundation Package</h3>
-          <p class="package-card__text">Get clarity, direction, and quick wins through Discovery and Mapping.</p>
-          <a href="packages/foundation.html" class="package-card__cta">Explore →</a>
-        </div>
-
-        <div class="package-card reveal">
-          <h3 class="package-card__title">Transformation Package</h3>
-          <p class="package-card__text">Full implementation and workflow optimisation for smarter delivery.</p>
-          <a href="packages/transformation.html" class="package-card__cta">Explore →</a>
-        </div>
-
-        <div class="package-card reveal">
-          <h3 class="package-card__title">Enablement Package</h3>
-          <p class="package-card__text">Build confidence, structure, and self-sufficiency in your teams.</p>
-          <a href="packages/enablement.html" class="package-card__cta">Explore →</a>
-        </div>
-
-        <div class="package-card reveal">
-          <h3 class="package-card__title">Scale Package</h3>
-          <p class="package-card__text">Multi-region, enterprise-scale optimisation built on proven frameworks.</p>
-          <a href="packages/scale.html" class="package-card__cta">Explore →</a>
-        </div>
       </div>
     </div>
   </section>
@@ -312,49 +281,65 @@
 
     <div class="container">
       <div class="section__header">
+        <span class="section-tag">Testimonials</span>
         <h2 class="section__title">What our clients say</h2>
       </div>
 
-      <div class="testimonials-grid">
-        <div class="testimonial-card reveal">
-          <p class="testimonial-card__quote">"LT.Solutions delivered a seamless Jira Service Management rollout, enabling our IT teams to support thousands of users globally with confidence."</p>
-          <p class="testimonial-card__author">CTO, Global Media Firm</p>
+      <div class="testimonial-carousel">
+        <div class="testimonial-carousel__track">
+          <div class="testimonial-slide active">
+            <div class="testimonial-card">
+              <p class="testimonial-card__quote">"LT.Solutions delivered a seamless Jira Service Management rollout, enabling our IT teams to support thousands of users globally with confidence."</p>
+              <p class="testimonial-card__author">CTO, Global Media Firm</p>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <p class="testimonial-card__quote">"Their structured CMDB approach gave us the visibility and control we had been missing for years. A real game-changer."</p>
+              <p class="testimonial-card__author">Head of IT Operations, Tech Consultancy</p>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <p class="testimonial-card__quote">"Working with LT.Solutions meant we gained not just a tool, but the know-how to use it. Our team is now self-sufficient and far more efficient."</p>
+              <p class="testimonial-card__author">Service Desk Manager, Financial Services</p>
+            </div>
+          </div>
         </div>
 
-        <div class="testimonial-card reveal">
-          <p class="testimonial-card__quote">"Their structured CMDB approach gave us the visibility and control we had been missing for years. A real game-changer."</p>
-          <p class="testimonial-card__author">Head of IT Operations, Tech Consultancy</p>
-        </div>
-
-        <div class="testimonial-card reveal">
-          <p class="testimonial-card__quote">"Working with LT.Solutions meant we gained not just a tool, but the know-how to use it. Our team is now self-sufficient and far more efficient."</p>
-          <p class="testimonial-card__author">Service Desk Manager, Financial Services</p>
+        <!-- Carousel Navigation Dots -->
+        <div class="testimonial-carousel__dots">
+          <button class="carousel-dot active" aria-label="Go to testimonial 1"></button>
+          <button class="carousel-dot" aria-label="Go to testimonial 2"></button>
+          <button class="carousel-dot" aria-label="Go to testimonial 3"></button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section: Final CTA -->
-  <section class="section section--navy">
-    <div class="container">
-      <div class="cta-block">
+  <!-- Footer with integrated CTA -->
+  <footer class="site-footer">
+    <!-- CTA Section -->
+    <div class="footer-cta">
+      <div class="container">
         <div class="cta-block__content">
-          <h2 class="cta-block__title">Ready to transform your IT operations?</h2>
+          <span class="section-tag">Ready to Begin?</span>
+          <h2 class="cta-block__title">Ready to transform your <span class="gradient-text">IT operations?</span></h2>
           <p class="cta-block__text">Whether you are implementing Jira Service Management, refining existing processes, or aligning with ISO standards, LT.Solutions can help you scale with confidence.</p>
           <div class="cta-block__buttons">
-            <a href="contact.html" class="btn btn--primary btn--large">Let's Talk Solutions</a>
+            <a href="contact.html" class="btn btn--primary btn--large btn--glow">Let's Talk Solutions</a>
+            <a href="approach.html" class="btn btn--secondary btn--large btn--glow">Our Approach</a>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
+    <!-- Footer Links -->
     <div class="footer-container">
       <div class="footer-branding">
-        <img src="images/lts-logo-white.svg" alt="LT.Solutions logo" class="footer-logo">
-        <p class="footer-tagline">Hands-on Atlassian expertise, designed to scale</p>
+        <img src="images/logo-footer.svg" alt="LT.Solutions logo" class="footer-logo">
       </div>
 
       <div class="footer-links">
@@ -381,7 +366,7 @@
           <h3 class="footer-heading">Connect</h3>
           <ul class="footer-list">
             <li><a href="contact.html" class="footer-link">Contact Us</a></li>
-            <li><a href="mailto:hello@ltsolutions.com" class="footer-link">hello@ltsolutions.com</a></li>
+            <li><a href="mailto:hello@lt.solutions" class="footer-link">hello@lt.solutions</a></li>
             <li><a href="https://www.linkedin.com/company/lt-solutions" target="_blank" rel="noopener" class="footer-link">LinkedIn</a></li>
           </ul>
         </div>

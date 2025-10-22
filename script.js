@@ -95,10 +95,32 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   /* ============================================
-     4. SCROLL REVEAL ANIMATION
+     4. SCROLL REVEAL ANIMATION - Phase Cards Sequential Float-Up
      ============================================ */
-  // Animation disabled - all elements show immediately via CSS
-  // Can be re-enabled in future phases if needed
+  // Intersection Observer for phase cards sequential reveal
+  const phaseCards = document.querySelectorAll('.methodology-grid--4col .phase-card');
+
+  if (phaseCards.length > 0) {
+    const observerOptions = {
+      threshold: 0.2, // Trigger when 20% of the element is visible
+      rootMargin: '0px 0px -50px 0px' // Start animation slightly before element enters viewport
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // Optional: unobserve after revealing (animation only happens once)
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe each phase card
+    phaseCards.forEach(card => {
+      revealObserver.observe(card);
+    });
+  }
 
   /* ============================================
      5. ACTIVE NAV HIGHLIGHTING
@@ -315,18 +337,134 @@ document.addEventListener('DOMContentLoaded', function() {
   flipCards.forEach(card => {
     card.addEventListener('click', function(e) {
       console.log('Card clicked!', e.target);
-      // Don't flip if clicking on a link
-      if (e.target.tagName === 'A') {
-        console.log('Link clicked, not flipping');
-        return;
+
+      // Don't flip if clicking on a link or if link is in the parent chain
+      let target = e.target;
+      while (target && target !== this) {
+        if (target.tagName === 'A') {
+          console.log('Link clicked, allowing navigation');
+          // Don't prevent default - let the link work
+          return;
+        }
+        target = target.parentElement;
       }
+
+      // Toggle the flipped state
       this.classList.toggle('flipped');
       console.log('Card flipped! Has flipped class:', this.classList.contains('flipped'));
+    });
+
+    // Ensure links work on both sides
+    const links = card.querySelectorAll('.service-card__link');
+    links.forEach(link => {
+      link.addEventListener('click', function(e) {
+        // Stop propagation so card doesn't flip
+        e.stopPropagation();
+        console.log('Link clicked, navigating to:', this.href);
+        // Link will navigate normally
+      });
     });
   });
 
   /* ============================================
-     10. INITIALIZE EVERYTHING
+     10. SCROLL PROGRESS INDICATOR
+     ============================================ */
+  const scrollProgress = document.querySelector('.scroll-progress');
+  const scrollProgressBar = document.querySelector('.scroll-progress__bar');
+  const scrollProgressIndicator = document.querySelector('.scroll-progress__indicator');
+
+  if (scrollProgress && scrollProgressBar && scrollProgressIndicator) {
+    let ticking = false;
+
+    function updateScrollProgress() {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      // Calculate scroll percentage
+      const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
+
+      // Update bar height (fills from bottom)
+      scrollProgressBar.style.height = scrollPercentage + '%';
+
+      // Update indicator position (moves from top to bottom)
+      const indicatorPosition = (scrollPercentage / 100) * 110; // 110px = track height - indicator height
+      scrollProgressIndicator.style.top = indicatorPosition + 'px';
+
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScrollProgress);
+        ticking = true;
+      }
+    });
+
+    // Initial update
+    updateScrollProgress();
+  }
+
+  /* ============================================
+     11. TESTIMONIAL CAROUSEL - Auto-rotating with manual controls
+     ============================================ */
+  const testimonialCarousel = document.querySelector('.testimonial-carousel');
+
+  if (testimonialCarousel) {
+    const slides = testimonialCarousel.querySelectorAll('.testimonial-slide');
+    const dots = testimonialCarousel.querySelectorAll('.carousel-dot');
+    let currentSlide = 0;
+    let autoRotateInterval;
+    const rotationDelay = 6000; // 6 seconds per slide
+
+    // Function to show a specific slide
+    function showSlide(index) {
+      // Remove active class from all slides and dots
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+
+      // Add active class to target slide and dot
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+
+      currentSlide = index;
+    }
+
+    // Function to show next slide
+    function nextSlide() {
+      const next = (currentSlide + 1) % slides.length;
+      showSlide(next);
+    }
+
+    // Function to start auto-rotation
+    function startAutoRotate() {
+      autoRotateInterval = setInterval(nextSlide, rotationDelay);
+    }
+
+    // Function to stop auto-rotation
+    function stopAutoRotate() {
+      clearInterval(autoRotateInterval);
+    }
+
+    // Add click handlers to dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        showSlide(index);
+        stopAutoRotate();
+        startAutoRotate(); // Restart rotation after manual change
+      });
+    });
+
+    // Pause auto-rotation on hover, resume on mouse leave
+    testimonialCarousel.addEventListener('mouseenter', stopAutoRotate);
+    testimonialCarousel.addEventListener('mouseleave', startAutoRotate);
+
+    // Start auto-rotation on page load
+    startAutoRotate();
+  }
+
+  /* ============================================
+     12. INITIALIZE EVERYTHING
      ============================================ */
   console.log('🎨 LT.Solutions - The Living Brand Experience initialized! 🚀');
 
