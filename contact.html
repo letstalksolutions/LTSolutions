@@ -3,221 +3,397 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Get in touch with LT.Solutions to discuss your transformation challenges and explore how our proven methodology can help you achieve your objectives.">
-  <title>Contact Us | LT.Solutions</title>
-  <!-- Google Fonts -->
+  <meta name="description" content="Ready to modernise ITSM and build confident teams. Send a message and we will arrange a short call to map next steps.">
+  <title>Contact LT.Solutions | LT.Solutions</title>
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://lt.solutions/contact/">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Contact LT.Solutions">
+  <meta property="og:description" content="Ready to modernise ITSM and build confident teams. Send a message and we will arrange a short call to map next steps.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lt.solutions/contact/">
+  <meta property="og:image" content="https://lt.solutions/images/og/default.jpg">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact LT.Solutions">
+  <meta name="twitter:description" content="Ready to modernise ITSM and build confident teams. Send a message and we will arrange a short call to map next steps.">
+  <meta name="twitter:image" content="https://lt.solutions/images/og/default.jpg">
+  <!-- Preconnect for Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" as="style">
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
         rel="stylesheet">
   <!-- Main Stylesheet -->
   <link href="styles.css" rel="stylesheet">
-  <!-- Main java script -->
+
+  <!-- Page-scoped layout tweak: wider form (65%) / narrower sidebar (35%) -->
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 65% 35%;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 992px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact-sidebar { margin-top: 2rem; }
+    }
+    /* Keep sidebar cards same width */
+    .contact-sidebar .contact-info-card,
+    .contact-sidebar .contact-response-card {
+      max-width: 100%;
+      width: 100%;
+    }
+  </style>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem","position": 1,"name": "Home","item": "https://lt.solutions/"},
+      {"@type": "ListItem","position": 2,"name": "Contact","item": "https://lt.solutions/contact/"}
+    ]
+  }
+  </script>
+
+  <!-- Plausible Analytics (Privacy-friendly, GDPR compliant) -->
+  <!-- Uncomment to activate: <script defer data-domain="lt.solutions" src="https://plausible.io/js/script.js"></script> -->
+  <!-- Main JavaScript -->
   <script defer src="script.js"></script>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header" role="banner">
-        <div class="container">
-            <nav class="nav" role="navigation" aria-label="Main navigation">
-                <a href="index.html" class="nav__logo" aria-label="LT.Solutions home">
-                    <img src="images/lts-logo.svg" alt="LT.Solutions - Business transformation consultancy" width="250" height="auto">
-                </a>
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__track">
+      <div class="scroll-progress__bar"></div>
+      <div class="scroll-progress__indicator"></div>
+    </div>
+  </div>
 
-                <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                    <span class="nav__toggle-bar"></span>
-                    <span class="nav__toggle-bar"></span>
-                    <span class="nav__toggle-bar"></span>
-                </button>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav__logo" aria-label="LT.Solutions home">
+          <img src="images/logo-full.png" alt="LT.Solutions - Atlassian consultancy" width="260" height="72">
+        </a>
 
-                <ul class="nav__menu">
-                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
-                    <li class="nav__item"><a href="services.html" class="nav__link">Services</a></li>
-                    <li class="nav__item"><a href="approach.html" class="nav__link">Our Methodology</a></li>
-                    <li class="nav__item"><a href="about.html" class="nav__link">About Us</a></li>
-                    <li class="nav__item"><a href="contact.html" class="nav__link nav__link--active nav__link--cta" aria-current="page">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+        <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="nav__toggle-icon"></span>
+        </button>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <h1 class="page-hero__title">Let's Start a Conversation</h1>
-            <p class="page-hero__subtitle">Whether you're exploring transformation opportunities or facing specific challenges, we're here to help you find the right path forward.</p>
-        </div>
-    </section>
+        <ul class="nav__menu">
+          <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="services.html" class="nav__link">Services</a></li>
+          <li class="nav__item"><a href="approach.html" class="nav__link">Our Approach</a></li>
+          <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="contact.html" class="nav__link nav__link--active" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Section: Contact Form -->
-    <section class="section section--white">
-        <div class="container">
-            <div class="contact-form-wrapper">
-                <h2 class="contact-form-wrapper__title">Get in Touch</h2>
-                <p class="contact-form__hook">Every transformation begins with a conversation.</p>
+  <!-- Hero Section with Living Brand Elements -->
+  <section class="page-hero section--dark">
+    <!-- Floating Brand Particles (Desktop Only) -->
+    <div class="hero-brand-particles" aria-hidden="true">
+      <div class="hero-brand-element hero-brand-element--lets">Let's</div>
+      <div class="hero-brand-element hero-brand-element--connect">Connect</div>
+      <div class="hero-brand-element hero-brand-element--arrow">→</div>
+      <div class="hero-brand-element hero-brand-element--talk">Talk</div>
+      <div class="hero-brand-element hero-brand-element--message">✉</div>
+      <div class="hero-brand-element hero-brand-element--conversation">◐</div>
+    </div>
 
-                <!-- POST /contact endpoint to be configured in Phase 5 -->
-                <form class="contact-form" id="contactForm" method="post">
-                    <div class="form-group">
-                        <label for="name" class="form-label">Your Name <span class="required" aria-label="required">*</span></label>
-                        <input type="text" id="name" name="name" class="form-input" required aria-required="true">
-                    </div>
+    <div class="container page-hero__content">
+      <span class="section-tag">Get In Touch</span>
+      <h1 class="page-hero__title">Let's start a <span class="gradient-text">conversation</span></h1>
+      <p class="page-hero__subtitle">Whether you're exploring transformation opportunities or facing specific challenges, we're here to help you find the right path forward.</p>
+      <div class="page-hero__cta">
+        <a href="services.html" class="btn btn--primary btn--glow">View Services</a>
+        <a href="approach.html" class="btn btn--secondary btn--glow">Our Approach</a>
+      </div>
+    </div>
+  </section>
 
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email Address <span class="required" aria-label="required">*</span></label>
-                        <input type="email" id="email" name="email" class="form-input" required aria-required="true">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="company" class="form-label">Company / Organisation</label>
-                        <input type="text" id="company" name="company" class="form-input">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone" class="form-label">Phone Number (optional)</label>
-                        <input type="tel" id="phone" name="phone" class="form-input">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="help-type" class="form-label">How can we help you? <span class="required" aria-label="required">*</span></label>
-                        <select id="help-type" name="help-type" class="form-input" required aria-required="true">
-                            <option value="">Please select...</option>
-                            <option value="discovery">Discovery & Diagnosis</option>
-                            <option value="planning">Strategic Planning & Roadmapping</option>
-                            <option value="implementation">Implementation Support</option>
-                            <option value="knowledge">Knowledge Transfer & Training</option>
-                            <option value="full">End-to-End Transformation</option>
-                            <option value="other">General Enquiry</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message" class="form-label">Message / Tell us about your challenge <span class="required" aria-label="required">*</span></label>
-                        <textarea id="message" name="message" class="form-textarea" rows="6" required aria-required="true"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <p class="form-privacy">We respect your privacy. Your information will only be used to respond to your enquiry and will never be shared with third parties.</p>
-                    </div>
-
-                    <button type="submit" class="btn btn--primary btn--large btn--full-width">Send Message</button>
-                </form>
-            </div>
-
-            <aside class="contact-sidebar">
-                <div class="contact-info-card">
-                    <h2 class="contact-info-card__title">Alternative Contact Methods</h2>
-
-                    <div class="contact-info-item">
-                        <svg class="contact-info-item__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <div>
-                            <h3 class="contact-info-item__label">Email Us</h3>
-                            <a href="mailto:hello@ltsolutions.com" class="contact-info-item__link">hello@ltsolutions.com</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-info-item">
-                        <svg class="contact-info-item__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                        <div>
-                            <h3 class="contact-info-item__label">Connect With Us</h3>
-                            <a href="https://www.linkedin.com/company/ltsolutions" target="_blank" rel="noopener" class="contact-info-item__link">LinkedIn</a>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-        </div>
-    </section>
-
-    <!-- Section: What Happens Next -->
-    <section class="section section--mist">
-        <div class="container">
-            <div class="section__header">
-                <h2 class="section__title">What to Expect</h2>
-            </div>
-
-            <div class="process-steps">
-                <article class="process-step">
-                    <div class="process-step__number" aria-hidden="true">1</div>
-                    <div class="process-step__content">
-                        <h3 class="process-step__title">Initial Conversation</h3>
-                        <p class="process-step__text">We'll schedule a brief call to understand your challenges and explore whether we're a good fit.</p>
-                    </div>
-                </article>
-
-                <article class="process-step">
-                    <div class="process-step__number" aria-hidden="true">2</div>
-                    <div class="process-step__content">
-                        <h3 class="process-step__title">Discovery Discussion</h3>
-                        <p class="process-step__text">If appropriate, we'll arrange a more detailed discussion to understand your situation and discuss potential approaches.</p>
-                    </div>
-                </article>
-
-                <article class="process-step">
-                    <div class="process-step__number" aria-hidden="true">3</div>
-                    <div class="process-step__content">
-                        <h3 class="process-step__title">Proposal</h3>
-                        <p class="process-step__text">We'll develop a tailored proposal outlining how we can support your transformation journey.</p>
-                    </div>
-                </article>
-
-                <article class="process-step">
-                    <div class="process-step__number" aria-hidden="true">4</div>
-                    <div class="process-step__content">
-                        <h3 class="process-step__title">Engagement</h3>
-                        <p class="process-step__text">Once aligned, we begin work—starting with thorough discovery to ensure we're building on solid foundations.</p>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
- <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-branding">
-          <img src="images/logo-footer.png" alt="LT.Solutions logo" class="footer-logo">
-          <p class="footer-tagline">Scaling isn’t only about knowledge; it’s about adapting it strategically.</p>
-        </div>
-
-        <div class="footer-links">
-          <div class="footer-column">
-            <h3>Services</h3>
-            <ul>
-              <li><a href="services.html#discovery">Discovery & Diagnosis</a></li>
-              <li><a href="services.html#mapping">Mapping the Path</a></li>
-              <li><a href="services.html#implementation">Implementation & Integration</a></li>
-              <li><a href="services.html#knowledge">Knowledge Transfer</a></li>
-            </ul>
+  <!-- Section: Contact Form -->
+  <section class="section section--mist">
+    <div class="container">
+      <div class="contact-layout">
+        <!-- Left: Contact Form Card -->
+        <div class="contact-form-card">
+          <div class="contact-form-card__header">
+            <h2 class="contact-form-card__title">Send us a message</h2>
+            <p class="contact-form-card__subtitle">Fill in the details below and we'll get back to you within 24 hours.</p>
           </div>
-          <div class="footer-column">
-            <h3>Company</h3>
-            <ul>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="approach.html">Our Methodology</a></li>
-              <li><a href="case-studies.html">Case Studies</a></li>
-            </ul>
+
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/xzzjllzo" method="POST">
+            <!-- Formspree hardening -->
+            <input type="hidden" name="_subject" value="LT.Solutions — New contact form submission">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name" class="form-label">Your Name <span class="required" aria-label="required">*</span></label>
+                <input type="text" id="name" name="name" class="form-input" required aria-required="true" placeholder="John Smith">
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address <span class="required" aria-label="required">*</span></label>
+                <input type="email" id="email" name="email" class="form-input" required aria-required="true" placeholder="john@company.com">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="company" class="form-label">Company / Organisation</label>
+                <input type="text" id="company" name="company" class="form-input" placeholder="Your organisation">
+              </div>
+
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone Number (optional)</label>
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+44 7XXX XXX XXX">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="help-type" class="form-label">How can we help you? <span class="required" aria-label="required">*</span></label>
+              <select id="help-type" name="help-type" class="form-input" required aria-required="true">
+                <option value="">Please select...</option>
+                <option value="discovery">Discovery & Diagnosis</option>
+                <option value="architecture">Architecture & Implementation</option>
+                <option value="automation">Workflow Automation & Efficiency</option>
+                <option value="enablement">Knowledge Enablement & Training</option>
+                <option value="services">General Services Enquiry</option>
+                <option value="other">General Enquiry</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Message <span class="required" aria-label="required">*</span></label>
+              <textarea id="message" name="message" class="form-textarea" rows="6" required aria-required="true" placeholder="Tell us about your challenge or what you're looking to achieve..."></textarea>
+            </div>
+
+            <div class="form-group">
+              <p class="form-privacy">
+                <svg class="form-privacy__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M8 1L3 3V7C3 10.5 5.5 13.5 8 14.5C10.5 13.5 13 10.5 13 7V3L8 1Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                We respect your privacy. Your information will only be used to respond to your enquiry and will never be shared with third parties.
+              </p>
+            </div>
+
+            <div class="form-group">
+              <label class="form-checkbox">
+                <input type="checkbox" name="privacy-agree" required aria-required="true">
+                <span class="form-checkbox__text">By submitting this form, you agree to our <a href="privacy.html" target="_blank">Privacy Policy</a>.</span>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn btn--primary btn--large btn--glow">Send Message</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right: Contact Info Sidebar -->
+        <div class="contact-sidebar">
+          <div class="contact-info-card">
+            <h3 class="contact-info-card__title">Prefer to reach out directly?</h3>
+
+            <div class="contact-info-item">
+              <div class="contact-info-item__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 8L10.89 13.26C11.2187 13.4793 11.6049 13.5963 12 13.5963C12.3951 13.5963 12.7813 13.4793 13.11 13.26L21 8M5 19H19C19.5304 19 20.0391 18.7893 20.4142 18.4142C20.7893 18.0391 21 17.5304 21 17V7C21 6.46957 20.7893 5.96086 20.4142 5.58579C20.0391 5.21071 19.5304 5 19 5H5C4.46957 5 3.96086 5.21071 3.58579 5.58579C3.21071 5.96086 3 6.46957 3 7V17C3 17.5304 3.21071 18.0391 3.58579 18.4142C3.96086 18.7893 4.46957 19 5 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="contact-info-item__content">
+                <div class="contact-info-item__label">Email</div>
+                <a href="mailto:hello@lt.solutions" class="contact-info-item__value">hello@lt.solutions</a>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-item__icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 8C16 10.21 14.21 12 12 12C9.79 12 8 10.21 8 8C8 5.79 9.79 4 12 4C14.21 4 16 5.79 16 8ZM4 18C4 15.34 9.33 14 12 14C14.67 14 20 15.34 20 18V20H4V18Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="contact-info-item__content">
+                <div class="contact-info-item__label">LinkedIn</div>
+                <a href="https://www.linkedin.com/in/andreas-l-a-nyberg/" target="_blank" rel="noopener" class="contact-info-item__value">Connect with Andreas</a>
+              </div>
+            </div>
           </div>
-          <div class="footer-column">
-            <h3>Connect</h3>
-            <ul>
-              <li><a href="contact.html">Contact Us</a></li>
-              <li><a href="https://linkedin.com/company/lt-solutions" target="_blank" rel="noopener">LinkedIn</a></li>
-              <li><a href="mailto:hello@ltsolutions.com">hello@ltsolutions.com</a></li>
-            </ul>
+
+          <div class="contact-response-card">
+            <div class="contact-response-card__icon" aria-hidden="true">⚡</div>
+            <h4 class="contact-response-card__title">Quick Response Time</h4>
+            <p class="contact-response-card__text">We typically respond within 24 hours during business days. For urgent enquiries, please mention it in your message.</p>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="footer-bottom">
-        <p>© 2025 LT.Solutions. All rights reserved.</p>
+  <!-- Brand Separator Line -->
+  <div class="brand-separator" aria-hidden="true">
+    <div class="separator-line"></div>
+    <svg width="1920" height="120" viewBox="0 0 1920 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g class="connection-lines">
+        <line x1="180" y1="55" x2="360" y2="40" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5"/>
+        <line x1="360" y1="40" x2="540" y2="70" stroke="rgba(206, 0, 0, 0.2)" stroke-width="1.5"/>
+        <line x1="540" y1="70" x2="750" y2="45" stroke="rgba(65, 105, 225, 0.2)" stroke-width="1.5"/>
+        <line x1="750" y1="45" x2="960" y2="68" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5"/>
+        <line x1="960" y1="68" x2="1140" y2="50" stroke="rgba(206, 0, 0, 0.18)" stroke-width="1.5"/>
+        <line x1="1140" y1="50" x2="1320" y2="60" stroke="rgba(65, 105, 225, 0.15)" stroke-width="1.5"/>
+      </g>
+      <g class="node-1">
+        <circle cx="180" cy="55" r="5" fill="rgba(206, 0, 0, 0.7)"/>
+        <circle class="ring" cx="180" cy="55" r="10" stroke="rgba(206, 0, 0, 0.4)" stroke-width="1.5" fill="none"/>
+        <circle cx="180" cy="55" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+      <g class="node-2">
+        <circle cx="360" cy="40" r="4" fill="rgba(255, 255, 255, 0.6)"/>
+        <circle cx="360" cy="40" r="1.5" fill="rgba(206, 0, 0, 0.8)"/>
+      </g>
+      <g class="node-3">
+        <circle cx="540" cy="70" r="6" fill="rgba(206, 0, 0, 0.75)"/>
+        <circle class="ring-2" cx="540" cy="70" r="12" stroke="rgba(206, 0, 0, 0.35)" stroke-width="1.5" fill="none"/>
+        <circle cx="540" cy="70" r="2.5" fill="rgba(255, 255, 255, 0.95)"/>
+      </g>
+      <g class="node-4">
+        <circle cx="750" cy="45" r="5" fill="rgba(65, 105, 225, 0.7)"/>
+        <circle class="ring-3" cx="750" cy="45" r="10" stroke="rgba(65, 105, 225, 0.4)" stroke-width="1.5" fill="none"/>
+        <circle cx="750" cy="45" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+      <g class="node-5">
+        <circle cx="960" cy="68" r="4.5" fill="rgba(255, 255, 255, 0.65)"/>
+        <circle cx="960" cy="68" r="1.5" fill="rgba(65, 105, 225, 0.8)"/>
+      </g>
+      <g class="node-6">
+        <circle cx="1140" cy="50" r="4" fill="rgba(206, 0, 0, 0.6)"/>
+        <circle cx="1140" cy="50" r="1.5" fill="rgba(255, 255, 255, 0.85)"/>
+      </g>
+      <g class="node-1">
+        <circle cx="1320" cy="60" r="5" fill="rgba(65, 105, 225, 0.65)"/>
+        <circle class="ring" cx="1320" cy="60" r="9" stroke="rgba(65, 105, 225, 0.35)" stroke-width="1.5" fill="none"/>
+        <circle cx="1320" cy="60" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- What Happens Next Section -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section__header">
+        <span class="section-tag">Your Journey</span>
+        <h2 class="section__title">What Happens Next</h2>
+        <p class="section__intro">A clear, transparent process from first contact to full engagement.</p>
       </div>
-    </footer>
 
-    <script src="script.js"></script>
+      <div class="process-timeline">
+        <div class="process-step reveal">
+          <div class="process-step__number">01</div>
+          <div class="process-step__content">
+            <h3 class="process-step__title">Initial Conversation</h3>
+            <p class="process-step__text">We schedule a short conversation to understand your situation and objectives. No pressure, just a friendly chat to see if we're the right fit.</p>
+            <div class="process-step__meta">⏱ 15-30 minutes</div>
+          </div>
+        </div>
+
+        <div class="process-step reveal">
+          <div class="process-step__number">02</div>
+          <div class="process-step__content">
+            <h3 class="process-step__title">Discovery Discussion</h3>
+            <p class="process-step__text">If we are a good fit, we arrange a detailed discovery discussion to explore your challenges, goals, and current setup in depth.</p>
+            <div class="process-step__meta">⏱ 1-2 hours</div>
+          </div>
+        </div>
+
+        <div class="process-step reveal">
+          <div class="process-step__number">03</div>
+          <div class="process-step__content">
+            <h3 class="process-step__title">Tailored Proposal</h3>
+            <p class="process-step__text">You receive a tailored proposal and roadmap for your transformation journey, complete with timelines, deliverables, and transparent pricing.</p>
+            <div class="process-step__meta">📋 Within 3-5 days</div>
+          </div>
+        </div>
+
+        <div class="process-step reveal">
+          <div class="process-step__number">04</div>
+          <div class="process-step__content">
+            <h3 class="process-step__title">Structured Engagement</h3>
+            <p class="process-step__text">Once agreed, we begin our structured engagement with full transparency, regular updates, and clear milestones throughout the journey.</p>
+            <div class="process-step__meta">🚀 Let's build something great</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer with integrated CTA -->
+  <footer class="site-footer">
+    <!-- CTA Section -->
+    <div class="footer-cta">
+      <div class="container">
+        <div class="cta-block__content">
+          <span class="section-tag">Let's Connect</span>
+          <h2 class="cta-block__title">Ready to <span class="gradient-text">get started?</span></h2>
+          <p class="cta-block__text">Whether you're exploring transformation opportunities or facing specific challenges, we're here to help you find the right path forward.</p>
+          <div class="cta-block__buttons">
+            <a href="services.html" class="btn btn--primary btn--large btn--glow">View Services</a>
+            <a href="approach.html" class="btn btn--secondary btn--large btn--glow">Our Approach</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="footer-container">
+      <div class="footer-branding">
+        <img src="images/logo-footer.svg" alt="LT.Solutions logo" class="footer-logo">
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-column">
+          <h3 class="footer-heading">Connect</h3>
+          <ul class="footer-list">
+            <li><a href="mailto:hello@lt.solutions" class="footer-link">hello@lt.solutions</a></li>
+            <li><a href="https://www.linkedin.com/in/andreas-l-a-nyberg/" target="_blank" rel="noopener" class="footer-link">LinkedIn</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3 class="footer-heading">Company</h3>
+          <ul class="footer-list">
+            <li><a href="about.html" class="footer-link">About LT.Solutions</a></li>
+            <li><a href="approach.html" class="footer-link">Our Approach</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3 class="footer-heading">Legal</h3>
+          <ul class="footer-list">
+            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="legal.html" class="footer-link">Legal Notice</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2025 LT.Solutions. All rights reserved.</p>
+    </div>
+  </footer>
+
 </body>
 </html>

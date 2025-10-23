@@ -3,450 +3,438 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Comprehensive transformation services including discovery & diagnosis, strategic roadmapping, hands-on implementation, and knowledge transfer. Expert support across every phase of your transformation journey.">
-  <title>Services That Drive Transformation | LT.Solutions</title>
-  <!-- Google Fonts -->
+  <meta name="description" content="Practical Atlassian services across setup, automation, reporting, and knowledge enablement. Build a reliable ITSM foundation and scale with confidence.">
+  <title>Atlassian services for architecture, automation, and enablement | LT.Solutions</title>
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://lt.solutions/services/">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Atlassian services for architecture, automation, and enablement">
+  <meta property="og:description" content="Practical Atlassian services across setup, automation, reporting, and knowledge enablement.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lt.solutions/services/">
+  <meta property="og:image" content="https://lt.solutions/images/og/default.jpg">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Atlassian services for architecture, automation, and enablement">
+  <meta name="twitter:description" content="Practical Atlassian services across setup, automation, reporting, and knowledge enablement.">
+  <meta name="twitter:image" content="https://lt.solutions/images/og/default.jpg">
+  <!-- Preconnect for Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- JavaScript (defer loads after HTML) -->
-  <script src="script.js" defer></script>
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" as="style">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+  <!-- Main Stylesheet -->
+  <link href="styles.css" rel="stylesheet">
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://lt.solutions/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://lt.solutions/services/"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Atlassian Architecture & Implementation",
+    "provider": {
+      "@type": "Organization",
+      "name": "LT.Solutions",
+      "url": "https://lt.solutions"
+    },
+    "areaServed": ["GB", "Europe"],
+    "serviceType": "Atlassian implementation and architecture",
+    "description": "We help organisations design and implement Atlassian environments that scale. From Jira Service Management to Confluence and Assets, we ensure every tool is integrated, consistent, and ready to support your teams."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Workflow Automation & Efficiency",
+    "provider": {
+      "@type": "Organization",
+      "name": "LT.Solutions",
+      "url": "https://lt.solutions"
+    },
+    "areaServed": ["GB", "Europe"],
+    "serviceType": "Workflow automation and process optimization",
+    "description": "We create workflow automation and visibility structures that help teams spend less time managing tickets and more time delivering value."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Knowledge Enablement & Training",
+    "provider": {
+      "@type": "Organization",
+      "name": "LT.Solutions",
+      "url": "https://lt.solutions"
+    },
+    "areaServed": ["GB", "Europe"],
+    "serviceType": "Training and knowledge transfer",
+    "description": "Transformation is not complete until knowledge is transferred. We make sure your people have the tools and understanding to sustain progress independently."
+  }
+  </script>
+  <!-- Plausible Analytics (Privacy-friendly, GDPR compliant) -->
+  <!-- Uncomment to activate: <script defer data-domain="lt.solutions" src="https://plausible.io/js/script.js"></script> -->
+  <!-- Main JavaScript -->
+  <script defer src="script.js"></script>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header" role="banner">
-        <div class="container">
-            <nav class="nav" role="navigation" aria-label="Main navigation">
-                <a href="index.html" class="nav__logo" aria-label="LT.Solutions home">
-                    <img src="images/lts-logo.svg" alt="LT.Solutions - Business transformation consultancy" width="180" height="50">
-                </a>
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__track">
+      <div class="scroll-progress__bar"></div>
+      <div class="scroll-progress__indicator"></div>
+    </div>
+  </div>
 
-                <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                    <span class="nav__toggle-bar"></span>
-                    <span class="nav__toggle-bar"></span>
-                    <span class="nav__toggle-bar"></span>
-                </button>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav__logo" aria-label="LT.Solutions home">
+          <img src="images/logo-full.png" alt="LT.Solutions - Atlassian consultancy" width="260" height="72">
+        </a>
 
-                <ul class="nav__menu">
-                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
-                    <li class="nav__item"><a href="services.html" class="nav__link nav__link--active" aria-current="page">Services</a></li>
-                    <li class="nav__item"><a href="approach.html" class="nav__link">Our Methodology</a></li>
-                    <li class="nav__item"><a href="about.html" class="nav__link">About Us</a></li>
-                    <li class="nav__item"><a href="contact.html" class="nav__link nav__link--cta">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+        <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="nav__toggle-icon"></span>
+        </button>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <h1 class="page-hero__title">Services That Drive Transformation</h1>
-            <p class="page-hero__subtitle">Comprehensive support across every phase of your transformation journey</p>
-        </div>
-    </section>
+        <ul class="nav__menu">
+          <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="services.html" class="nav__link nav__link--active" aria-current="page">Services</a></li>
+          <li class="nav__item"><a href="approach.html" class="nav__link">Our Approach</a></li>
+          <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Section: Introduction -->
-    <section class="section section--white">
-        <div class="container">
-            <div class="content-block content-block--centered">
-                <p class="text-lead">Our services are designed to work together as an integrated methodology, but we're equally comfortable supporting specific phases based on your needs.</p>
-            </div>
-        </div>
-    </section>
+  <!-- Hero Section with Living Brand Elements -->
+  <section class="page-hero section--dark">
+    <!-- Floating Brand Particles (Desktop Only) -->
+    <div class="hero-brand-particles" aria-hidden="true">
+      <div class="hero-brand-element hero-brand-element--services">Services</div>
+      <div class="hero-brand-element hero-brand-element--brackets">{}</div>
+      <div class="hero-brand-element hero-brand-element--icon">⚙</div>
+      <div class="hero-brand-element hero-brand-element--lt-small">LT.</div>
+      <div class="hero-brand-element hero-brand-element--workflow">Workflow</div>
+      <div class="hero-brand-element hero-brand-element--automation">⚡</div>
+    </div>
 
-    <!-- Service 1: Discovery & Diagnosis -->
-    <section id="discovery" class="section section--mist">
-        <div class="container">
-            <div class="service-detail">
-                <div class="service-detail__header">
-                    <span class="service-detail__label">Service 1</span>
-                    <h2 class="service-detail__title">Discovery & Diagnosis</h2>
-                    <p class="service-detail__tagline">Understanding where you are to plan where you're going</p>
-                </div>
+    <div class="container page-hero__content">
+      <span class="section-tag">Our Services</span>
+      <h1 class="page-hero__title">Practical support across <br><span class="gradient-text">every phase</span></h1>
+      <p class="page-hero__subtitle">From architecture to automation, we deliver hands-on Atlassian expertise that scales with your organisation.</p>
+      <div class="page-hero__cta">
+        <a href="contact.html" class="btn btn--primary btn--glow">Start the Conversation</a>
+        <a href="approach.html" class="btn btn--secondary btn--glow">Our Approach</a>
+      </div>
+    </div>
+  </section>
 
-                <div class="service-detail__content">
-                    <div class="service-detail__section">
-                        <h3 class="service-detail__subtitle">Overview</h3>
-                        <p>Successful transformation begins with clarity. Our Discovery & Diagnosis phase provides the thorough understanding of your current state that's essential for planning meaningful change.</p>
-                    </div>
+  <!-- Services Introduction -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__intro">Every organisation is different, but the foundation of success is always the same: clarity, structure, and knowledge that lasts. LT.Solutions delivers exactly that through technical implementation, workflow design, and capability enablement.</p>
+      </div>
+    </div>
+  </section>
 
-                    <div class="service-detail__section">
-                        <h3 class="service-detail__subtitle">The Challenge</h3>
-                        <p>Many transformation initiatives fail because they're built on assumptions rather than evidence. Without a clear understanding of your current capabilities, constraints, and opportunities, even the best strategies risk missing the mark.</p>
-                    </div>
+  <!-- Brand Separator Line -->
+  <div class="brand-separator" aria-hidden="true">
+    <div class="separator-line"></div>
+    <svg width="1920" height="120" viewBox="0 0 1920 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g class="connection-lines">
+        <line x1="180" y1="55" x2="360" y2="40" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5"/>
+        <line x1="360" y1="40" x2="540" y2="70" stroke="rgba(206, 0, 0, 0.2)" stroke-width="1.5"/>
+        <line x1="540" y1="70" x2="750" y2="45" stroke="rgba(65, 105, 225, 0.2)" stroke-width="1.5"/>
+        <line x1="750" y1="45" x2="960" y2="68" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5"/>
+        <line x1="960" y1="68" x2="1140" y2="50" stroke="rgba(206, 0, 0, 0.18)" stroke-width="1.5"/>
+        <line x1="1140" y1="50" x2="1320" y2="60" stroke="rgba(65, 105, 225, 0.15)" stroke-width="1.5"/>
+      </g>
+      <g class="node-1">
+        <circle cx="180" cy="55" r="5" fill="rgba(206, 0, 0, 0.7)"/>
+        <circle class="ring" cx="180" cy="55" r="10" stroke="rgba(206, 0, 0, 0.4)" stroke-width="1.5" fill="none"/>
+        <circle cx="180" cy="55" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+      <g class="node-2">
+        <circle cx="360" cy="40" r="4" fill="rgba(255, 255, 255, 0.6)"/>
+        <circle cx="360" cy="40" r="1.5" fill="rgba(206, 0, 0, 0.8)"/>
+      </g>
+      <g class="node-3">
+        <circle cx="540" cy="70" r="6" fill="rgba(206, 0, 0, 0.75)"/>
+        <circle class="ring-2" cx="540" cy="70" r="12" stroke="rgba(206, 0, 0, 0.35)" stroke-width="1.5" fill="none"/>
+        <circle cx="540" cy="70" r="2.5" fill="rgba(255, 255, 255, 0.95)"/>
+      </g>
+      <g class="node-4">
+        <circle cx="750" cy="45" r="5" fill="rgba(65, 105, 225, 0.7)"/>
+        <circle class="ring-3" cx="750" cy="45" r="10" stroke="rgba(65, 105, 225, 0.4)" stroke-width="1.5" fill="none"/>
+        <circle cx="750" cy="45" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+      <g class="node-5">
+        <circle cx="960" cy="68" r="4.5" fill="rgba(255, 255, 255, 0.65)"/>
+        <circle cx="960" cy="68" r="1.5" fill="rgba(65, 105, 225, 0.8)"/>
+      </g>
+      <g class="node-6">
+        <circle cx="1140" cy="50" r="4" fill="rgba(206, 0, 0, 0.6)"/>
+        <circle cx="1140" cy="50" r="1.5" fill="rgba(255, 255, 255, 0.85)"/>
+      </g>
+      <g class="node-1">
+        <circle cx="1320" cy="60" r="5" fill="rgba(65, 105, 225, 0.65)"/>
+        <circle class="ring" cx="1320" cy="60" r="9" stroke="rgba(65, 105, 225, 0.35)" stroke-width="1.5" fill="none"/>
+        <circle cx="1320" cy="60" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+    </svg>
+  </div>
 
-                    <!-- Detailed "What We Do" section - consider accordion UI in Phase 4 -->
-                    <div class="service-detail__section">
-                        <h3 class="service-detail__subtitle">What We Do</h3>
+  <!-- Service 1: Atlassian Architecture & Implementation -->
+  <section id="atlassian-architecture-implementation" class="section section--mist">
+    <!-- Brand Watermark -->
+    <div class="section-watermark" aria-hidden="true">LT.</div>
 
-                        <div class="service-detail__item">
-                            <h4>Stakeholder Engagement</h4>
-                            <p>We engage stakeholders across your organisation to understand different perspectives, identify pain points, and uncover opportunities.</p>
-                        </div>
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Atlassian Architecture & Implementation</h2>
+        <p class="section__subtitle">Building a solid foundation for smarter service management.</p>
+      </div>
 
-                        <div class="service-detail__item">
-                            <h4>Current State Mapping</h4>
-                            <p>We document existing processes, systems, and capabilities, creating a clear baseline against which progress can be measured.</p>
-                        </div>
+      <div class="content-block reveal">
+        <p class="text-lead">We help organisations design and implement Atlassian environments that scale. From Jira Service Management to Confluence and Assets, we ensure every tool is integrated, consistent, and ready to support your teams.</p>
 
-                        <div class="service-detail__item">
-                            <h4>Gap Analysis</h4>
-                            <p>By comparing your current state with best practices and strategic objectives, we identify gaps and prioritise opportunities for improvement.</p>
-                        </div>
+        <h3>Deliverables include:</h3>
+        <ul class="service-card__list">
+          <li>Configuration and optimisation of Jira and JSM</li>
+          <li>CMDB / Asset modelling</li>
+          <li>Integrations with other platforms (Azure, GCP, Slack, and more)</li>
+          <li>System migration and health checks</li>
+        </ul>
 
-                        <div class="service-detail__item">
-                            <h4>Constraint Identification</h4>
-                            <p>We identify technical, organisational, and resource constraints that could impact your transformation, enabling proactive planning.</p>
-                        </div>
+        <p>Ready to build a robust Atlassian architecture? <a href="contact.html">Start the conversation</a> to discuss your needs and create a tailored roadmap.</p>
+      </div>
+    </div>
+  </section>
 
-                        <div class="service-detail__item">
-                            <h4>Quick Win Identification</h4>
-                            <p>We look for opportunities to deliver early value, building momentum and demonstrating the benefits of transformation.</p>
-                        </div>
-                    </div>
+  <!-- Brand Separator Line -->
+  <div class="brand-separator" aria-hidden="true">
+    <div class="separator-line"></div>
+    <svg width="1920" height="120" viewBox="0 0 1920 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g class="connection-lines">
+        <line x1="180" y1="55" x2="360" y2="40" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5"/>
+        <line x1="360" y1="40" x2="540" y2="70" stroke="rgba(206, 0, 0, 0.2)" stroke-width="1.5"/>
+        <line x1="540" y1="70" x2="750" y2="45" stroke="rgba(65, 105, 225, 0.2)" stroke-width="1.5"/>
+        <line x1="750" y1="45" x2="960" y2="68" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5"/>
+        <line x1="960" y1="68" x2="1140" y2="50" stroke="rgba(206, 0, 0, 0.18)" stroke-width="1.5"/>
+        <line x1="1140" y1="50" x2="1320" y2="60" stroke="rgba(65, 105, 225, 0.15)" stroke-width="1.5"/>
+      </g>
+      <g class="node-1">
+        <circle cx="180" cy="55" r="5" fill="rgba(206, 0, 0, 0.7)"/>
+        <circle class="ring" cx="180" cy="55" r="10" stroke="rgba(206, 0, 0, 0.4)" stroke-width="1.5" fill="none"/>
+        <circle cx="180" cy="55" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+      <g class="node-2">
+        <circle cx="360" cy="40" r="4" fill="rgba(255, 255, 255, 0.6)"/>
+        <circle cx="360" cy="40" r="1.5" fill="rgba(206, 0, 0, 0.8)"/>
+      </g>
+      <g class="node-3">
+        <circle cx="540" cy="70" r="6" fill="rgba(206, 0, 0, 0.75)"/>
+        <circle class="ring-2" cx="540" cy="70" r="12" stroke="rgba(206, 0, 0, 0.35)" stroke-width="1.5" fill="none"/>
+        <circle cx="540" cy="70" r="2.5" fill="rgba(255, 255, 255, 0.95)"/>
+      </g>
+      <g class="node-4">
+        <circle cx="750" cy="45" r="5" fill="rgba(65, 105, 225, 0.7)"/>
+        <circle class="ring-3" cx="750" cy="45" r="10" stroke="rgba(65, 105, 225, 0.4)" stroke-width="1.5" fill="none"/>
+        <circle cx="750" cy="45" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+      <g class="node-5">
+        <circle cx="960" cy="68" r="4.5" fill="rgba(255, 255, 255, 0.65)"/>
+        <circle cx="960" cy="68" r="1.5" fill="rgba(65, 105, 225, 0.8)"/>
+      </g>
+      <g class="node-6">
+        <circle cx="1140" cy="50" r="4" fill="rgba(206, 0, 0, 0.6)"/>
+        <circle cx="1140" cy="50" r="1.5" fill="rgba(255, 255, 255, 0.85)"/>
+      </g>
+      <g class="node-1">
+        <circle cx="1320" cy="60" r="5" fill="rgba(65, 105, 225, 0.65)"/>
+        <circle class="ring" cx="1320" cy="60" r="9" stroke="rgba(65, 105, 225, 0.35)" stroke-width="1.5" fill="none"/>
+        <circle cx="1320" cy="60" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+    </svg>
+  </div>
 
-                    <div class="service-detail__deliverables">
-                        <h3 class="service-detail__subtitle">Deliverables</h3>
-                        <ul>
-                            <li>Current state assessment report</li>
-                            <li>Stakeholder analysis and alignment documentation</li>
-                            <li>Opportunity and constraint mapping</li>
-                            <li>Prioritised recommendations</li>
-                            <li>Foundation for roadmap development</li>
-                        </ul>
-                    </div>
+  <!-- Service 2: Workflow Automation & Efficiency -->
+  <section id="workflow-automation-efficiency" class="section section--white">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Workflow Automation & Efficiency</h2>
+        <p class="section__subtitle">Work smarter, not harder.</p>
+      </div>
 
-                    <div class="service-detail__meta">
-                        <div class="service-detail__meta-item">
-                            <strong>Typical Duration:</strong> 2-4 weeks
-                        </div>
-                        <div class="service-detail__meta-item">
-                            <strong>Ideal For:</strong> Organisations beginning a transformation journey, projects lacking clear direction, or situations requiring stakeholder alignment
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="content-block reveal">
+        <p class="text-lead">We create workflow automation and visibility structures that help teams spend less time managing tickets and more time delivering value.</p>
 
-    <!-- Service 2: Mapping the Path -->
-    <section id="mapping" class="section section--white">
-        <div class="container">
-            <div class="service-detail">
-                <div class="service-detail__header">
-                    <span class="service-detail__label">Service 2</span>
-                    <h2 class="service-detail__title">Mapping the Path</h2>
-                    <p class="service-detail__tagline">Strategic roadmaps that balance ambition with achievability</p>
-                </div>
+        <h3>Deliverables include:</h3>
+        <ul class="service-card__list">
+          <li>Custom automation rules and triggers</li>
+          <li>Service catalogue and request routing</li>
+          <li>SLA, reporting, and dashboard visibility</li>
+          <li>Process improvement and continuous refinement</li>
+        </ul>
 
-                <div class="service-detail__content">
-                    <div class="service-detail__section">
-                        <h3 class="service-detail__subtitle">Overview</h3>
-                        <p>With a clear understanding of your current state and desired outcomes, we develop comprehensive roadmaps that guide your transformation journey whilst remaining flexible enough to adapt as circumstances evolve.</p>
-                    </div>
+        <p>Transform your workflows and improve operational excellence. <a href="contact.html">Get in touch</a> to explore how we can help.</p>
+      </div>
+    </div>
+  </section>
 
-                    <div class="service-detail__section">
-                        <h3 class="service-detail__subtitle">The Challenge</h3>
-                        <p>Transformation roadmaps often fail because they're either too vague to be actionable or too rigid to accommodate inevitable changes. The key is finding the right balance between structure and flexibility.</p>
-                    </div>
+  <!-- Brand Separator Line -->
+  <div class="brand-separator" aria-hidden="true">
+    <div class="separator-line"></div>
+    <svg width="1920" height="120" viewBox="0 0 1920 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g class="connection-lines">
+        <line x1="180" y1="55" x2="360" y2="40" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5"/>
+        <line x1="360" y1="40" x2="540" y2="70" stroke="rgba(206, 0, 0, 0.2)" stroke-width="1.5"/>
+        <line x1="540" y1="70" x2="750" y2="45" stroke="rgba(65, 105, 225, 0.2)" stroke-width="1.5"/>
+        <line x1="750" y1="45" x2="960" y2="68" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5"/>
+        <line x1="960" y1="68" x2="1140" y2="50" stroke="rgba(206, 0, 0, 0.18)" stroke-width="1.5"/>
+        <line x1="1140" y1="50" x2="1320" y2="60" stroke="rgba(65, 105, 225, 0.15)" stroke-width="1.5"/>
+      </g>
+      <g class="node-1">
+        <circle cx="180" cy="55" r="5" fill="rgba(206, 0, 0, 0.7)"/>
+        <circle class="ring" cx="180" cy="55" r="10" stroke="rgba(206, 0, 0, 0.4)" stroke-width="1.5" fill="none"/>
+        <circle cx="180" cy="55" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+      <g class="node-2">
+        <circle cx="360" cy="40" r="4" fill="rgba(255, 255, 255, 0.6)"/>
+        <circle cx="360" cy="40" r="1.5" fill="rgba(206, 0, 0, 0.8)"/>
+      </g>
+      <g class="node-3">
+        <circle cx="540" cy="70" r="6" fill="rgba(206, 0, 0, 0.75)"/>
+        <circle class="ring-2" cx="540" cy="70" r="12" stroke="rgba(206, 0, 0, 0.35)" stroke-width="1.5" fill="none"/>
+        <circle cx="540" cy="70" r="2.5" fill="rgba(255, 255, 255, 0.95)"/>
+      </g>
+      <g class="node-4">
+        <circle cx="750" cy="45" r="5" fill="rgba(65, 105, 225, 0.7)"/>
+        <circle class="ring-3" cx="750" cy="45" r="10" stroke="rgba(65, 105, 225, 0.4)" stroke-width="1.5" fill="none"/>
+        <circle cx="750" cy="45" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+      <g class="node-5">
+        <circle cx="960" cy="68" r="4.5" fill="rgba(255, 255, 255, 0.65)"/>
+        <circle cx="960" cy="68" r="1.5" fill="rgba(65, 105, 225, 0.8)"/>
+      </g>
+      <g class="node-6">
+        <circle cx="1140" cy="50" r="4" fill="rgba(206, 0, 0, 0.6)"/>
+        <circle cx="1140" cy="50" r="1.5" fill="rgba(255, 255, 255, 0.85)"/>
+      </g>
+      <g class="node-1">
+        <circle cx="1320" cy="60" r="5" fill="rgba(65, 105, 225, 0.65)"/>
+        <circle class="ring" cx="1320" cy="60" r="9" stroke="rgba(65, 105, 225, 0.35)" stroke-width="1.5" fill="none"/>
+        <circle cx="1320" cy="60" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+    </svg>
+  </div>
 
-                    <!-- Detailed "What We Do" section - consider accordion UI in Phase 4 -->
-                    <div class="service-detail__section">
-                        <h3 class="service-detail__subtitle">What We Do</h3>
+  <!-- Service 3: Knowledge Enablement & Training -->
+  <section id="knowledge-enablement-training" class="section section--mist">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Knowledge Enablement & Training</h2>
+        <p class="section__subtitle">Empowering teams to own their success.</p>
+      </div>
 
-                        <div class="service-detail__item">
-                            <h4>Future State Design</h4>
-                            <p>Working collaboratively with your team, we define the target state for your transformation, ensuring it aligns with strategic objectives.</p>
-                        </div>
+      <div class="content-block reveal">
+        <p class="text-lead">Transformation is not complete until knowledge is transferred. We make sure your people have the tools and understanding to sustain progress independently.</p>
 
-                        <div class="service-detail__item">
-                            <h4>Phased Planning</h4>
-                            <p>We break the transformation into manageable phases, each delivering tangible value whilst building towards the ultimate vision.</p>
-                        </div>
+        <h3>Deliverables include:</h3>
+        <ul class="service-card__list">
+          <li>Confluence knowledge hubs and playbooks</li>
+          <li>Training sessions and enablement materials</li>
+          <li>Structured handover documentation</li>
+          <li>Ongoing support frameworks and review cycles</li>
+        </ul>
 
-                        <div class="service-detail__item">
-                            <h4>Dependency Mapping</h4>
-                            <p>We identify dependencies between initiatives, ensuring activities are sequenced appropriately and risks are managed proactively.</p>
-                        </div>
+        <p>Build lasting capability and team independence. <a href="contact.html">Contact us</a> to discuss knowledge enablement for your teams.</p>
+      </div>
+    </div>
+  </section>
 
-                        <div class="service-detail__item">
-                            <h4>Resource Planning</h4>
-                            <p>We define the people, budget, and time required for each phase, helping you plan resources realistically.</p>
-                        </div>
-
-                        <div class="service-detail__item">
-                            <h4>Success Metrics Definition</h4>
-                            <p>We establish clear, measurable success criteria for each phase, enabling you to track progress and demonstrate value.</p>
-                        </div>
-                    </div>
-
-                    <div class="service-detail__deliverables">
-                        <h3 class="service-detail__subtitle">Deliverables</h3>
-                        <ul>
-                            <li>Comprehensive transformation roadmap</li>
-                            <li>Phased implementation plan</li>
-                            <li>Resource requirements and timeline</li>
-                            <li>Risk register and mitigation strategies</li>
-                            <li>Success metrics and KPIs</li>
-                            <li>Communication and change management plan</li>
-                        </ul>
-                    </div>
-
-                    <div class="service-detail__meta">
-                        <div class="service-detail__meta-item">
-                            <strong>Typical Duration:</strong> 2-6 weeks
-                        </div>
-                        <div class="service-detail__meta-item">
-                            <strong>Ideal For:</strong> Organisations with clear objectives needing execution plans or complex transformations requiring careful sequencing
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Service 3: Implementation & Integration -->
-    <section id="implementation" class="section section--mist">
-        <div class="container">
-            <div class="service-detail">
-                <div class="service-detail__header">
-                    <span class="service-detail__label">Service 3</span>
-                    <h2 class="service-detail__title">Implementation & Integration</h2>
-                    <p class="service-detail__tagline">Turning strategy into reality through hands-on delivery</p>
-                </div>
-
-                <div class="service-detail__content">
-                    <div class="service-detail__section">
-                        <h3 class="service-detail__subtitle">Overview</h3>
-                        <p>This is where transformation becomes tangible. We work alongside your teams to execute the roadmap, integrate new capabilities, and navigate the challenges that inevitably arise during complex change initiatives.</p>
-                    </div>
-
-                    <div class="service-detail__section">
-                        <h3 class="service-detail__subtitle">The Challenge</h3>
-                        <p>The gap between planning and execution is where most transformations struggle. Unforeseen obstacles, competing priorities, and resistance to change can derail even the best-laid plans without experienced support.</p>
-                    </div>
-
-                    <!-- Detailed "What We Do" section - consider accordion UI in Phase 4 -->
-                    <div class="service-detail__section">
-                        <h3 class="service-detail__subtitle">What We Do</h3>
-
-                        <div class="service-detail__item">
-                            <h4>Solution Deployment</h4>
-                            <p>We support the implementation of new systems, processes, and capabilities, ensuring they're integrated effectively into your existing environment.</p>
-                        </div>
-
-                        <div class="service-detail__item">
-                            <h4>Process Optimisation</h4>
-                            <p>As we implement, we continuously refine and optimise, ensuring solutions are not just deployed but are actually working effectively.</p>
-                        </div>
-
-                        <div class="service-detail__item">
-                            <h4>Change Management</h4>
-                            <p>We help your team navigate the human side of transformation, managing resistance and ensuring adoption of new ways of working.</p>
-                        </div>
-
-                        <div class="service-detail__item">
-                            <h4>Integration Support</h4>
-                            <p>We ensure new solutions integrate seamlessly with existing systems and processes, avoiding the siloes that often undermine transformation value.</p>
-                        </div>
-
-                        <div class="service-detail__item">
-                            <h4>Adaptive Planning</h4>
-                            <p>We monitor progress continuously and adapt plans as needed, ensuring your transformation remains on track despite changing circumstances.</p>
-                        </div>
-                    </div>
-
-                    <div class="service-detail__deliverables">
-                        <h3 class="service-detail__subtitle">Deliverables</h3>
-                        <ul>
-                            <li>Deployed solutions and capabilities</li>
-                            <li>Integrated systems and processes</li>
-                            <li>Change management and communication execution</li>
-                            <li>Issue logs and resolution documentation</li>
-                            <li>Progress reports and steering committee updates</li>
-                        </ul>
-                    </div>
-
-                    <div class="service-detail__meta">
-                        <div class="service-detail__meta-item">
-                            <strong>Typical Duration:</strong> 8-24 weeks (varies by scope)
-                        </div>
-                        <div class="service-detail__meta-item">
-                            <strong>Ideal For:</strong> Organisations needing hands-on implementation support or complex integrations requiring specialist expertise
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Service 4: Knowledge Transfer & Delivery -->
-    <section id="knowledge" class="section section--white">
-        <div class="container">
-            <div class="service-detail">
-                <div class="service-detail__header">
-                    <span class="service-detail__label">Service 4</span>
-                    <h2 class="service-detail__title">Knowledge Transfer & Delivery</h2>
-                    <p class="service-detail__tagline">Building capabilities for sustained success</p>
-                </div>
-
-                <div class="service-detail__content">
-                    <div class="service-detail__section">
-                        <h3 class="service-detail__subtitle">Overview</h3>
-                        <p>Sustainable transformation requires more than successful delivery—it requires building the internal capabilities needed to maintain momentum, drive continuous improvement, and adapt as needs evolve.</p>
-                    </div>
-
-                    <div class="service-detail__section">
-                        <h3 class="service-detail__subtitle">The Challenge</h3>
-                        <p>Too many consulting engagements end with organisations dependent on external support. Real success means building independence, not dependence.</p>
-                    </div>
-
-                    <!-- Detailed "What We Do" section - consider accordion UI in Phase 4 -->
-                    <div class="service-detail__section">
-                        <h3 class="service-detail__subtitle">What We Do</h3>
-
-                        <div class="service-detail__item">
-                            <h4>Documentation & Playbooks</h4>
-                            <p>We create comprehensive documentation that captures processes, decisions, and best practices, providing an enduring reference for your team.</p>
-                        </div>
-
-                        <div class="service-detail__item">
-                            <h4>Skills Transfer</h4>
-                            <p>Through workshops, coaching, and hands-on collaboration, we transfer the skills and knowledge your team needs to maintain and evolve the solution.</p>
-                        </div>
-
-                        <div class="service-detail__item">
-                            <h4>Team Enablement</h4>
-                            <p>We work with your internal teams to build confidence and capability, ensuring they're ready to take full ownership when our engagement concludes.</p>
-                        </div>
-
-                        <div class="service-detail__item">
-                            <h4>Support Framework</h4>
-                            <p>We establish support structures and processes that enable your team to address issues and questions independently.</p>
-                        </div>
-
-                        <div class="service-detail__item">
-                            <h4>Handover Planning</h4>
-                            <p>We plan and execute a structured handover that ensures smooth transition from our active support to your independent operation.</p>
-                        </div>
-                    </div>
-
-                    <div class="service-detail__deliverables">
-                        <h3 class="service-detail__subtitle">Deliverables</h3>
-                        <ul>
-                            <li>Comprehensive documentation and playbooks</li>
-                            <li>Training materials and knowledge base</li>
-                            <li>Support procedures and escalation paths</li>
-                            <li>Measurement frameworks and dashboards</li>
-                            <li>Continuous improvement processes</li>
-                        </ul>
-                    </div>
-
-                    <div class="service-detail__meta">
-                        <div class="service-detail__meta-item">
-                            <strong>Typical Duration:</strong> 2-4 weeks
-                        </div>
-                        <div class="service-detail__meta-item">
-                            <strong>Ideal For:</strong> Organisations prioritising internal capability building or projects transitioning from external to internal support
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section: Why Our Approach Works -->
-    <section class="section section--navy">
-        <div class="container">
-            <div class="section__header section__header--light">
-                <h2 class="section__title">Why Our Integrated Approach Delivers Results</h2>
-            </div>
-
-            <div class="grid grid--2col">
-                <div class="feature-box feature-box--light">
-                    <h3 class="feature-box__title">Grounded in Reality</h3>
-                    <p class="feature-box__text">We begin with thorough discovery, ensuring every plan is based on evidence rather than assumptions.</p>
-                </div>
-
-                <div class="feature-box feature-box--light">
-                    <h3 class="feature-box__title">Strategically Sound</h3>
-                    <p class="feature-box__text">Our roadmaps balance ambition with pragmatism, delivering value at every phase whilst building towards long-term vision.</p>
-                </div>
-
-                <div class="feature-box feature-box--light">
-                    <h3 class="feature-box__title">Execution Focused</h3>
-                    <p class="feature-box__text">We don't just plan—we deliver, working hands-on to navigate the complexities of implementation.</p>
-                </div>
-
-                <div class="feature-box feature-box--light">
-                    <h3 class="feature-box__title">Built to Last</h3>
-                    <p class="feature-box__text">Our focus on knowledge transfer ensures transformations endure and continue to evolve long after we've gone.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section: CTA -->
-    <section class="section section--white">
-        <div class="container">
-            <div class="cta-block">
-                <h2 class="cta-block__title">Ready to Begin Your Transformation?</h2>
-                <p class="cta-block__text">Let's discuss which services are right for your organisation.</p>
-                <div class="cta-block__buttons">
-                    <a href="contact.html" class="btn btn--primary btn--large">Schedule a Consultation</a>
-                    <a href="approach.html" class="btn btn--secondary btn--large">Explore Our Methodology</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
- <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-branding">
-          <img src="images/logo-footer.png" alt="LT.Solutions logo" class="footer-logo">
-          <p class="footer-tagline">Scaling isn’t only about knowledge; it’s about adapting it strategically.</p>
-        </div>
-
-        <div class="footer-links">
-          <div class="footer-column">
-            <h3>Services</h3>
-            <ul>
-              <li><a href="services.html#discovery">Discovery & Diagnosis</a></li>
-              <li><a href="services.html#mapping">Mapping the Path</a></li>
-              <li><a href="services.html#implementation">Implementation & Integration</a></li>
-              <li><a href="services.html#knowledge">Knowledge Transfer</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h3>Company</h3>
-            <ul>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="approach.html">Our Methodology</a></li>
-              <li><a href="case-studies.html">Case Studies</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h3>Connect</h3>
-            <ul>
-              <li><a href="contact.html">Contact Us</a></li>
-              <li><a href="https://linkedin.com/company/lt-solutions" target="_blank" rel="noopener">LinkedIn</a></li>
-              <li><a href="mailto:hello@ltsolutions.com">hello@ltsolutions.com</a></li>
-            </ul>
+  <!-- Footer with integrated CTA -->
+  <footer class="site-footer">
+    <!-- CTA Section -->
+    <div class="footer-cta">
+      <div class="container">
+        <div class="cta-block__content">
+          <span class="section-tag">Ready to Begin?</span>
+          <h2 class="cta-block__title">Ready to elevate your <span class="gradient-text">Atlassian ecosystem?</span></h2>
+          <p class="cta-block__text">Let's discuss how our services can support your transformation goals.</p>
+          <div class="cta-block__buttons">
+            <a href="contact.html" class="btn btn--primary btn--large btn--glow">Start the Conversation</a>
+            <a href="approach.html" class="btn btn--secondary btn--large btn--glow">Our Approach</a>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="footer-bottom">
-        <p>© 2025 LT.Solutions. All rights reserved.</p>
+    <!-- Footer Links -->
+    <div class="footer-container">
+      <div class="footer-branding">
+        <img src="images/logo-footer.svg" alt="LT.Solutions logo" class="footer-logo">
       </div>
-    </footer>
 
-    <script src="script.js"></script>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h3 class="footer-heading">Connect</h3>
+          <ul class="footer-list">
+            <li><a href="mailto:hello@lt.solutions" class="footer-link">hello@lt.solutions</a></li>
+            <li><a href="https://www.linkedin.com/in/andreas-l-a-nyberg/" target="_blank" rel="noopener" class="footer-link">LinkedIn</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3 class="footer-heading">Company</h3>
+          <ul class="footer-list">
+            <li><a href="about.html" class="footer-link">About LT.Solutions</a></li>
+            <li><a href="approach.html" class="footer-link">Our Approach</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3 class="footer-heading">Legal</h3>
+          <ul class="footer-list">
+            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="legal.html" class="footer-link">Legal Notice</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2025 LT.Solutions. All rights reserved.</p>
+    </div>
+  </footer>
+
 </body>
 </html>

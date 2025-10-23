@@ -3,328 +3,564 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="LT.Solutions - Hands-on Atlassian expertise, designed to scale. Coming soon.">
-  <title>Coming Soon | LT.Solutions</title>
-  <!-- Google Fonts -->
+  <meta name="description" content="Hands-on Atlassian expertise that modernises workflows, improves visibility, and builds knowledge that stays in your team. Start your transformation with a clear approach.">
+  <title>Smarter Atlassian ecosystems built to last | LT.Solutions</title>
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://lt.solutions/">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Smarter Atlassian ecosystems built to last | LT.Solutions">
+  <meta property="og:description" content="Hands-on Atlassian expertise that modernises workflows, improves visibility, and builds knowledge that stays in your team.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lt.solutions/">
+  <meta property="og:image" content="https://lt.solutions/images/og/default.jpg">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Smarter Atlassian ecosystems built to last | LT.Solutions">
+  <meta name="twitter:description" content="Hands-on Atlassian expertise that modernises workflows, improves visibility, and builds knowledge that stays in your team.">
+  <meta name="twitter:image" content="https://lt.solutions/images/og/default.jpg">
+  <!-- Preconnect for Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" as="style">
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
         rel="stylesheet">
-  <style>
-    :root {
-      --color-navy: #1A1F3A;
-      --color-slate: #475569;
-      --color-mist: #F8FAFC;
-      --color-white: #FFFFFF;
-      --color-red: #CE0000;
-      --spacing-xs: 0.5rem;
-      --spacing-sm: 1rem;
-      --spacing-md: 1.5rem;
-      --spacing-lg: 2rem;
-      --spacing-xl: 3rem;
-      --spacing-2xl: 4rem;
-      --radius-sm: 4px;
-      --radius-md: 8px;
-      --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+  <!-- Main Stylesheet -->
+  <link href="styles.css" rel="stylesheet">
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "LT.Solutions",
+    "url": "https://lt.solutions",
+    "logo": "https://lt.solutions/images/logo-full.png",
+    "description": "Hands-on Atlassian expertise that modernises workflows, improves visibility, and builds knowledge that stays in your team.",
+    "email": "hello@lt.solutions",
+    "areaServed": ["GB", "Europe"],
+    "sameAs": [
+      "https://www.linkedin.com/company/let%E2%80%99s-talk-solutions-ltd",
+      "https://www.linkedin.com/in/andreas-l-a-nyberg/"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "hello@lt.solutions",
+      "contactType": "Customer Service",
+      "areaServed": ["GB", "Europe"],
+      "availableLanguage": ["en-GB", "en"]
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "LT.Solutions",
+    "url": "https://lt.solutions/",
+    "description": "Smarter Atlassian ecosystems built to last",
+    "publisher": {
+      "@type": "Organization",
+      "name": "LT.Solutions"
     }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, var(--color-navy) 0%, #2A3555 100%);
-      color: var(--color-white);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: var(--spacing-md);
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Announcement Banner */
-    .announcement-banner {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(135deg, var(--color-red) 0%, #A00000 100%);
-      padding: var(--spacing-sm) var(--spacing-md);
-      text-align: center;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .announcement-banner__text {
-      color: var(--color-white);
-      font-size: 0.95rem;
-      margin: 0;
-      font-weight: 500;
-    }
-
-    .announcement-banner__text strong {
-      font-weight: 700;
-    }
-
-    .main-content {
-      margin-top: 60px;
-    }
-
-    /* Animated background elements */
-    .bg-decoration {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.05;
-      animation: float 20s infinite ease-in-out;
-    }
-
-    .bg-decoration:nth-child(1) {
-      width: 400px;
-      height: 400px;
-      background: var(--color-red);
-      top: -200px;
-      left: -200px;
-      animation-delay: 0s;
-    }
-
-    .bg-decoration:nth-child(2) {
-      width: 300px;
-      height: 300px;
-      background: var(--color-red);
-      bottom: -150px;
-      right: -150px;
-      animation-delay: 5s;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(20px, 20px) scale(1.1); }
-    }
-
-    .container {
-      max-width: 800px;
-      width: 100%;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .logo {
-      width: 200px;
-      height: auto;
-      margin-bottom: var(--spacing-xl);
-      filter: brightness(0) invert(1);
-    }
-
-    h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 3.5rem;
-      font-weight: 700;
-      margin-bottom: var(--spacing-md);
-      line-height: 1.1;
-      background: linear-gradient(135deg, var(--color-white) 0%, var(--color-mist) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .tagline {
-      font-size: 1.5rem;
-      margin-bottom: var(--spacing-lg);
-      color: var(--color-white);
-      opacity: 0.9;
-      font-weight: 500;
-    }
-
-    .description {
-      font-size: 1.125rem;
-      line-height: 1.8;
-      margin-bottom: var(--spacing-2xl);
-      color: var(--color-white);
-      opacity: 0.8;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cta-box {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: var(--radius-md);
-      padding: var(--spacing-xl);
-      margin-bottom: var(--spacing-2xl);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .cta-box h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.5rem;
-      margin-bottom: var(--spacing-md);
-      color: var(--color-white);
-    }
-
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-md);
-      align-items: center;
-    }
-
-    .contact-link {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--spacing-sm);
-      color: var(--color-white);
-      text-decoration: none;
-      font-size: 1.125rem;
-      padding: var(--spacing-sm) var(--spacing-lg);
-      background: var(--color-red);
-      border-radius: var(--radius-md);
-      transition: all 0.3s ease;
-      font-weight: 600;
-    }
-
-    .contact-link:hover {
-      background: #A00000;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(206, 0, 0, 0.4);
-    }
-
-    .email-link {
-      color: var(--color-white);
-      text-decoration: none;
-      font-size: 1.125rem;
-      opacity: 0.9;
-      transition: opacity 0.3s ease;
-    }
-
-    .email-link:hover {
-      opacity: 1;
-      text-decoration: underline;
-    }
-
-    .social-links {
-      display: flex;
-      gap: var(--spacing-md);
-      justify-content: center;
-      margin-top: var(--spacing-lg);
-    }
-
-    .social-link {
-      color: var(--color-white);
-      opacity: 0.8;
-      transition: all 0.3s ease;
-      font-size: 0.95rem;
-      text-decoration: none;
-    }
-
-    .social-link:hover {
-      opacity: 1;
-      color: var(--color-red);
-    }
-
-    .footer-text {
-      margin-top: var(--spacing-xl);
-      font-size: 0.875rem;
-      opacity: 0.6;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .announcement-banner__text {
-        font-size: 0.875rem;
-      }
-
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      .tagline {
-        font-size: 1.25rem;
-      }
-
-      .description {
-        font-size: 1rem;
-      }
-
-      .logo {
-        width: 150px;
-      }
-
-      .cta-box {
-        padding: var(--spacing-lg);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .announcement-banner__text {
-        font-size: 0.8rem;
-      }
-
-      .announcement-banner {
-        padding: 0.75rem 0.5rem;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      .tagline {
-        font-size: 1.125rem;
-      }
-    }
-  </style>
+  }
+  </script>
+  <!-- Plausible Analytics (Privacy-friendly, GDPR compliant) -->
+  <!-- Uncomment to activate: <script defer data-domain="lt.solutions" src="https://plausible.io/js/script.js"></script> -->
+  <!-- Main JavaScript -->
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Announcement Banner -->
-  <div class="announcement-banner">
-    <p class="announcement-banner__text">
-      <strong>We're re-engineering how we deliver solutions.</strong> The new LT.Solutions is nearly ready.
-    </p>
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__track">
+      <div class="scroll-progress__bar"></div>
+      <div class="scroll-progress__indicator"></div>
+    </div>
   </div>
 
-  <!-- Animated background decorations -->
-  <div class="bg-decoration"></div>
-  <div class="bg-decoration"></div>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav__logo" aria-label="LT.Solutions home">
+          <img src="images/logo-full.png" alt="LT.Solutions - Atlassian consultancy" width="260" height="72">
+        </a>
 
-  <div class="container main-content">
-    <!-- Logo -->
-    <img src="images/lts-logo.svg" alt="LT.Solutions" class="logo">
+        <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="nav__toggle-icon"></span>
+        </button>
 
-    <!-- Main heading -->
-    <h1>Coming Soon</h1>
+        <ul class="nav__menu">
+          <li class="nav__item"><a href="index.html" class="nav__link nav__link--active" aria-current="page">Home</a></li>
+          <li class="nav__item"><a href="services.html" class="nav__link">Services</a></li>
+          <li class="nav__item"><a href="approach.html" class="nav__link">Our Approach</a></li>
+          <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Tagline -->
-    <p class="tagline">Hands-on Atlassian expertise, designed to scale</p>
+  <!-- Hero Section with Living Brand Elements -->
+  <section class="page-hero section--dark">
+    <!-- Floating Brand Particles (Desktop Only) -->
+    <div class="hero-brand-particles" aria-hidden="true">
+      <div class="hero-brand-element hero-brand-element--lt">LT.</div>
+      <div class="hero-brand-element hero-brand-element--solutions">Solutions</div>
+      <div class="hero-brand-element hero-brand-element--brackets">{}</div>
+    </div>
 
-    <!-- Description -->
-    <p class="description">
-      We're putting the finishing touches on our new website. In the meantime, we're here to help you transform your Atlassian ecosystem with practical, outcome-driven solutions.
-    </p>
-
-    <!-- CTA Box -->
-    <div class="cta-box">
-      <h2>Ready to start the conversation?</h2>
-      <div class="contact-info">
-        <a href="mailto:contact@lt.solutions" class="contact-link">Get in Touch</a>
-        <a href="mailto:contact@lt.solutions" class="email-link">contact@lt.solutions</a>
-      </div>
-
-      <!-- Social Links -->
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/andreas-l-a-nyberg/" target="_blank" rel="noopener" class="social-link">LinkedIn</a>
+    <div class="container page-hero__content">
+      <span class="section-tag">Atlassian Expertise</span>
+      <h1 class="page-hero__title">Smarter Atlassian ecosystems <br><span class="gradient-text">built to last</span></h1>
+      <p class="page-hero__subtitle">Hands-on Atlassian expertise to modernise workflows, automate operations, and empower your teams.</p>
+      <div class="page-hero__cta">
+        <a href="contact.html" class="btn btn--primary btn--large btn--glow">Start the Conversation</a>
+        <a href="approach.html" class="btn btn--secondary btn--large btn--glow">Explore Our Approach</a>
       </div>
     </div>
 
-    <!-- Footer -->
-    <p class="footer-text">&copy; 2025 LT.Solutions. All rights reserved.</p>
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- Section: Value Proposition -->
+<section class="section section--mist">
+  <!-- Brand Watermark -->
+  <div class="section-watermark" aria-hidden="true">LT.</div>
+
+  <div class="container">
+    <div class="section__header">
+      <span class="section-tag">Why Partner With LT.Solutions</span>
+      <h2 class="section__title">Practical expertise. Real results. Knowledge that stays.</h2>
+      <p class="section__intro">At LT.Solutions, transformation is never just about technology. It is about clarity, capability, and confidence. We combine hands-on Atlassian expertise with a structured approach that helps your teams work smarter, scale faster, and stay independent.</p>
+    </div>
+
+    <div class="grid grid--3col">
+      <div class="value-card reveal">
+        <img src="images/built-on-experience.svg" alt="" class="value-card__header-icon" aria-hidden="true">
+        <div class="value-card__content">
+          <h3 class="value-card__title">Built on Experience</h3>
+          <p class="value-card__text">Fourteen years of real-world problem-solving means we understand the pressure of broken tools and tight deadlines. We have been there, and we know what it takes to move from firefighting to future-proofing.</p>
+        </div>
+      </div>
+
+      <div class="value-card reveal">
+        <img src="images/designed-to-empower.svg" alt="" class="value-card__header-icon" aria-hidden="true">
+        <div class="value-card__content">
+          <h3 class="value-card__title">Designed to Empower</h3>
+          <p class="value-card__text">We go beyond delivery. Every engagement builds your internal capability so your teams can sustain progress long after we have stepped back.</p>
+        </div>
+      </div>
+
+      <div class="value-card reveal">
+        <img src="images/tailored-for-you.svg" alt="" class="value-card__header-icon" aria-hidden="true">
+        <div class="value-card__content">
+          <h3 class="value-card__title">Tailored for You</h3>
+          <p class="value-card__text">No two organisations are the same. We shape our framework around your context, creating smart, scalable solutions that fit your ways of working.</p>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
+
+  <!-- Brand Separator Line -->
+  <div class="brand-separator" aria-hidden="true">
+    <div class="separator-line"></div>
+    <svg width="1920" height="120" viewBox="0 0 1920 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g class="connection-lines">
+        <line x1="180" y1="55" x2="360" y2="40" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5"/>
+        <line x1="360" y1="40" x2="540" y2="70" stroke="rgba(206, 0, 0, 0.2)" stroke-width="1.5"/>
+        <line x1="540" y1="70" x2="750" y2="45" stroke="rgba(65, 105, 225, 0.2)" stroke-width="1.5"/>
+        <line x1="750" y1="45" x2="960" y2="68" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5"/>
+        <line x1="960" y1="68" x2="1140" y2="50" stroke="rgba(206, 0, 0, 0.18)" stroke-width="1.5"/>
+        <line x1="1140" y1="50" x2="1320" y2="60" stroke="rgba(65, 105, 225, 0.15)" stroke-width="1.5"/>
+      </g>
+      <g class="node-1">
+        <circle cx="180" cy="55" r="5" fill="rgba(206, 0, 0, 0.7)"/>
+        <circle class="ring" cx="180" cy="55" r="10" stroke="rgba(206, 0, 0, 0.4)" stroke-width="1.5" fill="none"/>
+        <circle cx="180" cy="55" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+      <g class="node-2">
+        <circle cx="360" cy="40" r="4" fill="rgba(255, 255, 255, 0.6)"/>
+        <circle cx="360" cy="40" r="1.5" fill="rgba(206, 0, 0, 0.8)"/>
+      </g>
+      <g class="node-3">
+        <circle cx="540" cy="70" r="6" fill="rgba(206, 0, 0, 0.75)"/>
+        <circle class="ring-2" cx="540" cy="70" r="12" stroke="rgba(206, 0, 0, 0.35)" stroke-width="1.5" fill="none"/>
+        <circle cx="540" cy="70" r="2.5" fill="rgba(255, 255, 255, 0.95)"/>
+      </g>
+      <g class="node-4">
+        <circle cx="750" cy="45" r="5" fill="rgba(65, 105, 225, 0.7)"/>
+        <circle class="ring-3" cx="750" cy="45" r="10" stroke="rgba(65, 105, 225, 0.4)" stroke-width="1.5" fill="none"/>
+        <circle cx="750" cy="45" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+      <g class="node-5">
+        <circle cx="960" cy="68" r="4.5" fill="rgba(255, 255, 255, 0.65)"/>
+        <circle cx="960" cy="68" r="1.5" fill="rgba(65, 105, 225, 0.8)"/>
+      </g>
+      <g class="node-6">
+        <circle cx="1140" cy="50" r="4" fill="rgba(206, 0, 0, 0.6)"/>
+        <circle cx="1140" cy="50" r="1.5" fill="rgba(255, 255, 255, 0.85)"/>
+      </g>
+      <g class="node-1">
+        <circle cx="1320" cy="60" r="5" fill="rgba(65, 105, 225, 0.65)"/>
+        <circle class="ring" cx="1320" cy="60" r="9" stroke="rgba(65, 105, 225, 0.35)" stroke-width="1.5" fill="none"/>
+        <circle cx="1320" cy="60" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Section: Services Overview -->
+  <section class="section section--mist">
+    <div class="container">
+      <div class="section__header">
+        <span class="section-tag">What We Offer</span>
+        <h2 class="section__title">Hands-on services that drive smarter IT operations</h2>
+        <p class="section__subtitle">We specialise in practical Atlassian implementation, clean workflows, automation, and capability building.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service Card 1 - Flip Card -->
+        <article class="service-card-flip reveal">
+          <div class="service-card-flip__inner">
+            <!-- Front of card -->
+            <div class="service-card-flip__front">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="2"/>
+                  <path d="M24 14v20M14 24h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="service-card__title">Atlassian Architecture & Implementation</h3>
+              <p class="service-card__text">We design and implement Jira, Confluence, and related Atlassian tools to create solid foundations for modern service management.</p>
+              <a href="services.html#atlassian-architecture-implementation" class="service-card__link">Learn more →</a>
+            </div>
+            <!-- Back of card -->
+            <div class="service-card-flip__back">
+              <h4 class="service-card__deliverables-title">Deliverables include:</h4>
+              <ul class="service-card__list">
+                <li>Jira Service Management setup and configuration</li>
+                <li>CMDB and Assets design</li>
+                <li>Integrations and automation across the Atlassian stack</li>
+                <li>Cloud migration and optimisation</li>
+              </ul>
+              <a href="services.html#atlassian-architecture-implementation" class="service-card__link">Learn more →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service Card 2 - Flip Card -->
+        <article class="service-card-flip reveal">
+          <div class="service-card-flip__inner">
+            <!-- Front of card -->
+            <div class="service-card-flip__front">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 24h32M24 8l16 16-16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="service-card__title">Workflow Automation & Efficiency</h3>
+              <p class="service-card__text">We create smarter workflows that reduce friction, streamline operations, and deliver real-time visibility to stakeholders.</p>
+              <a href="services.html#workflow-automation-efficiency" class="service-card__link">Learn more →</a>
+            </div>
+            <!-- Back of card -->
+            <div class="service-card-flip__back">
+              <h4 class="service-card__deliverables-title">Deliverables include:</h4>
+              <ul class="service-card__list">
+                <li>End-to-end process automation</li>
+                <li>Smart escalation paths and approval flows</li>
+                <li>Reporting dashboards and service insights</li>
+                <li>Continuous optimisation of operational workflows</li>
+              </ul>
+              <a href="services.html#workflow-automation-efficiency" class="service-card__link">Learn more →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service Card 3 - Flip Card -->
+        <article class="service-card-flip reveal">
+          <div class="service-card-flip__inner">
+            <!-- Front of card -->
+            <div class="service-card-flip__front">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="16" r="8" stroke="currentColor" stroke-width="2"/>
+                  <path d="M8 40c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <h3 class="service-card__title">Knowledge Enablement & Training</h3>
+              <p class="service-card__text">We ensure transformation lasts by transferring knowledge and embedding best practice in your teams.</p>
+              <a href="services.html#knowledge-enablement-training" class="service-card__link">Learn more →</a>
+            </div>
+            <!-- Back of card -->
+            <div class="service-card-flip__back">
+              <h4 class="service-card__deliverables-title">Deliverables include:</h4>
+              <ul class="service-card__list">
+                <li>Confluence knowledge hubs and documentation libraries</li>
+                <li>Structured training and enablement</li>
+                <li>Frameworks for continual improvement</li>
+                <li>Clear handovers for independence post-engagement</li>
+              </ul>
+              <a href="services.html#knowledge-enablement-training" class="service-card__link">Learn more →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Separator Line -->
+  <div class="brand-separator" aria-hidden="true">
+    <div class="separator-line"></div>
+    <svg width="1920" height="120" viewBox="0 0 1920 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g class="connection-lines">
+        <line x1="180" y1="55" x2="360" y2="40" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5"/>
+        <line x1="360" y1="40" x2="540" y2="70" stroke="rgba(206, 0, 0, 0.2)" stroke-width="1.5"/>
+        <line x1="540" y1="70" x2="750" y2="45" stroke="rgba(65, 105, 225, 0.2)" stroke-width="1.5"/>
+        <line x1="750" y1="45" x2="960" y2="68" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5"/>
+        <line x1="960" y1="68" x2="1140" y2="50" stroke="rgba(206, 0, 0, 0.18)" stroke-width="1.5"/>
+        <line x1="1140" y1="50" x2="1320" y2="60" stroke="rgba(65, 105, 225, 0.15)" stroke-width="1.5"/>
+      </g>
+      <g class="node-1">
+        <circle cx="180" cy="55" r="5" fill="rgba(206, 0, 0, 0.7)"/>
+        <circle class="ring" cx="180" cy="55" r="10" stroke="rgba(206, 0, 0, 0.4)" stroke-width="1.5" fill="none"/>
+        <circle cx="180" cy="55" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+      <g class="node-2">
+        <circle cx="360" cy="40" r="4" fill="rgba(255, 255, 255, 0.6)"/>
+        <circle cx="360" cy="40" r="1.5" fill="rgba(206, 0, 0, 0.8)"/>
+      </g>
+      <g class="node-3">
+        <circle cx="540" cy="70" r="6" fill="rgba(206, 0, 0, 0.75)"/>
+        <circle class="ring-2" cx="540" cy="70" r="12" stroke="rgba(206, 0, 0, 0.35)" stroke-width="1.5" fill="none"/>
+        <circle cx="540" cy="70" r="2.5" fill="rgba(255, 255, 255, 0.95)"/>
+      </g>
+      <g class="node-4">
+        <circle cx="750" cy="45" r="5" fill="rgba(65, 105, 225, 0.7)"/>
+        <circle class="ring-3" cx="750" cy="45" r="10" stroke="rgba(65, 105, 225, 0.4)" stroke-width="1.5" fill="none"/>
+        <circle cx="750" cy="45" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+      <g class="node-5">
+        <circle cx="960" cy="68" r="4.5" fill="rgba(255, 255, 255, 0.65)"/>
+        <circle cx="960" cy="68" r="1.5" fill="rgba(65, 105, 225, 0.8)"/>
+      </g>
+      <g class="node-6">
+        <circle cx="1140" cy="50" r="4" fill="rgba(206, 0, 0, 0.6)"/>
+        <circle cx="1140" cy="50" r="1.5" fill="rgba(255, 255, 255, 0.85)"/>
+      </g>
+      <g class="node-1">
+        <circle cx="1320" cy="60" r="5" fill="rgba(65, 105, 225, 0.65)"/>
+        <circle class="ring" cx="1320" cy="60" r="9" stroke="rgba(65, 105, 225, 0.35)" stroke-width="1.5" fill="none"/>
+        <circle cx="1320" cy="60" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Section: Methodology Overview -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section__header">
+        <span class="section-tag">How We Work</span>
+        <h2 class="section__title">Our Four-Phase Framework</h2>
+        <p class="section__intro">At LT.Solutions, every project follows a clear path designed to understand your context, define priorities, implement improvements, and build lasting capability. This framework ensures every engagement is efficient, collaborative, and outcome-driven.</p>
+      </div>
+
+      <div class="methodology-grid methodology-grid--4col">
+        <!-- Phase 1 -->
+        <a href="approach.html#discovery-diagnosis" class="phase-card glass-card reveal phase-card--clickable">
+          <div class="phase-card__header">
+            <span class="phase-card__number">Phase 1</span>
+            <h3 class="phase-card__title">Discovery & Diagnosis</h3>
+          </div>
+          <p class="phase-card__tagline">Understanding your context, operations, and success criteria.</p>
+        </a>
+
+        <!-- Phase 2 -->
+        <a href="approach.html#mapping-the-path" class="phase-card glass-card reveal phase-card--clickable">
+          <div class="phase-card__header">
+            <span class="phase-card__number">Phase 2</span>
+            <h3 class="phase-card__title">Mapping the Path</h3>
+          </div>
+          <p class="phase-card__tagline">Defining clear priorities and practical frameworks for progress.</p>
+        </a>
+
+        <!-- Phase 3 -->
+        <a href="approach.html#implementation-integration" class="phase-card glass-card reveal phase-card--clickable">
+          <div class="phase-card__header">
+            <span class="phase-card__number">Phase 3</span>
+            <h3 class="phase-card__title">Implementation & Integration</h3>
+          </div>
+          <p class="phase-card__tagline">Introducing workflows and automation that fit naturally.</p>
+        </a>
+
+        <!-- Phase 4 -->
+        <a href="approach.html#knowledge-transfer-delivery" class="phase-card glass-card reveal phase-card--clickable">
+          <div class="phase-card__header">
+            <span class="phase-card__number">Phase 4</span>
+            <h3 class="phase-card__title">Knowledge Transfer & Delivery</h3>
+          </div>
+          <p class="phase-card__tagline">Building capability so your team stays independent.</p>
+        </a>
+      </div>
+
+      <div class="section__cta">
+        <a href="approach.html" class="btn btn--primary">Explore Our Full Methodology</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Separator Line -->
+  <div class="brand-separator" aria-hidden="true">
+    <div class="separator-line"></div>
+    <svg width="1920" height="120" viewBox="0 0 1920 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g class="connection-lines">
+        <line x1="180" y1="55" x2="360" y2="40" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5"/>
+        <line x1="360" y1="40" x2="540" y2="70" stroke="rgba(206, 0, 0, 0.2)" stroke-width="1.5"/>
+        <line x1="540" y1="70" x2="750" y2="45" stroke="rgba(65, 105, 225, 0.2)" stroke-width="1.5"/>
+        <line x1="750" y1="45" x2="960" y2="68" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5"/>
+        <line x1="960" y1="68" x2="1140" y2="50" stroke="rgba(206, 0, 0, 0.18)" stroke-width="1.5"/>
+        <line x1="1140" y1="50" x2="1320" y2="60" stroke="rgba(65, 105, 225, 0.15)" stroke-width="1.5"/>
+      </g>
+      <g class="node-1">
+        <circle cx="180" cy="55" r="5" fill="rgba(206, 0, 0, 0.7)"/>
+        <circle class="ring" cx="180" cy="55" r="10" stroke="rgba(206, 0, 0, 0.4)" stroke-width="1.5" fill="none"/>
+        <circle cx="180" cy="55" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+      <g class="node-2">
+        <circle cx="360" cy="40" r="4" fill="rgba(255, 255, 255, 0.6)"/>
+        <circle cx="360" cy="40" r="1.5" fill="rgba(206, 0, 0, 0.8)"/>
+      </g>
+      <g class="node-3">
+        <circle cx="540" cy="70" r="6" fill="rgba(206, 0, 0, 0.75)"/>
+        <circle class="ring-2" cx="540" cy="70" r="12" stroke="rgba(206, 0, 0, 0.35)" stroke-width="1.5" fill="none"/>
+        <circle cx="540" cy="70" r="2.5" fill="rgba(255, 255, 255, 0.95)"/>
+      </g>
+      <g class="node-4">
+        <circle cx="750" cy="45" r="5" fill="rgba(65, 105, 225, 0.7)"/>
+        <circle class="ring-3" cx="750" cy="45" r="10" stroke="rgba(65, 105, 225, 0.4)" stroke-width="1.5" fill="none"/>
+        <circle cx="750" cy="45" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+      <g class="node-5">
+        <circle cx="960" cy="68" r="4.5" fill="rgba(255, 255, 255, 0.65)"/>
+        <circle cx="960" cy="68" r="1.5" fill="rgba(65, 105, 225, 0.8)"/>
+      </g>
+      <g class="node-6">
+        <circle cx="1140" cy="50" r="4" fill="rgba(206, 0, 0, 0.6)"/>
+        <circle cx="1140" cy="50" r="1.5" fill="rgba(255, 255, 255, 0.85)"/>
+      </g>
+      <g class="node-1">
+        <circle cx="1320" cy="60" r="5" fill="rgba(65, 105, 225, 0.65)"/>
+        <circle class="ring" cx="1320" cy="60" r="9" stroke="rgba(65, 105, 225, 0.35)" stroke-width="1.5" fill="none"/>
+        <circle cx="1320" cy="60" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Section: Testimonials -->
+  <section class="section section--white">
+    <!-- Brand Watermark -->
+    <div class="section-watermark" aria-hidden="true">LT.</div>
+
+    <div class="container">
+      <div class="section__header">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section__title">What our clients say</h2>
+      </div>
+
+      <div class="testimonial-carousel">
+        <div class="testimonial-carousel__track">
+          <div class="testimonial-slide active">
+            <div class="testimonial-card">
+              <p class="testimonial-card__quote">"LT.Solutions delivered a seamless Jira Service Management rollout, enabling our IT teams to support thousands of users globally with confidence."</p>
+              <p class="testimonial-card__author">CTO, Global Media Firm</p>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <p class="testimonial-card__quote">"Their structured CMDB approach gave us the visibility and control we had been missing for years. A real game-changer."</p>
+              <p class="testimonial-card__author">Head of IT Operations, Tech Consultancy</p>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <p class="testimonial-card__quote">"Working with LT.Solutions meant we gained not just a tool, but the know-how to use it. Our team is now self-sufficient and far more efficient."</p>
+              <p class="testimonial-card__author">Service Desk Manager, Financial Services</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Navigation Dots -->
+        <div class="testimonial-carousel__dots">
+          <button class="carousel-dot active" aria-label="Go to testimonial 1"></button>
+          <button class="carousel-dot" aria-label="Go to testimonial 2"></button>
+          <button class="carousel-dot" aria-label="Go to testimonial 3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer with integrated CTA -->
+  <footer class="site-footer">
+    <!-- CTA Section -->
+    <div class="footer-cta">
+      <div class="container">
+        <div class="cta-block__content">
+          <span class="section-tag">Ready to Begin?</span>
+          <h2 class="cta-block__title">Ready to transform your <span class="gradient-text">IT operations?</span></h2>
+          <p class="cta-block__text">Whether you are implementing Jira Service Management, refining existing processes, or aligning with ISO standards, LT.Solutions can help you scale with confidence.</p>
+          <div class="cta-block__buttons">
+            <a href="contact.html" class="btn btn--primary btn--large btn--glow">Let's Talk Solutions</a>
+            <a href="approach.html" class="btn btn--secondary btn--large btn--glow">Our Approach</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="footer-container">
+      <div class="footer-branding">
+        <img src="images/logo-footer.svg" alt="LT.Solutions logo" class="footer-logo">
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-column">
+          <h3 class="footer-heading">Connect</h3>
+          <ul class="footer-list">
+            <li><a href="mailto:hello@lt.solutions" class="footer-link">hello@lt.solutions</a></li>
+            <li><a href="https://www.linkedin.com/in/andreas-l-a-nyberg/" target="_blank" rel="noopener" class="footer-link">LinkedIn</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3 class="footer-heading">Company</h3>
+          <ul class="footer-list">
+            <li><a href="about.html" class="footer-link">About LT.Solutions</a></li>
+            <li><a href="approach.html" class="footer-link">Our Approach</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3 class="footer-heading">Legal</h3>
+          <ul class="footer-list">
+            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="legal.html" class="footer-link">Legal Notice</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2025 LT.Solutions. All rights reserved.</p>
+    </div>
+  </footer>
+
 </body>
 </html>

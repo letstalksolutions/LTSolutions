@@ -3,215 +3,367 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="LT.Solutions partners with organisations to deliver transformative change through practical expertise, proven methodologies, and genuine commitment to building lasting capabilities.">
-  <title>About Us | LT.Solutions</title>
-  <!-- Google Fonts -->
+  <meta name="description" content="Hands-on Atlassian expertise with a focus on clarity, clean workflows, automation, and knowledge that stays. The story behind LT.Solutions and the values that guide the work.">
+  <title>About LT.Solutions and why this approach works | LT.Solutions</title>
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://lt.solutions/about/">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="About LT.Solutions and why this approach works">
+  <meta property="og:description" content="From firefighting to future-proofing. Hands-on Atlassian expertise with a focus on clarity, clean workflows, and knowledge that stays.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lt.solutions/about/">
+  <meta property="og:image" content="https://lt.solutions/images/og/default.jpg">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About LT.Solutions and why this approach works">
+  <meta name="twitter:description" content="From firefighting to future-proofing. Hands-on Atlassian expertise with a focus on clarity, clean workflows, and knowledge that stays.">
+  <meta name="twitter:image" content="https://lt.solutions/images/og/default.jpg">
+  <!-- Preconnect for Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" as="style">
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- JavaScript (defer loads after HTML) -->
-  <script src="script.js" defer></script>
+  <!-- Main Stylesheet -->
+  <link href="styles.css" rel="stylesheet">
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://lt.solutions/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://lt.solutions/about/"
+      }
+    ]
+  }
+  </script>
+  <!-- Plausible Analytics (Privacy-friendly, GDPR compliant) -->
+  <!-- Uncomment to activate: <script defer data-domain="lt.solutions" src="https://plausible.io/js/script.js"></script> -->
+  <!-- Main JavaScript -->
+  <script defer src="script.js"></script>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header" role="banner">
-        <div class="container">
-            <nav class="nav" role="navigation" aria-label="Main navigation">
-                <a href="index.html" class="nav__logo" aria-label="LT.Solutions home">
-                    <img src="images/lts-logo.png" alt="LT.Solutions - Business transformation consultancy" width="180" height="50">
-                </a>
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__track">
+      <div class="scroll-progress__bar"></div>
+      <div class="scroll-progress__indicator"></div>
+    </div>
+  </div>
 
-                <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                    <span class="nav__toggle-bar"></span>
-                    <span class="nav__toggle-bar"></span>
-                    <span class="nav__toggle-bar"></span>
-                </button>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav__logo" aria-label="LT.Solutions home">
+          <img src="images/logo-full.png" alt="LT.Solutions - Atlassian consultancy" width="260" height="72">
+        </a>
 
-                <ul class="nav__menu">
-                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
-                    <li class="nav__item"><a href="services.html" class="nav__link">Services</a></li>
-                    <li class="nav__item"><a href="approach.html" class="nav__link">Our Methodology</a></li>
-                    <li class="nav__item"><a href="about.html" class="nav__link nav__link--active" aria-current="page">About Us</a></li>
-                    <li class="nav__item"><a href="contact.html" class="nav__link nav__link--cta">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+        <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="nav__toggle-icon"></span>
+        </button>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <h1 class="page-hero__title">About LT.Solutions</h1>
-            <p class="page-hero__subtitle">Guiding organisations through transformative change</p>
-        </div>
-    </section>
+        <ul class="nav__menu">
+          <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="services.html" class="nav__link">Services</a></li>
+          <li class="nav__item"><a href="approach.html" class="nav__link">Our Approach</a></li>
+          <li class="nav__item"><a href="about.html" class="nav__link nav__link--active" aria-current="page">About</a></li>
+          <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Section: Our Story -->
-    <section class="section section--white">
-        <div class="container">
-            <div class="content-block">
-                <h2 class="content-block__title">Our Story</h2>
-                <div class="content-block__text">
-                    <p>LT.Solutions was founded on a simple belief: successful transformation requires more than consulting advice—it demands partnership, practical expertise, and a genuine commitment to building lasting capabilities.</p>
+  <!-- Hero Section with Living Brand Elements -->
+  <section class="page-hero section--dark">
+    <!-- Floating Brand Particles (Desktop Only) -->
+    <div class="hero-brand-particles" aria-hidden="true">
+      <div class="hero-brand-element hero-brand-element--lt">LT.</div>
+      <div class="hero-brand-element hero-brand-element--solutions">Solutions</div>
+      <div class="hero-brand-element hero-brand-element--star">★</div>
+      <div class="hero-brand-element hero-brand-element--experience">Experience</div>
+      <div class="hero-brand-element hero-brand-element--clarity">◈</div>
+      <div class="hero-brand-element hero-brand-element--expertise">✦</div>
+    </div>
 
-                    <p>We've seen too many transformation initiatives falter because they lacked proper foundation, realistic planning, or sustained support. Our methodology addresses these gaps by providing structure where it's needed whilst remaining flexible enough to adapt to your unique circumstances.</p>
-                </div>
-            </div>
+    <div class="container page-hero__content">
+      <span class="section-tag">Our Story</span>
+      <h1 class="page-hero__title" id="why-work-with-me">From firefighting to <span class="gradient-text">future-proofing</span></h1>
+      <p class="page-hero__subtitle">Built on experience, driven by clarity—delivering Atlassian expertise that empowers teams and scales with confidence.</p>
+      <div class="page-hero__cta">
+        <a href="contact.html" class="btn btn--primary btn--glow">Start the Conversation</a>
+        <a href="services.html" class="btn btn--secondary btn--glow">View Services</a>
+      </div>
+    </div>
+  </section>
 
-            <!-- What Sets Us Apart -->
-            <div class="content-block">
-                <h2 class="content-block__title">What Sets Us Apart</h2>
-                <p>We're not theorists. Every recommendation we make is grounded in practical experience and proven approaches.</p>
-            </div>
+  <!-- Why Work With Me Section -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section__header">
+        <span class="section-tag">Andreas Nyberg</span>
+        <h2 class="section__title">Why Work With Me</h2>
+      </div>
 
-            <div class="grid grid--2col">
-                <div class="feature-box">
-                    <h3 class="feature-box__title">Partnership Mindset</h3>
-                    <p class="feature-box__text">We work with you, not just for you. Your success is our success, and we're committed to building the internal capabilities that ensure transformation endures.</p>
-                </div>
+      <div class="content-block">
+        <p>Before I tell you about my journey, let me ask: do you recognise yourself in this situation?</p>
 
-                <div class="feature-box">
-                    <h3 class="feature-box__title">Systematic Yet Flexible</h3>
-                    <p class="feature-box__text">Our four-phase methodology provides structure and clarity whilst remaining adaptable to your organisation's unique needs and circumstances.</p>
-                </div>
+        <blockquote class="magazine-quote">
+          <p>The pressure of tools breaking, deadlines closing in, and survival-mode fixes just about keeping things afloat. You make it work, no contracts breached, no disasters, but every shortcut adds to the growing backlog labelled tech debt.</p>
+        </blockquote>
 
-                <div class="feature-box">
-                    <h3 class="feature-box__title">Knowledge Transfer Focus</h3>
-                    <p class="feature-box__text">We measure success not just by what we deliver, but by what your team can sustain and build upon after our engagement concludes.</p>
-                </div>
+        <p>That was me, for over fourteen years.</p>
 
-                <div class="feature-box">
-                    <h3 class="feature-box__title">Practical Experience</h3>
-                    <p class="feature-box__text">Our expertise is built on years of hands-on delivery across diverse industries, giving us insight into what works in practice, not just in theory.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <p>Then I asked myself a simple question: what if we stopped firefighting and started building smarter?</p>
 
-    <!-- Section: Our Values -->
-    <section class="section section--mist">
-        <div class="container">
-            <div class="section__header">
-                <h2 class="section__title">Our Values</h2>
-            </div>
+        <p>That is the space I work in now.</p>
 
-            <div class="values-grid">
-                <article class="value-item">
-                    <div class="value-item__icon" aria-hidden="true">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M24 8v32M8 24h32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <h3 class="value-item__title">Integrity</h3>
-                    <p class="value-item__text">We provide honest, objective guidance even when it's difficult. Your long-term success matters more than any single engagement.</p>
-                </article>
+        <p>I help teams get more from the tools, systems, and processes they already have by building scalable, integrated solutions across the Atlassian ecosystem. I focus on connecting Jira Software, Jira Service Management, and Confluence in ways that simplify complexity and deliver lasting efficiency and impact.</p>
 
-                <article class="value-item">
-                    <div class="value-item__icon" aria-hidden="true">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2"/>
-                            <path d="M18 24l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <h3 class="value-item__title">Excellence</h3>
-                    <p class="value-item__text">We hold ourselves to the highest standards of quality and professionalism in everything we do.</p>
-                </article>
+        <p>And yes, I use AI confidently. The right technology does not replace us, it helps us stay objective, unlock ideas, remove bottlenecks, and free up time for the work that matters most.</p>
 
-                <article class="value-item">
-                    <div class="value-item__icon" aria-hidden="true">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="18" cy="18" r="10" stroke="currentColor" stroke-width="2"/>
-                            <circle cx="30" cy="30" r="10" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <h3 class="value-item__title">Collaboration</h3>
-                    <p class="value-item__text">The best solutions emerge from genuine partnership. We value your expertise and work to create shared ownership of outcomes.</p>
-                </article>
+        <p>I am not a one-man band, but part of a modern, lean, and smart setup.</p>
+      </div>
+    </div>
+  </section>
 
-                <article class="value-item">
-                    <div class="value-item__icon" aria-hidden="true">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M24 8l8 16h-16l8-16zM24 40l8-16h-16l8 16z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <h3 class="value-item__title">Impact</h3>
-                    <p class="value-item__text">We focus on delivering tangible, measurable results that create real value for your organisation.</p>
-                </article>
+  <!-- Brand Separator Line -->
+  <div class="brand-separator" aria-hidden="true">
+    <div class="separator-line"></div>
+    <svg width="1920" height="120" viewBox="0 0 1920 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Connection lines - enhanced and more visible -->
+      <g class="connection-lines">
+        <line x1="180" y1="55" x2="360" y2="40" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5"/>
+        <line x1="360" y1="40" x2="540" y2="70" stroke="rgba(206, 0, 0, 0.2)" stroke-width="1.5"/>
+        <line x1="540" y1="70" x2="750" y2="45" stroke="rgba(65, 105, 225, 0.2)" stroke-width="1.5"/>
+        <line x1="750" y1="45" x2="960" y2="68" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5"/>
+        <line x1="960" y1="68" x2="1140" y2="50" stroke="rgba(206, 0, 0, 0.18)" stroke-width="1.5"/>
+        <line x1="1140" y1="50" x2="1320" y2="60" stroke="rgba(65, 105, 225, 0.15)" stroke-width="1.5"/>
+      </g>
 
-                <article class="value-item">
-                    <div class="value-item__icon" aria-hidden="true">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2"/>
-                            <path d="M24 16v8l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <h3 class="value-item__title">Sustainability</h3>
-                    <p class="value-item__text">Our work doesn't end with delivery. We build capabilities that enable your organisation to thrive long after our engagement concludes.</p>
-                </article>
-            </div>
-        </div>
-    </section>
+      <!-- Enhanced animated nodes with royal blue (#4169E1) -->
+      <g class="node-1">
+        <circle cx="180" cy="55" r="5" fill="rgba(206, 0, 0, 0.7)"/>
+        <circle class="ring" cx="180" cy="55" r="10" stroke="rgba(206, 0, 0, 0.4)" stroke-width="1.5" fill="none"/>
+        <circle cx="180" cy="55" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
 
-    <!-- Section: CTA -->
-    <section class="section section--white">
-        <div class="container">
-            <div class="cta-block">
-                <h2 class="cta-block__title">Ready to Work Together?</h2>
-                <p class="cta-block__text">Let's discuss how we can support your transformation journey.</p>
-                <div class="cta-block__buttons">
-                    <a href="contact.html" class="btn btn--primary btn--large">Get in Touch</a>
-                    <a href="services.html" class="btn btn--secondary btn--large">View Our Services</a>
-                </div>
-            </div>
-        </div>
-    </section>
+      <g class="node-2">
+        <circle cx="360" cy="40" r="4" fill="rgba(255, 255, 255, 0.6)"/>
+        <circle cx="360" cy="40" r="1.5" fill="rgba(206, 0, 0, 0.8)"/>
+      </g>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-branding">
-          <img src="images/logo-footer.png" alt="LT.Solutions logo" class="footer-logo">
-          <p class="footer-tagline">Scaling isn’t only about knowledge; it’s about adapting it strategically.</p>
-        </div>
+      <g class="node-3">
+        <circle cx="540" cy="70" r="6" fill="rgba(206, 0, 0, 0.75)"/>
+        <circle class="ring-2" cx="540" cy="70" r="12" stroke="rgba(206, 0, 0, 0.35)" stroke-width="1.5" fill="none"/>
+        <circle cx="540" cy="70" r="2.5" fill="rgba(255, 255, 255, 0.95)"/>
+      </g>
 
-        <div class="footer-links">
-          <div class="footer-column">
-            <h3>Services</h3>
-            <ul>
-              <li><a href="services.html#discovery">Discovery & Diagnosis</a></li>
-              <li><a href="services.html#mapping">Mapping the Path</a></li>
-              <li><a href="services.html#implementation">Implementation & Integration</a></li>
-              <li><a href="services.html#knowledge">Knowledge Transfer</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h3>Company</h3>
-            <ul>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="approach.html">Our Methodology</a></li>
-              <li><a href="case-studies.html">Case Studies</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h3>Connect</h3>
-            <ul>
-              <li><a href="contact.html">Contact Us</a></li>
-              <li><a href="https://linkedin.com/company/lt-solutions" target="_blank" rel="noopener">LinkedIn</a></li>
-              <li><a href="mailto:hello@ltsolutions.com">hello@ltsolutions.com</a></li>
-            </ul>
+      <g class="node-4">
+        <circle cx="750" cy="45" r="5" fill="rgba(65, 105, 225, 0.7)"/>
+        <circle class="ring-3" cx="750" cy="45" r="10" stroke="rgba(65, 105, 225, 0.4)" stroke-width="1.5" fill="none"/>
+        <circle cx="750" cy="45" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+
+      <g class="node-5">
+        <circle cx="960" cy="68" r="4.5" fill="rgba(255, 255, 255, 0.65)"/>
+        <circle cx="960" cy="68" r="1.5" fill="rgba(65, 105, 225, 0.8)"/>
+      </g>
+
+      <g class="node-6">
+        <circle cx="1140" cy="50" r="4" fill="rgba(206, 0, 0, 0.6)"/>
+        <circle cx="1140" cy="50" r="1.5" fill="rgba(255, 255, 255, 0.85)"/>
+      </g>
+
+      <g class="node-1">
+        <circle cx="1320" cy="60" r="5" fill="rgba(65, 105, 225, 0.65)"/>
+        <circle class="ring" cx="1320" cy="60" r="9" stroke="rgba(65, 105, 225, 0.35)" stroke-width="1.5" fill="none"/>
+        <circle cx="1320" cy="60" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- About LT.Solutions Section -->
+  <section class="section section--mist">
+    <div class="container">
+      <div class="section__header">
+        <span class="section-tag">Let's Talk Solutions</span>
+        <h2 class="section__title">About LT.Solutions</h2>
+        <p class="section__intro">Hands-on Atlassian expertise, designed to scale with knowledge that stays in your team.</p>
+      </div>
+
+      <div class="content-block">
+        <blockquote class="magazine-quote">
+          <p>LT.Solutions is the consultancy I built to deliver exactly that: smarter, scalable solutions built on the full Atlassian platform. I work with medium to large organisations to modernise service delivery, improve collaboration, and unlock real value from Jira Software, Jira Service Management, and Confluence.</p>
+        </blockquote>
+
+        <p>My focus is technical and hands-on: robust architecture, clean configurations, automation, and clear documentation. Every project prioritises knowledge transfer so your teams are not left dependent on me. Instead, they leave confident, skilled, and self-sufficient.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Separator Line -->
+  <div class="brand-separator" aria-hidden="true">
+    <div class="separator-line"></div>
+    <svg width="1920" height="120" viewBox="0 0 1920 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Connection lines - enhanced and more visible -->
+      <g class="connection-lines">
+        <line x1="180" y1="55" x2="360" y2="40" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5"/>
+        <line x1="360" y1="40" x2="540" y2="70" stroke="rgba(206, 0, 0, 0.2)" stroke-width="1.5"/>
+        <line x1="540" y1="70" x2="750" y2="45" stroke="rgba(65, 105, 225, 0.2)" stroke-width="1.5"/>
+        <line x1="750" y1="45" x2="960" y2="68" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5"/>
+        <line x1="960" y1="68" x2="1140" y2="50" stroke="rgba(206, 0, 0, 0.18)" stroke-width="1.5"/>
+        <line x1="1140" y1="50" x2="1320" y2="60" stroke="rgba(65, 105, 225, 0.15)" stroke-width="1.5"/>
+      </g>
+
+      <!-- Enhanced animated nodes with royal blue (#4169E1) -->
+      <g class="node-1">
+        <circle cx="180" cy="55" r="5" fill="rgba(206, 0, 0, 0.7)"/>
+        <circle class="ring" cx="180" cy="55" r="10" stroke="rgba(206, 0, 0, 0.4)" stroke-width="1.5" fill="none"/>
+        <circle cx="180" cy="55" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+
+      <g class="node-2">
+        <circle cx="360" cy="40" r="4" fill="rgba(255, 255, 255, 0.6)"/>
+        <circle cx="360" cy="40" r="1.5" fill="rgba(206, 0, 0, 0.8)"/>
+      </g>
+
+      <g class="node-3">
+        <circle cx="540" cy="70" r="6" fill="rgba(206, 0, 0, 0.75)"/>
+        <circle class="ring-2" cx="540" cy="70" r="12" stroke="rgba(206, 0, 0, 0.35)" stroke-width="1.5" fill="none"/>
+        <circle cx="540" cy="70" r="2.5" fill="rgba(255, 255, 255, 0.95)"/>
+      </g>
+
+      <g class="node-4">
+        <circle cx="750" cy="45" r="5" fill="rgba(65, 105, 225, 0.7)"/>
+        <circle class="ring-3" cx="750" cy="45" r="10" stroke="rgba(65, 105, 225, 0.4)" stroke-width="1.5" fill="none"/>
+        <circle cx="750" cy="45" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+
+      <g class="node-5">
+        <circle cx="960" cy="68" r="4.5" fill="rgba(255, 255, 255, 0.65)"/>
+        <circle cx="960" cy="68" r="1.5" fill="rgba(65, 105, 225, 0.8)"/>
+      </g>
+
+      <g class="node-6">
+        <circle cx="1140" cy="50" r="4" fill="rgba(206, 0, 0, 0.6)"/>
+        <circle cx="1140" cy="50" r="1.5" fill="rgba(255, 255, 255, 0.85)"/>
+      </g>
+
+      <g class="node-1">
+        <circle cx="1320" cy="60" r="5" fill="rgba(65, 105, 225, 0.65)"/>
+        <circle class="ring" cx="1320" cy="60" r="9" stroke="rgba(65, 105, 225, 0.35)" stroke-width="1.5" fill="none"/>
+        <circle cx="1320" cy="60" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Our Values Section -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section__header">
+        <span class="section-tag">Our Foundation</span>
+        <h2 class="section__title">Our Values</h2>
+        <p class="section__intro">Values we bring to the table, and we hope you do too</p>
+      </div>
+
+      <div class="grid grid--3col">
+        <article class="value-card reveal">
+          <h3 class="value-card__title">Integrity</h3>
+          <p class="value-card__text">We offer honest, objective advice even when it is difficult. Your long-term success matters more than short-term comfort.</p>
+        </article>
+
+        <article class="value-card reveal">
+          <h3 class="value-card__title">Collaboration</h3>
+          <p class="value-card__text">The best results come from partnership. We work with your teams, not above them.</p>
+        </article>
+
+        <article class="value-card reveal">
+          <h3 class="value-card__title">Clarity</h3>
+          <p class="value-card__text">We simplify complexity. Every deliverable is designed to create transparency and understanding.</p>
+        </article>
+
+        <article class="value-card reveal">
+          <h3 class="value-card__title">Impact</h3>
+          <p class="value-card__text">We measure success by outcomes, not just deliverables. Tangible, visible, measurable change.</p>
+        </article>
+
+        <article class="value-card reveal">
+          <h3 class="value-card__title">Sustainability</h3>
+          <p class="value-card__text">Our goal is to make ourselves unnecessary. Independence for your teams is the true mark of success.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer with integrated CTA -->
+  <footer class="site-footer">
+    <!-- CTA Section -->
+    <div class="footer-cta">
+      <div class="container">
+        <div class="cta-block__content">
+          <span class="section-tag">Ready to Begin?</span>
+          <h2 class="cta-block__title">Ready to transform your <span class="gradient-text">IT operations?</span></h2>
+          <p class="cta-block__text">Let's discuss how we can help you move from firefighting to future-proofing.</p>
+          <div class="cta-block__buttons">
+            <a href="contact.html" class="btn btn--primary btn--large btn--glow">Start the Conversation</a>
+            <a href="services.html" class="btn btn--secondary btn--large btn--glow">View Services</a>
+            <a href="approach.html" class="btn btn--secondary btn--large btn--glow">Our Approach</a>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="footer-bottom">
-        <p>© 2025 LT.Solutions. All rights reserved.</p>
+    <!-- Footer Links -->
+    <div class="footer-container">
+      <div class="footer-branding">
+        <img src="images/logo-footer.svg" alt="LT.Solutions logo" class="footer-logo">
       </div>
-    </footer>
 
-    <script src="script.js"></script>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h3 class="footer-heading">Connect</h3>
+          <ul class="footer-list">
+            <li><a href="mailto:hello@lt.solutions" class="footer-link">hello@lt.solutions</a></li>
+            <li><a href="https://www.linkedin.com/in/andreas-l-a-nyberg/" target="_blank" rel="noopener" class="footer-link">LinkedIn</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3 class="footer-heading">Company</h3>
+          <ul class="footer-list">
+            <li><a href="about.html" class="footer-link">About LT.Solutions</a></li>
+            <li><a href="approach.html" class="footer-link">Our Approach</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3 class="footer-heading">Legal</h3>
+          <ul class="footer-list">
+            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="legal.html" class="footer-link">Legal Notice</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2025 LT.Solutions. All rights reserved.</p>
+    </div>
+  </footer>
+
 </body>
 </html>

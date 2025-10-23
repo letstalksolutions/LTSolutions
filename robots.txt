@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /packages/
+Disallow: /coming-soon.html
+Disallow: /index-main.html
+
+Sitemap: https://lt.solutions/sitemap.xml

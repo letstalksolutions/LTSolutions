@@ -193,8 +193,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Validate on submit
     contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-
       let isValid = true;
 
       formInputs.forEach(input => {
@@ -203,19 +201,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
 
-      if (isValid) {
-        // Form is valid - show success message
-        showFormSuccess();
+      if (!isValid) {
+        // Prevent submission if validation fails
+        e.preventDefault();
 
-        // In Phase 5, this will be replaced with actual form submission
-        console.log('Form would be submitted with data:', new FormData(contactForm));
-      } else {
         // Focus first error field
         const firstError = contactForm.querySelector('.error');
         if (firstError) {
           firstError.focus();
         }
       }
+      // If valid, allow form to submit naturally to Formspree
+      // Formspree will handle the redirect and success message
     });
   }
 
