@@ -1748,7 +1748,7 @@ a:focus-visible {
 }
 
 .value-card__title {
-  color: var(--color-dark);
+  color: #05080ecf;
   font-size: 1.75rem;
   margin-bottom: var(--spacing-md);
   font-weight: 700;
@@ -1783,7 +1783,7 @@ a:focus-visible {
 }
 
 .value-card__text {
-  color: var(--color-slate);
+  color: #1c2340;
   line-height: 1.7;
   font-size: 1rem;
   text-align: center;
