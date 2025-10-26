@@ -290,7 +290,7 @@ a:focus-visible {
 }
 
 .section {
-  padding: var(--spacing-3xl) 0;
+  padding-block: 6rem;
   position: relative;
   z-index: 2;
 }
@@ -298,6 +298,14 @@ a:focus-visible {
 .section > .container {
   position: relative;
   z-index: 2;
+}
+
+.section .section__header {
+  margin-bottom: 2.25rem;
+}
+
+.section--navy {
+  padding-block: 7rem;
 }
 
 .section--mist {
@@ -1717,10 +1725,10 @@ a:focus-visible {
   overflow: hidden;
   color: var(--color-white);
   border: 1px solid var(--glass-border);
-  border-radius: var(--radius-md);
+  border-radius: 14px;
   box-shadow: var(--glass-shadow);
   transition: all 0.4s ease;
-  padding: 0;
+  padding: 1.25rem 1.25rem 1.1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1771,7 +1779,7 @@ a:focus-visible {
 .value-card__title {
   color: var(--color-white);
   font-size: 1.75rem;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 0.35rem;
   font-weight: 700;
   padding-bottom: var(--spacing-sm);
   position: relative;
@@ -1805,9 +1813,12 @@ a:focus-visible {
 
 .value-card__text {
   color: var(--color-text-muted);
-  line-height: 1.7;
+  line-height: 1.65;
   font-size: 1rem;
   text-align: center;
+  max-width: 68ch;
+  margin-inline: auto;
+  opacity: 0.95;
   transition: color 0.4s ease;
 }
 
@@ -2810,7 +2821,7 @@ select.form-input {
 .grid--3col {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--spacing-lg);
+  gap: 1.5rem;
 }
 
 /* Center last 2 items when there are 5 items in 3-col grid */
@@ -2833,7 +2844,7 @@ select.form-input {
 .grid--2col {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-lg);
+  gap: 1.5rem;
 }
 
 .grid--4col {
@@ -2880,9 +2891,14 @@ select.form-input {
 }
 
 .section__title {
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 2.4vw + 1rem, 2.4rem);
+  letter-spacing: 0.2px;
   color: var(--color-navy);
   margin-bottom: var(--spacing-md);
+}
+
+.section__title + .section__intro {
+  margin-top: 0.75rem;
 }
 
 .section__header--light .section__title {
@@ -2893,8 +2909,9 @@ select.form-input {
 .section__intro {
   font-size: 1.25rem;
   color: var(--color-slate);
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: 68ch;
+  margin-inline: auto;
+  line-height: 1.65;
 }
 
 .section__header--light .section__subtitle,
@@ -3422,6 +3439,28 @@ select.form-input {
 .mt-lg { margin-top: var(--spacing-lg); }
 .mt-xl { margin-top: var(--spacing-xl); }
 
+/* Spacer helpers */
+.spacer--sm { height: 12px; }
+.spacer--md { height: 24px; }
+
+/* Divider */
+.divider {
+  width: 100%;
+  max-width: 160px;
+  height: 1px;
+  margin: 1.5rem auto;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+}
+
+/* CTA cluster */
+.cta-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
 /* ============================================
    17. SCROLL ANIMATIONS
    ============================================ */
@@ -3440,6 +3479,11 @@ select.form-input {
    18. RESPONSIVE - MOBILE
    ============================================ */
 @media (max-width: 768px) {
+  /* Sections */
+  .section {
+    padding-block: 4rem;
+  }
+
   /* Navigation */
   .nav__toggle {
     display: block;
