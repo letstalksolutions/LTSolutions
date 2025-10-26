@@ -1414,10 +1414,10 @@ a:focus-visible {
 
 .service-card-flip__back {
   transform: rotateY(180deg);
-  background-color: rgba(4, 21, 59, 0.85);
-  color: var(--color-white);
+  background-color: transparent;
+  color: #ffffff;
   padding-bottom: 90px; /* Less padding needed on back */
-  backdrop-filter: blur(2px);
+  backdrop-filter: none;
 }
 
 /* Enhanced hover effects with glow - matches value cards */
@@ -1613,7 +1613,7 @@ a:focus-visible {
 
 /* Deliverables title on back of flip card */
 .service-card-flip__back .service-card__deliverables-title {
-  color: var(--color-white);
+  color: #ffffff;
   margin-top: 0;
 }
 
@@ -1634,7 +1634,7 @@ a:focus-visible {
 
 /* List items on back of flip card */
 .service-card-flip__back .service-card__list li {
-  color: rgba(255, 255, 255, 0.9);
+  color: #ffffff;
 }
 
 .service-card__list li::before {
@@ -1718,9 +1718,9 @@ a:focus-visible {
     0 0 100px rgba(189, 10, 10, 0.4);
   border-color: rgba(255, 68, 68, 0.9);
   border-bottom-color: #ff4444;
-  background-color: rgba(10, 15, 31, 0.85);
-  color: var(--color-white);
-  backdrop-filter: blur(2px);
+  background-color: transparent;
+  color: #ffffff;
+  backdrop-filter: none;
 }
 
 /* SVG Header Icon - Edge to Edge */
@@ -1761,7 +1761,7 @@ a:focus-visible {
 }
 
 .value-card:hover .value-card__title {
-  color: var(--color-white);
+  color: #ffffff;
 }
 
 .value-card__title::after {
@@ -1791,7 +1791,7 @@ a:focus-visible {
 }
 
 .value-card:hover .value-card__text {
-  color: rgba(255, 255, 255, 0.9);
+  color: #ffffff;
 }
 
 /* Process Timeline - Contact Page Journey */
