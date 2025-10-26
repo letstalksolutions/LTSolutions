@@ -3092,7 +3092,8 @@ select.form-input {
 .approach-timeline::before {
   content: '';
   position: absolute;
-  left: 58.5px;
+  left: 60px;
+  transform: translateX(-50%);
   top: 80px;
   bottom: 80px;
   width: 3px;
@@ -3120,7 +3121,7 @@ select.form-input {
 /* Phase number circle */
 .approach-phase__number {
   position: absolute;
-  left: 30px;
+  left: 0;
   top: 0;
   width: 60px;
   height: 60px;
@@ -3135,6 +3136,7 @@ select.form-input {
   font-family: var(--font-heading);
   box-shadow: 0 4px 20px rgba(189, 10, 10, 0.3);
   z-index: 2;
+  transform: translateX(30px);
 }
 
 .approach-phase:nth-child(2) .approach-phase__number {
