@@ -1530,7 +1530,7 @@ a:focus-visible {
 .service-card__title,
 .phase-card__title,
 .package-card__title {
-  color: var(--color-navy);
+  color: #05080ecf;
   font-size: 1.5rem;
   margin-bottom: var(--spacing-md);
 }
@@ -1598,10 +1598,9 @@ a:focus-visible {
 }
 
 .service-card__text,
-.value-card__text,
 .phase-card__text,
 .package-card__text {
-  color: var(--color-slate);
+  color: #1c2340;
   line-height: 1.6;
   margin-bottom: var(--spacing-md);
 }
@@ -1897,7 +1896,7 @@ a:focus-visible {
 .process-step__title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--color-dark);
+  color: #05080ecf;
   margin-bottom: var(--spacing-sm);
   font-family: var(--font-heading);
   line-height: 1.3;
@@ -3157,26 +3156,26 @@ select.form-input {
   top: 25px;
   width: 200px;
   height: 200px;
-  opacity: 0.04;
+  opacity: 0.15;
   pointer-events: none;
 }
 
 .approach-phase__icon img {
   width: 100%;
   height: 100%;
-  filter: grayscale(1);
+  filter: brightness(0) invert(1);
 }
 
 /* Slightly more visible for implementation icon */
 .approach-phase:nth-child(3) .approach-phase__icon {
-  opacity: 0.06;
+  opacity: 0.20;
 }
 
 /* Phase content */
 .approach-phase__title {
   font-size: 1.75rem;
   font-weight: 700;
-  color: var(--color-navy);
+  color: var(--color-text-muted);
   margin-bottom: var(--spacing-md);
   font-family: var(--font-heading);
   max-width: 500px;
@@ -3221,11 +3220,11 @@ select.form-input {
     height: 140px;
     top: 5px;
     right: 0;
-    opacity: 0.03;
+    opacity: 0.12;
   }
 
   .approach-phase:nth-child(3) .approach-phase__icon {
-    opacity: 0.05;
+    opacity: 0.18;
   }
 
   .approach-phase__title {
