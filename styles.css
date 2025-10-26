@@ -126,14 +126,9 @@ body::before {
 
 /* Gradient Text Effect */
 .gradient-text {
-  background: linear-gradient(135deg, #dc2828 0%, #b91c1c 50%, #991b1b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-red);
   display: inline-block;
   font-weight: 700;
-  animation: gradient-shift 3s ease infinite;
-  background-size: 200% 200%;
   text-shadow: none;
 }
 
@@ -1029,7 +1024,7 @@ a:focus-visible {
 /* Brand Separator Line - Creates breathing space to reveal atmospheric background */
 .brand-separator {
   position: relative;
-  height: 150px;
+  height: 200px;
   margin: 0;
   display: flex;
   align-items: center;
@@ -1052,7 +1047,7 @@ a:focus-visible {
   transform: translateX(-50%);
   width: 100%;
   max-width: 1920px;
-  height: 150px;
+  height: 200px;
   pointer-events: none;
   z-index: 1;
   opacity: 0.25;
@@ -3322,7 +3317,8 @@ select.form-input {
   }
 
   .hero-brand-particles {
-    display: none; /* Hide floating elements on mobile for performance */
+    /* Keep animated background visible on mobile for separator "window" effect */
+    display: block;
   }
 
   .hero-tagline {
