@@ -3092,7 +3092,7 @@ select.form-input {
 .approach-timeline::before {
   content: '';
   position: absolute;
-  left: 60px;
+  left: 58.5px;
   top: 80px;
   bottom: 80px;
   width: 3px;
@@ -3196,7 +3196,7 @@ select.form-input {
 /* Mobile responsive */
 @media (max-width: 768px) {
   .approach-timeline::before {
-    left: 30px;
+    left: 23.5px;
     top: 40px;
     bottom: 40px;
   }
