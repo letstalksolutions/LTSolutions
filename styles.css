@@ -1815,6 +1815,161 @@ a:focus-visible {
   color: #ffffff;
 }
 
+/* Value Card Flip - About Page Interactive Values */
+.value-card-flip {
+  background-color: transparent;
+  perspective: 1000px;
+  height: 400px;
+  cursor: pointer;
+  position: relative;
+}
+
+.value-card-flip__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.value-card-flip.flipped .value-card-flip__inner {
+  transform: rotateY(180deg) !important;
+}
+
+.value-card-flip__front,
+.value-card-flip__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--radius-md);
+  box-shadow: var(--glass-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  border: 1px solid var(--glass-border);
+  padding: 0;
+  overflow: hidden;
+}
+
+.value-card-flip__front {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.value-card-flip__back {
+  transform: rotateY(180deg);
+  background: transparent;
+  color: #ffffff;
+  backdrop-filter: none;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Front card: SVG header at top */
+.value-card-flip__front .value-card__header-icon {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  position: relative;
+  z-index: 2;
+  opacity: 1.0;
+  filter: drop-shadow(0 0 2px rgba(189, 10, 10, 0.8));
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* Front card: content below SVG */
+.value-card-flip__front .value-card__content {
+  padding: var(--spacing-xl) var(--spacing-lg);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.value-card-flip__front .value-card__title {
+  color: var(--color-white);
+  font-size: 1.75rem;
+  margin-bottom: var(--spacing-md);
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+
+.value-card__hint {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  font-style: italic;
+  margin-top: var(--spacing-sm);
+  opacity: 0.7;
+}
+
+/* Back card: centered text */
+.value-card-flip__back .value-card__title {
+  color: var(--color-white);
+  font-size: 1.75rem;
+  margin-bottom: var(--spacing-lg);
+  font-weight: 700;
+  font-family: var(--font-heading);
+  position: relative;
+  padding-bottom: var(--spacing-sm);
+}
+
+.value-card-flip__back .value-card__title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--color-red);
+  box-shadow: 0 0 8px rgba(189, 10, 10, 0.4);
+  border-radius: 2px;
+}
+
+.value-card-flip__back .value-card__text {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  font-size: 1rem;
+  text-align: center;
+  max-width: 90%;
+}
+
+/* Hover effects */
+.value-card-flip:not(.flipped):hover .value-card-flip__front {
+  box-shadow:
+    0 0 30px rgba(220, 40, 40, 0.3),
+    0 12px 50px rgba(189, 10, 10, 0.6),
+    0 0 100px rgba(189, 10, 10, 0.4);
+  border-color: rgba(255, 68, 68, 0.9);
+}
+
+.value-card-flip:not(.flipped):hover .value-card-flip__inner {
+  transform: perspective(1200px) rotateY(-0.5deg) rotateX(0.3deg) translateY(-8px) scale(1.02);
+}
+
+.value-card-flip.flipped:hover .value-card-flip__back {
+  box-shadow:
+    0 0 30px rgba(220, 40, 40, 0.3),
+    0 12px 50px rgba(189, 10, 10, 0.6),
+    0 0 100px rgba(189, 10, 10, 0.4);
+  border-color: rgba(255, 68, 68, 0.9);
+}
+
+.value-card-flip.flipped:hover .value-card-flip__inner {
+  transform: rotateY(180deg) translateY(-8px) scale(1.02) !important;
+}
+
 /* Process Timeline - Contact Page Journey */
 .process-timeline {
   max-width: 900px;

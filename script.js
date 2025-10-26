@@ -364,6 +364,22 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   /* ============================================
+     9B. VALUE CARD FLIP (About Page)
+     ============================================ */
+  const valueFlipCards = document.querySelectorAll('.value-card-flip');
+  console.log('Found value flip cards:', valueFlipCards.length);
+
+  valueFlipCards.forEach(card => {
+    card.addEventListener('click', function() {
+      console.log('Value card clicked!');
+
+      // Toggle the flipped state
+      this.classList.toggle('flipped');
+      console.log('Value card flipped! Has flipped class:', this.classList.contains('flipped'));
+    });
+  });
+
+  /* ============================================
      10. SCROLL PROGRESS INDICATOR
      ============================================ */
   const scrollProgress = document.querySelector('.scroll-progress');
