@@ -364,18 +364,35 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   /* ============================================
-     9B. VALUE CARD FLIP (About Page)
+     9B. VALUE ACCORDION (About Page)
      ============================================ */
-  const valueFlipCards = document.querySelectorAll('.value-card-flip');
-  console.log('Found value flip cards:', valueFlipCards.length);
+  const valueCards = document.querySelectorAll('.value-accordion-card');
+  const valueContents = document.querySelectorAll('.value-content');
+  const contentContainer = document.querySelector('.values-accordion__content');
 
-  valueFlipCards.forEach(card => {
+  console.log('Found value accordion cards:', valueCards.length);
+
+  valueCards.forEach(card => {
     card.addEventListener('click', function() {
-      console.log('Value card clicked!');
+      const valueType = this.getAttribute('data-value');
+      console.log('Value card clicked:', valueType);
 
-      // Toggle the flipped state
-      this.classList.toggle('flipped');
-      console.log('Value card flipped! Has flipped class:', this.classList.contains('flipped'));
+      // Remove active class from all cards
+      valueCards.forEach(c => c.classList.remove('active'));
+
+      // Remove active class from all contents
+      valueContents.forEach(content => content.classList.remove('active'));
+
+      // Add active class to clicked card
+      this.classList.add('active');
+
+      // Show the corresponding content
+      const targetContent = document.querySelector(`.value-content[data-value="${valueType}"]`);
+      if (targetContent) {
+        targetContent.classList.add('active');
+        contentContainer.classList.add('active');
+        console.log('Showing content for:', valueType);
+      }
     });
   });
 

@@ -1815,137 +1815,144 @@ a:focus-visible {
   color: #ffffff;
 }
 
-/* Value Card Flip - About Page Interactive Values */
-.value-card-flip {
-  background-color: transparent;
-  perspective: 1000px;
-  height: 250px;
-  cursor: pointer;
-  position: relative;
-}
-
-.value-card-flip__inner {
-  position: relative;
+/* Value Accordion - About Page Interactive Values */
+.values-accordion {
   width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s ease;
-  transform-style: preserve-3d;
 }
 
-.value-card-flip.flipped .value-card-flip__inner {
-  transform: rotateY(180deg) !important;
+.values-accordion__cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--spacing-md);
 }
 
-.value-card-flip__front,
-.value-card-flip__back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: var(--radius-md);
-  box-shadow: var(--glass-shadow);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  border: 1px solid var(--glass-border);
-  padding: var(--spacing-lg);
-}
-
-.value-card-flip__front {
+.value-accordion-card {
   background: var(--glass-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xl) var(--spacing-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
 }
 
-.value-card-flip__back {
-  transform: rotateY(180deg);
-  background: transparent;
-  color: #ffffff;
-  backdrop-filter: none;
-}
-
-/* Front card: centered title with red underline */
-.value-card-flip__front .value-card__title {
+.value-accordion-card__title {
   color: var(--color-white);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
   font-family: var(--font-heading);
+  text-align: center;
   position: relative;
   padding-bottom: var(--spacing-sm);
-  text-align: center;
+  margin: 0;
 }
 
-.value-card-flip__front .value-card__title::after {
+.value-accordion-card__title::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
+  width: 50px;
   height: 3px;
   background: var(--color-red);
   box-shadow: 0 0 8px rgba(189, 10, 10, 0.5);
   border-radius: 2px;
 }
 
-/* Back card: centered text */
-.value-card-flip__back .value-card__title {
-  color: var(--color-white);
-  font-size: 1.75rem;
-  margin-bottom: var(--spacing-lg);
-  font-weight: 700;
-  font-family: var(--font-heading);
-  position: relative;
-  padding-bottom: var(--spacing-sm);
+.value-accordion-card:hover {
+  box-shadow:
+    0 0 20px rgba(220, 40, 40, 0.3),
+    0 8px 30px rgba(189, 10, 10, 0.4);
+  border-color: rgba(255, 68, 68, 0.6);
+  transform: translateY(-4px);
 }
 
-.value-card-flip__back .value-card__title::after {
+.value-accordion-card.active {
+  border-color: var(--color-red);
+  box-shadow:
+    0 0 30px rgba(220, 40, 40, 0.5),
+    0 12px 40px rgba(189, 10, 10, 0.6);
+}
+
+/* Expandable Content Panel - appears below cards */
+.values-accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  opacity: 0;
+  margin-top: 0;
+}
+
+.values-accordion__content.active {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: var(--spacing-xl);
+}
+
+.value-content {
+  display: none;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-2xl) var(--spacing-xl);
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.value-content.active {
+  display: block;
+  animation: fadeInUp 0.4s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.value-content__title {
+  color: var(--color-white);
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  padding-bottom: var(--spacing-md);
+}
+
+.value-content__title::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
+  width: 80px;
+  height: 4px;
   background: var(--color-red);
-  box-shadow: 0 0 8px rgba(189, 10, 10, 0.4);
+  box-shadow: 0 0 12px rgba(189, 10, 10, 0.6);
   border-radius: 2px;
 }
 
-.value-card-flip__back .value-card__text {
+.value-content__text {
   color: rgba(255, 255, 255, 0.9);
-  line-height: 1.7;
-  font-size: 1rem;
-  text-align: center;
-  max-width: 90%;
-}
-
-/* Hover effects */
-.value-card-flip:not(.flipped):hover .value-card-flip__front {
-  box-shadow:
-    0 0 30px rgba(220, 40, 40, 0.3),
-    0 12px 50px rgba(189, 10, 10, 0.6),
-    0 0 100px rgba(189, 10, 10, 0.4);
-  border-color: rgba(255, 68, 68, 0.9);
-}
-
-.value-card-flip:not(.flipped):hover .value-card-flip__inner {
-  transform: perspective(1200px) rotateY(-0.5deg) rotateX(0.3deg) translateY(-8px) scale(1.02);
-}
-
-.value-card-flip.flipped:hover .value-card-flip__back {
-  box-shadow:
-    0 0 30px rgba(220, 40, 40, 0.3),
-    0 12px 50px rgba(189, 10, 10, 0.6),
-    0 0 100px rgba(189, 10, 10, 0.4);
-  border-color: rgba(255, 68, 68, 0.9);
-}
-
-.value-card-flip.flipped:hover .value-card-flip__inner {
-  transform: rotateY(180deg) translateY(-8px) scale(1.02) !important;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 /* Process Timeline - Contact Page Journey */
@@ -2823,14 +2830,6 @@ select.form-input {
   grid-column: 4 / span 2;
 }
 
-/* Value cards: show all 5 in one row */
-.grid--3col:has(> .value-card-flip:nth-child(5):last-child) {
-  grid-template-columns: repeat(5, 1fr);
-}
-
-.grid--3col:has(> .value-card-flip:nth-child(5):last-child) > * {
-  grid-column: span 1;
-}
 
 .grid--4col {
   display: grid;
