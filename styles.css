@@ -224,8 +224,15 @@ body::before {
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Section Tag on White Sections */
+/* Section Tag on White Sections (now transparent) */
 .section--white .section-tag {
+  background: rgba(189, 10, 10, 0.05);
+  border-color: rgba(189, 10, 10, 0.25);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Section Tag on White Solid Sections (legal pages) */
+.section--white-solid .section-tag {
   background: rgba(189, 10, 10, 0.05);
   border-color: rgba(189, 10, 10, 0.25);
   color: var(--color-navy);
@@ -323,14 +330,27 @@ a:focus-visible {
 }
 
 .section--white {
-  background-color: var(--color-white);
+  background: transparent;
   position: relative;
-  color: var(--color-slate);
+  color: var(--color-white);
 }
 
 .section--white .section__title,
 .section--white .section__intro,
 .section--white .section__subtitle {
+  color: var(--color-white);
+}
+
+/* Solid white background for legal/privacy pages only */
+.section--white-solid {
+  background-color: var(--color-white);
+  position: relative;
+  color: var(--color-slate);
+}
+
+.section--white-solid .section__title,
+.section--white-solid .section__intro,
+.section--white-solid .section__subtitle {
   color: var(--color-navy);
 }
 
