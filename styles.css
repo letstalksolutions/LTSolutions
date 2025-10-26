@@ -1428,7 +1428,7 @@ a:focus-visible {
 }
 
 .service-card-flip__front {
-  background-color: var(--color-white);
+  background: rgba(255, 255, 255, 0.7);
   padding-bottom: 130px; /* Extra padding on front to avoid text overlap */
 }
 
