@@ -375,9 +375,19 @@ document.addEventListener('DOMContentLoaded', function() {
   valueCards.forEach(card => {
     card.addEventListener('click', function() {
       const valueType = this.getAttribute('data-value');
-      console.log('Value card clicked:', valueType);
+      const isCurrentlyActive = this.classList.contains('active');
+      console.log('Value card clicked:', valueType, 'Currently active:', isCurrentlyActive);
 
-      // Remove active class from all cards
+      // If clicking the already active card, close everything
+      if (isCurrentlyActive) {
+        valueCards.forEach(c => c.classList.remove('active'));
+        valueContents.forEach(content => content.classList.remove('active'));
+        contentContainer.classList.remove('active');
+        console.log('Closing accordion');
+        return;
+      }
+
+      // Otherwise, remove active from all cards
       valueCards.forEach(c => c.classList.remove('active'));
 
       // Remove active class from all contents
