@@ -1414,7 +1414,7 @@ a:focus-visible {
 
 .service-card-flip__back {
   transform: rotateY(180deg);
-  background-color: transparent;
+  background: transparent;
   color: #ffffff;
   padding-bottom: 90px; /* Less padding needed on back */
   backdrop-filter: none;
@@ -1718,7 +1718,7 @@ a:focus-visible {
     0 0 100px rgba(189, 10, 10, 0.4);
   border-color: rgba(255, 68, 68, 0.9);
   border-bottom-color: #ff4444;
-  background-color: transparent;
+  background: transparent;
   color: #ffffff;
   backdrop-filter: none;
 }
