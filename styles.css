@@ -3196,7 +3196,8 @@ select.form-input {
 /* Mobile responsive */
 @media (max-width: 768px) {
   .approach-timeline::before {
-    left: 23.5px;
+    left: 25px;
+    transform: translateX(-50%);
     top: 40px;
     bottom: 40px;
   }
