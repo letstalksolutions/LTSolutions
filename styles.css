@@ -44,10 +44,10 @@
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
+  --spacing-lg: clamp(1.25rem, 1.6vw, 2rem);
   --spacing-xl: 3rem;
   --spacing-2xl: 4rem;
-  --spacing-3xl: 6rem;
+  --spacing-3xl: clamp(4rem, 6vw, 7rem);
 
   /* Shadows */
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -1254,7 +1254,8 @@ a:focus-visible {
 /* ============================================
    10. BUTTONS
    ============================================ */
-.btn {
+.btn,
+a.button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
@@ -1266,11 +1267,23 @@ a:focus-visible {
   cursor: pointer;
   transition: all var(--transition-base);
   min-width: 120px;
+  outline: none;
 }
 
-.btn:focus-visible {
-  outline: 2px solid var(--color-white);
-  outline-offset: 2px;
+.btn:focus-visible,
+a.button:focus-visible {
+  outline: 2px solid #ce0000;
+  outline-offset: 3px;
+}
+
+.btn:hover,
+a.button:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active,
+a.button:active {
+  transform: translateY(0);
 }
 
 .btn--primary {
@@ -1980,27 +1993,51 @@ a:focus-visible {
 
 .section--tint-blue {
   position: relative;
+  overflow: clip;
 }
 
 .section--tint-blue::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(
-    ellipse 120% 100% at center,
-    rgba(45, 156, 219, 0.04) 0%,
-    rgba(65, 105, 225, 0.025) 40%,
-    transparent 70%
-  );
+  inset: 0;
   pointer-events: none;
   z-index: 0;
+  background:
+    radial-gradient(120% 80% at 30% 40%, rgba(65, 105, 225, 0.10) 0%, transparent 60%),
+    radial-gradient(120% 80% at 70% 60%, rgba(45, 156, 219, 0.06) 0%, transparent 70%);
+  background-repeat: no-repeat;
+  filter: saturate(105%);
+}
+
+.section--tint-blue > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ambient motion for blue tint - respects reduced motion preference */
+@media (prefers-reduced-motion: no-preference) {
+  .section--tint-blue.is-ambient::before {
+    animation: tintDrift 16s ease-in-out infinite alternate;
+    background-size: 140% 120%, 120% 140%;
+  }
+
+  @keyframes tintDrift {
+    0% {
+      background-position: 28% 42%, 74% 62%;
+      opacity: 0.75;
+    }
+    50% {
+      background-position: 32% 38%, 70% 58%;
+      opacity: 0.9;
+    }
+    100% {
+      background-position: 26% 46%, 76% 64%;
+      opacity: 0.75;
+    }
+  }
 }
 
 /* Ensure content stays on top of tint overlay */
-.section--tint-blue > .container,
 .section--tint-green > .container {
   position: relative;
   z-index: 1;
@@ -3446,6 +3483,20 @@ select.form-input {
 
 .content-block ul {
   margin-bottom: var(--spacing-md);
+}
+
+/* Deliverables Lists - Enhanced styling with left border accent */
+.service-card__list,
+.content-block ul {
+  border-left: 2px solid rgba(206, 0, 0, 0.5);
+  padding-left: 1rem;
+  list-style: none;
+  margin-block: 0.75rem 0;
+}
+
+.service-card__list li,
+.content-block ul li {
+  margin: 0.35rem 0;
 }
 
 /* ============================================
