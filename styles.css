@@ -191,47 +191,31 @@ body::before {
 }
 
 /* Section Tag (like "Atlassian Expertise") */
+/* ============================================
+   Section Tag - Unified High-Contrast Design (LS-128)
+   Single consistent style across all backgrounds
+   ============================================ */
 .section-tag {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(189, 10, 10, 0.3);
+  background: rgba(189, 10, 10, 0.12);
+  border: 1px solid rgba(189, 10, 10, 0.4);
   border-radius: 2rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--color-text-muted);
+  color: var(--color-white);
   margin-bottom: var(--spacing-sm);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: all var(--transition-base);
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* Section Tag on White Sections (now transparent) */
-.section--white .section-tag {
-  background: rgba(189, 10, 10, 0.1);
-  border-color: rgba(189, 10, 10, 0.3);
-  color: var(--color-red);
-  text-shadow: none;
-}
-
-/* Section Tag on White Solid Sections (legal pages) */
-.section--white-solid .section-tag {
-  background: rgba(189, 10, 10, 0.05);
-  border-color: rgba(189, 10, 10, 0.25);
-  color: var(--color-navy);
-}
-
-/* Section Tag on Mist Sections */
-.section--mist .section-tag {
-  background: rgba(189, 10, 10, 0.05);
-  border-color: rgba(189, 10, 10, 0.25);
-  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .section-tag:hover {
+  background: rgba(189, 10, 10, 0.2);
   border-color: var(--color-red);
-  background: rgba(189, 10, 10, 0.1);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(189, 10, 10, 0.3);
 }
 
 /* ============================================
