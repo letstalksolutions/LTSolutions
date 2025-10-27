@@ -3491,7 +3491,7 @@ select.form-input {
   border-left: 2px solid rgba(206, 0, 0, 0.5);
   padding-left: 1rem;
   list-style: none;
-  margin-block: 0.75rem 0;
+  margin-block: 0.75rem 1.5rem;
 }
 
 .service-card__list li,
