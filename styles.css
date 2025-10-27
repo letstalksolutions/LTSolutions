@@ -2320,6 +2320,15 @@ a:focus-visible {
   border: 1px solid rgba(189, 10, 10, 0.08);
   position: relative;
   transition: all 0.3s ease;
+  color: var(--color-slate);
+}
+
+/* Ensure form text is dark on white background, overriding section color */
+.contact-form-card .form-label,
+.contact-form-card .form-input,
+.contact-form-card .form-textarea,
+.contact-form-card select {
+  color: var(--color-navy);
 }
 
 .contact-form-card::before {
@@ -3370,6 +3379,7 @@ select.form-input {
   margin-top: var(--spacing-lg);
   margin-bottom: var(--spacing-md);
   font-size: 1.25rem;
+  color: var(--color-white);
 }
 
 .content-block p {
