@@ -1956,6 +1956,56 @@ a:focus-visible {
   }
 }
 
+/* Subtle Section Tints - Very subtle color overlays for visual hierarchy */
+.section--tint-green {
+  position: relative;
+}
+
+.section--tint-green::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    ellipse 120% 100% at center,
+    rgba(16, 185, 129, 0.04) 0%,
+    rgba(34, 197, 94, 0.025) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section--tint-blue {
+  position: relative;
+}
+
+.section--tint-blue::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    ellipse 120% 100% at center,
+    rgba(45, 156, 219, 0.04) 0%,
+    rgba(65, 105, 225, 0.025) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure content stays on top of tint overlay */
+.section--tint-blue > .container,
+.section--tint-green > .container {
+  position: relative;
+  z-index: 1;
+}
+
 /* Value Accordion - About Page Interactive Values */
 .values-accordion {
   width: 100%;
