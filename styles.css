@@ -2387,27 +2387,49 @@ a.button:active {
   line-height: 1.7;
 }
 
-/* Process Timeline - Contact Page Journey */
+/* Process Timeline - Frosted Glass Design (LS-130) */
 .process-timeline {
   max-width: 900px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xl);
+  position: relative;
+  z-index: 1;
+}
+
+/* Timeline Watermark */
+.timeline-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(140px, 22vw, 220px);
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: rgba(255, 255, 255, 0.04);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  letter-spacing: 0.1em;
 }
 
 .process-step {
-  background: var(--color-white);
-  border: 2px solid rgba(189, 10, 10, 0.1);
-  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg);
   padding: var(--spacing-xl);
   display: flex;
   align-items: flex-start;
   gap: var(--spacing-lg);
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .process-step::before {
@@ -2416,21 +2438,24 @@ a.button:active {
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(90deg,
-    rgba(189, 10, 10, 0.1) 0%,
-    rgba(189, 10, 10, 0.3) 50%,
-    rgba(189, 10, 10, 0.1) 100%);
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(189, 10, 10, 0.08) 0%,
+    rgba(65, 105, 225, 0.05) 100%
+  );
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
 }
 
 .process-step:hover {
   transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.12);
   box-shadow:
-    0 8px 30px rgba(0, 0, 0, 0.1),
-    0 0 0 2px rgba(189, 10, 10, 0.2);
-  border-color: rgba(189, 10, 10, 0.3);
+    0 15px 50px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(189, 10, 10, 0.3);
+  border-color: rgba(189, 10, 10, 0.4);
 }
 
 .process-step:hover::before {
@@ -2487,7 +2512,7 @@ a.button:active {
 .process-step__title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #05080ecf;
+  color: var(--color-white);
   margin-bottom: var(--spacing-sm);
   font-family: var(--font-heading);
   line-height: 1.3;
@@ -2496,7 +2521,7 @@ a.button:active {
 .process-step__text {
   font-size: 1rem;
   line-height: 1.7;
-  color: var(--color-slate);
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: var(--spacing-md);
 }
 
@@ -2506,11 +2531,11 @@ a.button:active {
   gap: var(--spacing-xs);
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--color-red);
-  background: rgba(189, 10, 10, 0.05);
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(189, 10, 10, 0.15);
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--radius-sm);
-  border-left: 3px solid var(--color-red);
+  border-left: 3px solid rgba(189, 10, 10, 0.6);
 }
 
 /* Responsive adjustments for process timeline */
