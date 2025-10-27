@@ -41,7 +41,12 @@ document.addEventListener('DOMContentLoaded', function() {
      ============================================ */
   const brandElements = document.querySelectorAll('.hero-brand-element');
 
-  if (brandElements.length > 0 && window.matchMedia('(min-width: 769px)').matches) {
+  // Respect user's motion preferences for accessibility (LS-118)
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (brandElements.length > 0 &&
+      window.matchMedia('(min-width: 769px)').matches &&
+      !prefersReducedMotion) {
     let ticking = false;
 
     function updateParallax() {
@@ -331,37 +336,46 @@ document.addEventListener('DOMContentLoaded', function() {
   const flipCards = document.querySelectorAll('.service-card-flip');
   console.log('Found flip cards:', flipCards.length);
 
-  flipCards.forEach(card => {
-    card.addEventListener('click', function(e) {
-      console.log('Card clicked!', e.target);
+  // Only enable flip interaction on devices with fine pointers (LS-116)
+  // This prevents accidental flips on touch devices while scrolling
+  const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
 
-      // Don't flip if clicking on a link or if link is in the parent chain
-      let target = e.target;
-      while (target && target !== this) {
-        if (target.tagName === 'A') {
-          console.log('Link clicked, allowing navigation');
-          // Don't prevent default - let the link work
-          return;
+  if (hasFinePointer) {
+    flipCards.forEach(card => {
+      card.addEventListener('click', function(e) {
+        console.log('Card clicked!', e.target);
+
+        // Don't flip if clicking on a link or if link is in the parent chain
+        let target = e.target;
+        while (target && target !== this) {
+          if (target.tagName === 'A') {
+            console.log('Link clicked, allowing navigation');
+            // Don't prevent default - let the link work
+            return;
+          }
+          target = target.parentElement;
         }
-        target = target.parentElement;
-      }
 
-      // Toggle the flipped state
-      this.classList.toggle('flipped');
-      console.log('Card flipped! Has flipped class:', this.classList.contains('flipped'));
-    });
+        // Toggle the flipped state
+        this.classList.toggle('flipped');
+        console.log('Card flipped! Has flipped class:', this.classList.contains('flipped'));
+      });
 
-    // Ensure links work on both sides
-    const links = card.querySelectorAll('.service-card__link');
-    links.forEach(link => {
-      link.addEventListener('click', function(e) {
-        // Stop propagation so card doesn't flip
-        e.stopPropagation();
-        console.log('Link clicked, navigating to:', this.href);
-        // Link will navigate normally
+      // Ensure links work on both sides
+      const links = card.querySelectorAll('.service-card__link');
+      links.forEach(link => {
+        link.addEventListener('click', function(e) {
+          // Stop propagation so card doesn't flip
+          e.stopPropagation();
+          console.log('Link clicked, navigating to:', this.href);
+          // Link will navigate normally
+        });
       });
     });
-  });
+  } else {
+    // On touch devices, keep cards unflipped to show front by default
+    console.log('Touch device detected - flip cards disabled for better UX');
+  }
 
   /* ============================================
      9B. VALUE ACCORDION (About Page)
