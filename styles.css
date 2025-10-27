@@ -3414,10 +3414,10 @@ select.form-input {
 }
 
 .contact-form {
-  background-color: var(--color-white);
-  padding: var(--spacing-xl);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .form-group {
