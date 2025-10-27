@@ -2192,6 +2192,217 @@ a.button:active {
   margin: 0 auto;
 }
 
+/* ============================================
+   About Page - New Layout Components (LS-127)
+   ============================================ */
+
+/* Bridge Section - Connector between hero and content */
+.bridge-section {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+  border-top: 1px solid var(--glass-border);
+  padding: calc(var(--spacing-lg) + 4px) 0;
+}
+
+.bridge-text {
+  margin: 0;
+  color: #dfe6ff;
+  font-size: clamp(16px, 1.45vw, 18px);
+  line-height: 1.6;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* About Grid - Two-column layout for Foundation/Values and Why Work sections */
+.about-grid {
+  display: grid;
+  gap: var(--spacing-xl);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 960px) {
+  .about-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+/* About Grid direct children (left column content) */
+.about-grid > div h2 {
+  color: var(--color-white);
+  margin-top: 0;
+  margin-bottom: var(--spacing-md);
+  font-size: clamp(22px, 3vw, 34px);
+}
+
+.about-grid > div p {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+}
+
+/* About Panel - Glass panel for content sections */
+.about-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 18px;
+  padding: clamp(18px, 2.4vw, 28px);
+  box-shadow: var(--glass-shadow);
+}
+
+.about-panel h2,
+.about-panel h3 {
+  color: var(--color-white);
+  margin-top: 0;
+  margin-bottom: var(--spacing-md);
+  font-size: clamp(22px, 3vw, 34px);
+}
+
+.about-panel p {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+}
+
+.about-panel__lead {
+  font-size: 16px;
+  color: #e9edff;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Values List - Numbered badge list */
+.values-list {
+  list-style: none;
+  margin: var(--spacing-md) 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.value-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.value-badge {
+  height: 28px;
+  min-width: 28px;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  background: rgba(206, 0, 0, 0.16);
+  border: 1px solid rgba(206, 0, 0, 0.4);
+  font-weight: 700;
+  color: var(--color-white);
+  font-size: 14px;
+}
+
+.value-content strong {
+  display: block;
+  color: var(--color-white);
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.value-content p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* About Quote - Styled blockquote for narrative sections */
+.about-quote {
+  border-left: 3px solid rgba(206, 0, 0, 0.6);
+  padding-left: 14px;
+  color: #e9edff;
+  font-size: clamp(16px, 1.45vw, 18px);
+  line-height: 1.7;
+  margin: var(--spacing-md) 0;
+  font-style: italic;
+}
+
+/* Outcomes List - Bullet list for typical outcomes */
+.outcomes-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-md) 0 0;
+}
+
+.outcomes-list li {
+  position: relative;
+  padding-left: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+.outcomes-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-red);
+  font-weight: bold;
+}
+
+/* Facts Grid - Four-column grid for company facts */
+.facts-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: var(--spacing-xl);
+}
+
+@media (min-width: 900px) {
+  .facts-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.fact-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: var(--glass-shadow);
+  transition: all 0.3s ease;
+}
+
+.fact-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.fact-card strong {
+  display: block;
+  font-size: 18px;
+  color: var(--color-white);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-heading);
+}
+
+.fact-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Section Lead - Styled intro paragraph for sections */
+.section__lead {
+  font-size: clamp(16px, 1.45vw, 18px);
+  color: #e9edff;
+  max-width: 68ch;
+  margin: var(--spacing-md) 0 var(--spacing-lg);
+  line-height: 1.7;
+}
+
 /* Process Timeline - Contact Page Journey */
 .process-timeline {
   max-width: 900px;
