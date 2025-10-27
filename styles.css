@@ -864,10 +864,19 @@ a:focus-visible {
 .page-hero__subtitle {
   font-size: 1.5rem;
   color: rgba(255, 255, 255, 0.9);
-  margin-bottom: var(--spacing-2xl);
+  margin-bottom: 0.8rem;
   max-width: 640px;
   line-height: 1.6;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.page-intro {
+  font-size: clamp(15px, 1.4vw, 18px);
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--spacing-xl);
+  max-width: 680px;
+  line-height: 1.7;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .page-hero__cta {
