@@ -518,7 +518,34 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   /* ============================================
-     12. INITIALIZE EVERYTHING
+     12. VALUE FLIP CARDS - ABOUT PAGE
+     ============================================ */
+  const valueFlipCards = document.querySelectorAll('.value-flip-card');
+
+  if (valueFlipCards.length > 0) {
+    valueFlipCards.forEach(card => {
+      card.addEventListener('click', function() {
+        // Toggle flip state
+        this.classList.toggle('flipped');
+      });
+
+      // Add keyboard accessibility
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('role', 'button');
+
+      card.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.classList.toggle('flipped');
+        }
+      });
+    });
+
+    console.log(`💳 ${valueFlipCards.length} value flip cards initialized`);
+  }
+
+  /* ============================================
+     13. INITIALIZE EVERYTHING
      ============================================ */
   console.log('🎨 LT.Solutions - The Living Brand Experience initialized! 🚀');
 

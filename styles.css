@@ -209,9 +209,10 @@ body::before {
 
 /* Section Tag on White Sections (now transparent) */
 .section--white .section-tag {
-  background: rgba(189, 10, 10, 0.05);
-  border-color: rgba(189, 10, 10, 0.25);
-  color: rgba(255, 255, 255, 0.9);
+  background: rgba(189, 10, 10, 0.1);
+  border-color: rgba(189, 10, 10, 0.3);
+  color: var(--color-red);
+  text-shadow: none;
 }
 
 /* Section Tag on White Solid Sections (legal pages) */
@@ -330,6 +331,7 @@ a:focus-visible {
 .section--white .section__intro,
 .section--white .section__subtitle {
   color: var(--color-white);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Solid white background for legal/privacy pages only */
@@ -1035,7 +1037,7 @@ a:focus-visible {
 /* Brand Separator Line - Creates breathing space to reveal atmospheric background */
 .brand-separator {
   position: relative;
-  height: 200px;
+  height: 150px;
   margin: 0;
   display: flex;
   align-items: center;
@@ -1824,6 +1826,134 @@ a:focus-visible {
 
 .value-card:hover .value-card__text {
   color: #ffffff;
+}
+
+/* Value Flip Cards - About Page Values Section */
+.value-flip-card {
+  background: transparent;
+  perspective: 1000px;
+  min-height: 280px;
+  cursor: pointer;
+}
+
+.value-flip-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.value-flip-card.flipped .value-flip-card__inner {
+  transform: rotateY(180deg);
+}
+
+.value-flip-card__front,
+.value-flip-card__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  box-shadow: var(--glass-shadow);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.4s ease;
+}
+
+.value-flip-card__front {
+  z-index: 2;
+}
+
+.value-flip-card__back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.value-flip-card:hover .value-flip-card__front,
+.value-flip-card:hover .value-flip-card__back {
+  transform: translateY(-4px) rotateY(0deg);
+  box-shadow:
+    inset 0 2px 40px rgba(0, 0, 0, 0.6),
+    0 8px 30px rgba(189, 10, 10, 0.4),
+    0 0 60px rgba(189, 10, 10, 0.3);
+  border-color: rgba(255, 68, 68, 0.7);
+}
+
+.value-flip-card.flipped:hover .value-flip-card__back {
+  transform: translateY(-4px) rotateY(180deg);
+}
+
+.value-card__preview {
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 1rem;
+  opacity: 0.95;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.value-card__hint {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: var(--color-red);
+  border: 1px solid var(--color-red);
+  border-radius: 6px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.value-flip-card:hover .value-card__hint {
+  opacity: 1;
+  background: rgba(189, 10, 10, 0.1);
+  box-shadow: 0 0 12px rgba(189, 10, 10, 0.3);
+}
+
+/* Responsive spacing for value cards */
+.grid--3col {
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.grid--2col {
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .value-flip-card {
+    min-height: 240px;
+  }
+
+  .value-flip-card__inner,
+  .value-flip-card__front,
+  .value-flip-card__back {
+    min-height: 240px;
+  }
+
+  .value-flip-card__front,
+  .value-flip-card__back {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .grid--3col,
+  .grid--2col {
+    gap: 1.5rem;
+  }
 }
 
 /* Value Accordion - About Page Interactive Values */
@@ -3303,7 +3433,7 @@ select.form-input {
 /* Phase number circle */
 .approach-phase__number {
   position: absolute;
-  left: -120px;
+  left: 30px;
   top: 0;
   width: 60px;
   height: 60px;
@@ -3393,7 +3523,7 @@ select.form-input {
   }
 
   .approach-phase__number {
-    left: -90px;
+    left: 0;
     width: 50px;
     height: 50px;
     font-size: 1.5rem;
