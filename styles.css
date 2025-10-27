@@ -2804,19 +2804,21 @@ select.form-input {
   top: var(--spacing-xl);
 }
 
-/* Contact Info Card */
+/* Contact Info Card - Frosted Glass (LS-129b) */
 .contact-info-card {
-  background: var(--color-white);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-radius: var(--radius-md);
   padding: var(--spacing-xl);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(15, 33, 55, 0.08);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .contact-info-card__title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--color-dark);
+  color: var(--color-white);
   margin-bottom: var(--spacing-lg);
   font-family: var(--font-heading);
 }
@@ -2858,7 +2860,7 @@ select.form-input {
 .contact-info-item__label {
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--color-slate);
+  color: rgba(255, 255, 255, 0.6);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 4px;
@@ -2867,7 +2869,7 @@ select.form-input {
 .contact-info-item__value {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--color-dark);
+  color: var(--color-white);
   text-decoration: none;
   transition: color 0.2s ease;
   display: inline-block;
@@ -2877,17 +2879,17 @@ select.form-input {
   color: var(--color-red);
 }
 
-/* Contact Response Card - 3D Elevated */
+/* Contact Response Card - Frosted Glass (LS-129b) */
 .contact-response-card {
-  background: linear-gradient(135deg,
-    rgba(189, 10, 10, 0.08) 0%,
-    rgba(189, 10, 10, 0.03) 100%);
-  border: 1px solid rgba(189, 10, 10, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-md);
   padding: var(--spacing-xl);
   text-align: left;
   position: relative;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 
@@ -2926,7 +2928,7 @@ select.form-input {
 .contact-response-card__title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--color-dark);
+  color: var(--color-white);
   margin-bottom: var(--spacing-md);
   font-family: var(--font-heading);
 }
@@ -2934,7 +2936,7 @@ select.form-input {
 .contact-response-card__text {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: var(--color-slate);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* Responsive Contact Layout */
