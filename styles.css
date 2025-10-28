@@ -2830,18 +2830,43 @@ select.form-input {
   align-items: flex-start;
   gap: var(--spacing-md);
   padding: var(--spacing-md);
-  border-radius: var(--radius-sm);
-  transition: all 0.2s ease;
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Diagonal red line from top-left to bottom-right (LS-136) */
+.contact-info-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 2px;
+  background: var(--color-red);
+  transform: translateX(-100%) rotate(45deg);
+  transform-origin: top left;
+  transition: transform 0.5s ease;
+  opacity: 0;
 }
 
 .contact-info-item:hover {
-  background: rgba(189, 10, 10, 0.03);
+  background: rgba(189, 10, 10, 0.13);
+  border-color: rgba(189, 10, 10, 0.4);
+}
+
+.contact-info-item:hover::after {
+  transform: translateX(0) rotate(45deg);
+  opacity: 1;
 }
 
 .contact-info-item:not(:last-child) {
   margin-bottom: var(--spacing-sm);
 }
 
+/* Remove red background from icons, preserve aspect ratio (LS-136) */
 .contact-info-item__icon {
   flex-shrink: 0;
   width: 40px;
@@ -2849,9 +2874,17 @@ select.form-input {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(189, 10, 10, 0.1) 0%, rgba(189, 10, 10, 0.05) 100%);
+  background: transparent;
   border-radius: var(--radius-sm);
   color: var(--color-red);
+}
+
+.contact-info-item__icon img {
+  width: auto;
+  height: auto;
+  max-width: 24px;
+  max-height: 24px;
+  object-fit: contain;
 }
 
 .contact-info-item__content {
