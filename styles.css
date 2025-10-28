@@ -2837,19 +2837,29 @@ select.form-input {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Diagonal red line from top-left to bottom-right (LS-136) */
+/* L-shaped border trace: top-left → bottom-left → bottom-right (LS-136a) */
+.contact-info-item::before,
 .contact-info-item::after {
   content: '';
   position: absolute;
+  background: var(--color-red);
+  transition: all 0.8s ease;
+}
+
+/* Vertical line: top-left to bottom-left */
+.contact-info-item::before {
   top: 0;
   left: 0;
-  width: 200%;
-  height: 2px;
-  background: var(--color-red);
-  transform: translateX(-100%) rotate(45deg);
-  transform-origin: top left;
-  transition: transform 0.5s ease;
-  opacity: 0;
+  width: 1px;
+  height: 0;
+}
+
+/* Horizontal line: bottom-left to bottom-right */
+.contact-info-item::after {
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
 }
 
 .contact-info-item:hover {
@@ -2857,9 +2867,14 @@ select.form-input {
   border-color: rgba(189, 10, 10, 0.4);
 }
 
+/* Animate vertical line down first */
+.contact-info-item:hover::before {
+  height: 100%;
+}
+
+/* Then animate horizontal line across */
 .contact-info-item:hover::after {
-  transform: translateX(0) rotate(45deg);
-  opacity: 1;
+  width: 100%;
 }
 
 .contact-info-item:not(:last-child) {
