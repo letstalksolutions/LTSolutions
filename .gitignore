@@ -1,0 +1,68 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Documentation & Development
+HANDOVER*.md
+*HANDOVER*.md
+SESSION*.md
+RELEASE-*.md
+CHANGELOG*.md
+*-HANDOVER.md
+*.pdf
+lighthouse-*.json
+*.csv
+
+# Screenshots & Test Images (root only, not images/)
+/*.png
+/*.jpg
+/*.jpeg
+/*.gif
+
+# Prototypes
+*_prototype.html
+*_test.html
+*_visualisation.html
+coming-soon.html
+
+# Old versions
+styles.min*.css
+!styles.min.css
+stylesv*.css
+
+# Jira & Project Management
+JIRA-*.md
+*JIRA*.md
+PROJECT-*.md
+QA-*.md
+Phase_*.md
+
+# Temporary & Build
+*.tmp
+*.log
+.cache/
+dist/
+build/
+
+# Archives
+archive/
+project-images/
+backups/
+
+# Claude
+.claude/
