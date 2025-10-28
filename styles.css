@@ -1423,7 +1423,25 @@ a.button:active {
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease;
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+/* Top accent line only for back side (front uses ::after for corner peel) */
+.service-card-flip__back::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--color-red) 50%,
+    transparent 100%);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  opacity: 0.5;
+  z-index: 2;
 }
 
 .service-card-flip__front {
@@ -1431,6 +1449,9 @@ a.button:active {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   padding-bottom: 130px; /* Extra padding on front to avoid text overlap */
+  border-top: 2px solid transparent;
+  border-image: linear-gradient(90deg, transparent 0%, var(--color-red) 50%, transparent 100%) 1;
+  border-image-slice: 1 0 0 0;
 }
 
 .service-card-flip__back {
@@ -1557,13 +1578,31 @@ a.button:active {
 .glass-card.phase-card {
   background: var(--glass-bg);
   border-color: var(--glass-border);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   padding: var(--spacing-2xl) var(--spacing-lg);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top accent line */
+.glass-card.phase-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--color-red) 50%,
+    transparent 100%);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  opacity: 0.5;
 }
 
 /* Clickable phase cards as links */
@@ -1732,7 +1771,7 @@ a.button:active {
   position: relative;
   overflow: hidden;
   color: var(--color-white);
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
   box-shadow: var(--glass-shadow);
   transition: all 0.4s ease;
@@ -1743,6 +1782,23 @@ a.button:active {
   text-align: center;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+}
+
+/* Top accent line */
+.value-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--color-red) 50%,
+    transparent 100%);
+  border-radius: 14px 14px 0 0;
+  opacity: 0.5;
+  z-index: 1;
 }
 
 .value-card:hover {
@@ -2250,10 +2306,33 @@ a.button:active {
   background: var(--glass-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
   padding: clamp(18px, 2.4vw, 28px);
   box-shadow: var(--glass-shadow);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Top accent line */
+.about-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--color-red) 50%,
+    transparent 100%);
+  border-radius: 18px 18px 0 0;
+  opacity: 0.5;
+}
+
+.about-panel:hover {
+  border-color: rgba(189, 10, 10, 0.4);
 }
 
 .about-panel h2,
@@ -2375,11 +2454,34 @@ a.button:active {
   background: var(--glass-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
   padding: 16px;
   box-shadow: var(--glass-shadow);
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Top accent line */
+.fact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--color-red) 50%,
+    transparent 100%);
+  border-radius: 14px 14px 0 0;
+  opacity: 0.5;
 }
 
 .fact-card:hover {
@@ -2387,6 +2489,7 @@ a.button:active {
   box-shadow:
     0 12px 28px rgba(0, 0, 0, 0.15),
     0 0 0 1px rgba(255, 255, 255, 0.1);
+  border-color: rgba(189, 10, 10, 0.4);
 }
 
 .fact-card strong {
@@ -2562,7 +2665,7 @@ a.button:active {
   box-shadow:
     0 10px 40px rgba(0, 0, 0, 0.2),
     0 2px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
   transition: all 0.3s ease;
   color: var(--color-white);
@@ -2595,18 +2698,20 @@ a.button:active {
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
+  height: 2px;
   background: linear-gradient(90deg,
-    var(--color-red) 0%,
-    #ff4444 50%,
-    var(--color-red) 100%);
+    transparent 0%,
+    var(--color-red) 50%,
+    transparent 100%);
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  opacity: 0.5;
 }
 
 .contact-form-card:hover {
   box-shadow:
     0 15px 50px rgba(0, 0, 0, 0.12),
     0 5px 15px rgba(189, 10, 10, 0.08);
+  border-color: rgba(189, 10, 10, 0.4);
 }
 
 /* Form Watermark - "LT.S" behind contact form (LS-129a) */
@@ -2814,7 +2919,29 @@ select.form-input {
   border-radius: var(--radius-md);
   padding: var(--spacing-xl);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-info-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--color-red) 50%,
+    transparent 100%);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  opacity: 0.5;
+}
+
+.contact-info-card:hover {
+  border-color: rgba(189, 10, 10, 0.4);
 }
 
 .contact-info-card__title {
@@ -2934,7 +3061,7 @@ select.form-input {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-md);
   padding: var(--spacing-xl);
   text-align: left;
@@ -2960,7 +3087,7 @@ select.form-input {
 
 .contact-response-card:hover {
   box-shadow: 0 6px 20px rgba(189, 10, 10, 0.12);
-  border-color: rgba(189, 10, 10, 0.3);
+  border-color: rgba(189, 10, 10, 0.4);
 }
 
 .contact-response-card__icon {
@@ -3547,8 +3674,8 @@ select.form-input {
   right: 0;
   bottom: 0;
   background-image:
-    radial-gradient(circle at 10% 20%, rgba(189, 10, 10, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 90% 80%, rgba(45, 156, 219, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 10% 20%, rgba(45, 156, 219, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(189, 10, 10, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 50% 10%, rgba(189, 10, 10, 0.08) 0%, transparent 60%);
   pointer-events: none;
   z-index: 0;
@@ -4335,12 +4462,29 @@ select.form-input {
   -webkit-backdrop-filter: blur(20px);
   padding: var(--spacing-lg);
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-left: 4px solid var(--color-red);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+}
+
+/* Top accent line (matching other cards) */
+.process-step::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--color-red) 50%,
+    transparent 100%);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  opacity: 0.5;
+  z-index: 1;
 }
 
 /* Sliding red line on bottom - hidden by default (LS-134) */
@@ -4364,6 +4508,8 @@ select.form-input {
 .process-step:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 45px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: rgba(189, 10, 10, 0.4);
+  border-left-color: var(--color-red);
 }
 
 .process-step h4 {
