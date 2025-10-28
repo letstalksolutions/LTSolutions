@@ -2198,6 +2198,14 @@ a.button:active {
   margin: 0 auto;
 }
 
+/* Bridge text when used under .section__header */
+.section__header .bridge-text {
+  margin-top: 0.5rem;
+  max-width: 70ch;
+  opacity: 0.85;
+  color: rgba(255, 255, 255, 0.8);
+}
+
 /* About Grid - Two-column layout for Foundation/Values and Why Work sections */
 .about-grid {
   display: grid;
