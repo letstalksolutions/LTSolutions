@@ -2416,8 +2416,8 @@ a.button:active {
 }
 
 .process-step {
-  background: var(--color-white);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
   padding: var(--spacing-xl);
   display: flex;
@@ -4256,15 +4256,20 @@ select.form-input {
 }
 
 .process-step {
-  background: #f5f7fa;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   padding: var(--spacing-lg);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-left: 4px solid var(--color-red);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .process-step h4 {
   margin: 0 0 var(--spacing-sm) 0;
-  color: var(--color-navy);
+  color: var(--color-white);
   font-size: 1.1rem;
   font-weight: 600;
 }
@@ -4272,7 +4277,7 @@ select.form-input {
 .process-step p {
   margin: 0;
   font-size: 1rem;
-  color: var(--color-slate);
+  color: rgba(255, 255, 255, 0.85);
   font-style: italic;
 }
 
