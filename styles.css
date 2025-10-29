@@ -1048,31 +1048,31 @@ a:focus-visible {
 /* SVG overlay container - animates as ONE organism */
 .brand-separator svg {
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   width: 100%;
   max-width: 1920px;
-  height: 200px;
+  height: 150px;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.25;
+  opacity: 0.35;
   animation: floatOrganism 24s ease-in-out infinite;
 }
 
 /* Entire structure floats as one connected organism */
 @keyframes floatOrganism {
   0%, 100% {
-    transform: translateX(-50%) translateY(0);
+    transform: translate(-50%, -50%) translateY(0);
   }
   25% {
-    transform: translateX(-50%) translateY(-3px);
+    transform: translate(-50%, -50%) translateY(-3px);
   }
   50% {
-    transform: translateX(-50%) translateY(2px);
+    transform: translate(-50%, -50%) translateY(2px);
   }
   75% {
-    transform: translateX(-50%) translateY(-2px);
+    transform: translate(-50%, -50%) translateY(-2px);
   }
 }
 
