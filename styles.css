@@ -1814,23 +1814,29 @@ a.button:active {
   backdrop-filter: none;
 }
 
-/* SVG Header Icon - Corner to Corner Alignment */
+/* Icon - Clean centered design */
 .value-card__header-icon {
-  width: 100%;
-  height: auto;
+  width: 64px;
+  height: 64px;
   display: block;
-  border-radius: var(--radius-md) var(--radius-md) 0 0;
   position: relative;
   z-index: 2;
-  opacity: 1.0;
-  filter: drop-shadow(0 0 2px rgba(189, 10, 10, 0.8));
-  margin: 0;
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 8px rgba(189, 10, 10, 0.3));
+  margin: var(--spacing-xl) auto var(--spacing-md);
   flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.value-card:hover .value-card__header-icon {
+  transform: translateY(-4px);
+  opacity: 1;
+  filter: drop-shadow(0 4px 12px rgba(189, 10, 10, 0.5));
 }
 
 /* Content wrapper with padding */
 .value-card__content {
-  padding: var(--spacing-xl) var(--spacing-lg);
+  padding: 0 var(--spacing-lg) var(--spacing-xl);
   position: relative;
   z-index: 2;
   flex-grow: 1;
