@@ -545,7 +545,20 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   /* ============================================
-     13. INITIALIZE EVERYTHING
+     13. ACTIVE PAGE NAVIGATION INDICATOR
+     ============================================ */
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav__link').forEach(link => {
+    const linkHref = link.getAttribute('href');
+    if (linkHref === currentPage ||
+        (currentPage === '' && linkHref === 'index.html') ||
+        (currentPage === 'index.html' && linkHref === 'index.html')) {
+      link.classList.add('nav__link--active');
+    }
+  });
+
+  /* ============================================
+     14. INITIALIZE EVERYTHING
      ============================================ */
   console.log('🎨 LT.Solutions - The Living Brand Experience initialized! 🚀');
 

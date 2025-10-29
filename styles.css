@@ -474,6 +474,12 @@ a:focus-visible {
 
 .nav__link--active {
   color: var(--color-red);
+  background: rgba(189, 10, 10, 0.08);
+  border-radius: 4px;
+}
+
+.nav__link--active::after {
+  transform: scaleX(1);
 }
 
 /* Mobile Menu Toggle */
