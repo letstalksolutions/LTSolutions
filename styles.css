@@ -614,7 +614,7 @@ a:focus-visible {
 .hero-brand-element--lt {
   font-size: 10rem;
   top: 10%;
-  left: -5%;
+  right: 50%;
   transform: rotate(-5deg);
   animation: floatBrand 25s ease-in-out infinite;
 }
@@ -622,7 +622,7 @@ a:focus-visible {
 .hero-brand-element--solutions {
   font-size: 6rem;
   top: 50%;
-  right: -10%;
+  right: 5%;
   transform: rotate(3deg);
   animation: floatBrand 30s ease-in-out infinite 5s;
 }
@@ -795,7 +795,7 @@ a:focus-visible {
 .hero-brand-element--talk {
   font-size: 6rem;
   bottom: 30%;
-  left: 20%;
+  left: 10%;
   color: rgba(255, 255, 255, 0.06);
   transform: rotate(-8deg);
   animation: floatBrand 24s ease-in-out infinite 14s;
