@@ -676,7 +676,7 @@ a:focus-visible {
   font-size: 10rem;
   top: 60%;
   right: 20%;
-  color: rgba(255, 200, 0, 0.05);
+  color: rgba(45, 156, 219, 0.05);
   transform: rotate(-10deg);
   animation: floatBrand 26s ease-in-out infinite 18s;
 }
@@ -692,11 +692,11 @@ a:focus-visible {
 }
 
 .hero-brand-element--arrow {
-  font-size: 15rem;
-  top: 45%;
-  right: 10%;
+  font-size: 10rem;
+  top:20%;
+  right: 20%;
   color: rgba(45, 156, 219, 0.05);
-  transform: rotate(-6deg);
+  transform: rotate(-15deg);
   animation: floatBrand 30s ease-in-out infinite 14s;
 }
 
@@ -767,7 +767,7 @@ a:focus-visible {
 .hero-brand-element--expertise {
   font-size: 14rem;
   top: 65%;
-  left: 40%;
+  right: 10%;
   color: rgba(255, 255, 255, 0.04);
   transform: rotate(-3deg);
   animation: floatBrand 27s ease-in-out infinite 13s;
@@ -811,9 +811,9 @@ a:focus-visible {
 }
 
 .hero-brand-element--conversation {
-  font-size: 15rem;
-  bottom: 20%;
-  right: 20%;
+  font-size: 8rem;
+  bottom:10%;
+  right: 80%;
   color: rgba(200, 150, 255, 0.04);
   transform: rotate(-5deg);
   animation: floatBrand 28s ease-in-out infinite 19s;
