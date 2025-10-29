@@ -1,8 +1,10 @@
 <svg width="105" height="104" viewBox="0 0 105 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.75">
 <path d="M52.5 102.14C80.6665 102.14 103.5 79.6109 103.5 51.82C103.5 24.029 80.6665 1.5 52.5 1.5C24.3335 1.5 1.5 24.029 1.5 51.82C1.5 79.6109 24.3335 102.14 52.5 102.14Z" stroke="white" stroke-width="3" stroke-dasharray="10 5"/>
 <path d="M73.8143 23.5H32.1857C30.7024 23.5 29.5 24.7009 29.5 26.1824V77.8176C29.5 79.2991 30.7024 80.5 32.1857 80.5H73.8143C75.2976 80.5 76.5 79.2991 76.5 77.8176V26.1824C76.5 24.7009 75.2976 23.5 73.8143 23.5Z" stroke="white" stroke-width="4"/>
-<path d="M37.4922 34.9902H67.5323" stroke="white" stroke-width="3"/>
-<path d="M37.4922 44.7109H70.1829" stroke="white" stroke-width="3"/>
-<path d="M37.4922 54.4277H63.9982" stroke="white" stroke-width="3"/>
-<path d="M37.4922 65.0312H67.5323" stroke="white" stroke-width="3"/>
+<path d="M37.4922 34.9902H67.5323" stroke="#9E9E9E" stroke-width="3"/>
+<path d="M37.4922 44.7109H70.1829" stroke="#9E9E9E" stroke-width="3"/>
+<path d="M37.4922 54.4277H63.9982" stroke="#9E9E9E" stroke-width="3"/>
+<path d="M37.4922 65.0312H67.5323" stroke="#9E9E9E" stroke-width="3"/>
+</g>
 </svg>
