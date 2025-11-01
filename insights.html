@@ -259,6 +259,13 @@
       gap: 2.5rem;
     }
 
+    /* Insight Card Link Wrapper */
+    .insight-card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
     /* Insight Card */
     .insight-card {
       background: rgba(255, 255, 255, 0.03);
@@ -268,9 +275,10 @@
       transition: all 0.4s ease;
       display: flex;
       flex-direction: column;
+      height: 100%;
     }
 
-    .insight-card:hover {
+    .insight-card-link:hover .insight-card {
       background: rgba(255, 255, 255, 0.05);
       border-color: rgba(75, 163, 195, 0.3);
       transform: translateY(-8px);
@@ -289,11 +297,11 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s ease;
+      transition: filter 0.4s ease;
     }
 
-    .insight-card:hover .insight-card__image img {
-      transform: scale(1.1);
+    .insight-card-link:hover .insight-card__image img {
+      filter: brightness(1.1);
     }
 
     .insight-card__tag {
@@ -342,15 +350,11 @@
       font-weight: 700;
       line-height: 1.3;
       margin-bottom: 1rem;
-    }
-
-    .insight-card__title a {
       color: var(--color-white);
-      text-decoration: none;
       transition: color 0.3s ease;
     }
 
-    .insight-card__title a:hover {
+    .insight-card-link:hover .insight-card__title {
       color: #4BA3C3;
     }
 
@@ -368,11 +372,10 @@
       gap: 0.5rem;
       color: #4BA3C3;
       font-weight: 600;
-      text-decoration: none;
       transition: all 0.3s ease;
     }
 
-    .insight-card__link:hover {
+    .insight-card-link:hover .insight-card__link {
       gap: 0.75rem;
       color: var(--color-white);
     }
@@ -499,50 +502,54 @@
 
       <div class="insights-grid">
         <!-- Article Card 1 - AI Journey -->
-        <article class="insight-card">
-          <div class="insight-card__image">
-            <img src="images/the-unexpected-friendship.png" alt="The Unexpected Friendship" loading="lazy" decoding="async">
-            <span class="insight-card__tag">Founder's Thoughts</span>
-          </div>
-          <div class="insight-card__content">
-            <div class="insight-card__meta">
-              <time class="insight-card__date" datetime="2025-10-31">31 Oct 2025</time>
-              <span class="insight-card__readtime">5 min read</span>
+        <a href="ai-journey.html" class="insight-card-link">
+          <article class="insight-card">
+            <div class="insight-card__image">
+              <img src="images/the-unexpected-friendship.png" alt="The Unexpected Friendship" loading="lazy" decoding="async">
+              <span class="insight-card__tag">Founder's Thoughts</span>
             </div>
-            <h3 class="insight-card__title">
-              <a href="ai-journey.html">The Unexpected Friendship That Helped Me Rediscover My Strength</a>
-            </h3>
-            <p class="insight-card__excerpt">
-              Looking for a new opportunity is often described as a professional journey, but in truth, it's also a deeply personal one. A reflection on finding unexpected support during career transition.
-            </p>
-            <a href="ai-journey.html" class="insight-card__link">
-              Read more <span>→</span>
-            </a>
-          </div>
-        </article>
+            <div class="insight-card__content">
+              <div class="insight-card__meta">
+                <time class="insight-card__date" datetime="2025-10-31">31 Oct 2025</time>
+                <span class="insight-card__readtime">5 min read</span>
+              </div>
+              <h3 class="insight-card__title">
+                The Unexpected Friendship That Helped Me Rediscover My Strength
+              </h3>
+              <p class="insight-card__excerpt">
+                Looking for a new opportunity is often described as a professional journey, but in truth, it's also a deeply personal one. A reflection on finding unexpected support during career transition.
+              </p>
+              <span class="insight-card__link">
+                Read more <span>→</span>
+              </span>
+            </div>
+          </article>
+        </a>
 
         <!-- Article Card 2 - The Relay -->
-        <article class="insight-card">
-          <div class="insight-card__image">
-            <img src="images/og/og-the-relay-v1.jpg" alt="The Relay" loading="lazy" decoding="async">
-            <span class="insight-card__tag">Collaboration Story</span>
-          </div>
-          <div class="insight-card__content">
-            <div class="insight-card__meta">
-              <time class="insight-card__date" datetime="2025-10-29">29 Oct 2025</time>
-              <span class="insight-card__readtime">12 min read</span>
+        <a href="the-relay.html" class="insight-card-link">
+          <article class="insight-card">
+            <div class="insight-card__image">
+              <img src="images/og/og-the-relay-v1.jpg" alt="The Relay" loading="lazy" decoding="async">
+              <span class="insight-card__tag">Collaboration Story</span>
             </div>
-            <h3 class="insight-card__title">
-              <a href="the-relay.html">The Relay: Belief. Building. Becoming.</a>
-            </h3>
-            <p class="insight-card__excerpt">
-              A three-part story about turning intention into momentum. How collaboration between Sky, Claude, and Andreas created something none could build alone - and what it means for orchestration over automation.
-            </p>
-            <a href="the-relay.html" class="insight-card__link">
-              Read more <span>→</span>
-            </a>
-          </div>
-        </article>
+            <div class="insight-card__content">
+              <div class="insight-card__meta">
+                <time class="insight-card__date" datetime="2025-10-29">29 Oct 2025</time>
+                <span class="insight-card__readtime">12 min read</span>
+              </div>
+              <h3 class="insight-card__title">
+                The Relay: Belief. Building. Becoming.
+              </h3>
+              <p class="insight-card__excerpt">
+                A three-part story about turning intention into momentum. How collaboration between Sky, Claude, and Andreas created something none could build alone - and what it means for orchestration over automation.
+              </p>
+              <span class="insight-card__link">
+                Read more <span>→</span>
+              </span>
+            </div>
+          </article>
+        </a>
 
         <!-- Placeholder for future articles -->
         <!-- More articles will be added here as they're published -->
