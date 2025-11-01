@@ -3846,6 +3846,34 @@ select.form-input {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.footer-transparency {
+  margin: 0.75rem 0 0;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+}
+
+.transparency-note {
+  max-width: 700px;
+  margin: 3rem auto 0;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid rgba(75, 163, 195, 0.5);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.transparency-note p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.transparency-note strong {
+  color: rgba(255, 255, 255, 0.95);
+}
+
 /* ============================================
    16. CONTENT BLOCKS
    ============================================ */
