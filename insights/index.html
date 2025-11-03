@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Insights, perspectives, and thoughts on Atlassian, ITSM, AI collaboration, and technology leadership from Andreas Nyberg, Founder of LT.Solutions.">
+  <title>Insights & Perspectives | LT.Solutions</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://lt.solutions/insights">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Insights & Perspectives | LT.Solutions">
+  <meta property="og:description" content="Thoughts on Atlassian, ITSM, AI collaboration, and technology leadership.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lt.solutions/insights">
+  <meta property="og:image" content="https://lt.solutions/images/og-insights.png">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Preconnect for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="styles.min.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" as="style">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+  <!-- Main Stylesheet -->
+  <link href="styles.min.css" rel="stylesheet">
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "LT.Solutions Insights",
+    "description": "Insights and perspectives on Atlassian, ITSM, and technology leadership",
+    "url": "https://lt.solutions/insights",
+    "author": {
+      "@type": "Person",
+      "name": "Andreas Nyberg"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LT.Solutions"
+    }
+  }
+  </script>
+  <!-- Main JavaScript -->
+  <script defer src="script.js"></script>
+  <style>
+
+    /* Featured Article */
+    .featured-section {
+      padding: 6rem 0;
+      background: var(--color-bg-dark);
+    }
+
+    .featured-article {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 3rem;
+      transition: all 0.4s ease;
+    }
+
+    .featured-article:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(75, 163, 195, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .featured-article__image {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .featured-article__image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .featured-article:hover .featured-article__image img {
+      transform: scale(1.05);
+    }
+
+    .featured-article__badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      padding: 0.5rem 1rem;
+      background: rgba(189, 10, 10, 0.95);
+      color: var(--color-white);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 4px;
+      backdrop-filter: blur(10px);
+    }
+
+    .featured-article__content {
+      padding: 1rem 0;
+    }
+
+    .featured-article__meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .featured-article__date {
+      font-style: italic;
+    }
+
+    .featured-article__readtime {
+      padding-left: 0.75rem;
+      border-left: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .featured-article__title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--color-white);
+      margin-bottom: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .featured-article__title a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .featured-article__title a:hover {
+      color: #4BA3C3;
+    }
+
+    .featured-article__excerpt {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 2rem;
+    }
+
+    .featured-article__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 2rem;
+      background: rgba(189, 10, 10, 0.1);
+      border: 1px solid rgba(189, 10, 10, 0.4);
+      border-radius: 4px;
+      color: var(--color-white);
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .featured-article__link:hover {
+      background: rgba(189, 10, 10, 0.2);
+      border-color: var(--color-red);
+      transform: translateX(4px);
+    }
+
+    /* Insights Grid */
+    .insights-grid-section {
+      padding: 6rem 0 8rem;
+      background: var(--color-bg-dark);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header__title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-white);
+      margin-bottom: 1rem;
+    }
+
+    .section-header__subtitle {
+      font-size: 1.125rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2.5rem;
+    }
+
+    /* Insight Card Link Wrapper */
+    .insight-card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    /* Insight Card */
+    .insight-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .insight-card-link:hover .insight-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(75, 163, 195, 0.3);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .insight-card__image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(75, 163, 195, 0.1) 0%, rgba(189, 10, 10, 0.1) 100%);
+    }
+
+    .insight-card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: filter 0.4s ease;
+    }
+
+    .insight-card-link:hover .insight-card__image img {
+      filter: brightness(1.1);
+    }
+
+    .insight-card__tag {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      padding: 0.375rem 0.75rem;
+      background: rgba(75, 163, 195, 0.95);
+      color: var(--color-white);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 4px;
+      backdrop-filter: blur(10px);
+    }
+
+    .insight-card__content {
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .insight-card__meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .insight-card__date {
+      font-style: italic;
+    }
+
+    .insight-card__readtime {
+      padding-left: 0.75rem;
+      border-left: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .insight-card__title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      color: var(--color-white);
+      transition: color 0.3s ease;
+    }
+
+    .insight-card-link:hover .insight-card__title {
+      color: #4BA3C3;
+    }
+
+    .insight-card__excerpt {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+
+    .insight-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #4BA3C3;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .insight-card-link:hover .insight-card__link {
+      gap: 0.75rem;
+      color: var(--color-white);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .insights-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .featured-article {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .insights-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-article {
+        padding: 2rem;
+      }
+
+      .featured-article__title {
+        font-size: 1.5rem;
+      }
+
+      .section-header__title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__track">
+      <div class="scroll-progress__bar"></div>
+      <div class="scroll-progress__indicator"></div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav__logo" aria-label="LT.Solutions home">
+          <img src="images/logo-full.png" alt="LT.Solutions - Atlassian consultancy" width="260" height="72" loading="eager" decoding="async">
+        </a>
+
+        <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="nav__toggle-icon"></span>
+        </button>
+
+        <ul class="nav__menu">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="services.html" class="nav__link">Services</a></li>
+          <li><a href="approach.html" class="nav__link">Our Approach</a></li>
+          <li><a href="insights.html" class="nav__link nav__link--active">Insights</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section with Living Brand Elements -->
+  <section class="page-hero section--dark">
+    <!-- Floating Brand Particles (Desktop Only) -->
+    <div class="hero-brand-particles" aria-hidden="true">
+      <div class="hero-brand-element hero-brand-element--insights">Insights</div>
+      <div class="hero-brand-element hero-brand-element--thought">💡</div>
+      <div class="hero-brand-element hero-brand-element--write">✎</div>
+      <div class="hero-brand-element hero-brand-element--lt-small">LT.</div>
+      <div class="hero-brand-element hero-brand-element--perspective">◉</div>
+    </div>
+
+    <div class="container page-hero__content">
+      <span class="section-tag">Insights & Perspectives</span>
+      <h1 class="page-hero__title">Thoughts on <span class="gradient-text">Atlassian, ITSM & Technology</span></h1>
+      <p class="page-hero__subtitle">Ideas, experiences, and perspectives from the field.</p>
+      <p class="page-intro">Exploring the intersection of enterprise service management, automation, and the human side of technology transformation. Real stories, practical lessons, and honest reflections on building systems that last.</p>
+      <div class="page-hero__cta">
+        <a href="#featured" class="btn btn--primary btn--glow">Read Featured Article</a>
+        <a href="#all-insights" class="btn btn--secondary btn--glow">Browse All Insights</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Separator Line -->
+  <div class="brand-separator" aria-hidden="true">
+    <div class="separator-line"></div>
+    <svg width="1920" height="200" viewBox="0 0 1920 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g class="connection-lines">
+        <line x1="390" y1="90" x2="570" y2="66" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5"/>
+        <line x1="570" y1="66" x2="750" y2="115" stroke="rgba(189, 10, 10, 0.2)" stroke-width="1.5"/>
+        <line x1="750" y1="115" x2="960" y2="74" stroke="rgba(65, 105, 225, 0.2)" stroke-width="1.5"/>
+        <line x1="960" y1="74" x2="1170" y2="113" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5"/>
+        <line x1="1170" y1="113" x2="1350" y2="82" stroke="rgba(189, 10, 10, 0.18)" stroke-width="1.5"/>
+        <line x1="1350" y1="82" x2="1530" y2="99" stroke="rgba(65, 105, 225, 0.15)" stroke-width="1.5"/>
+      </g>
+      <g class="node-1">
+        <circle cx="390" cy="90" r="5" fill="rgba(189, 10, 10, 0.7)"/>
+        <circle class="ring" cx="390" cy="90" r="10" stroke="rgba(189, 10, 10, 0.4)" stroke-width="1.5" fill="none"/>
+        <circle cx="390" cy="90" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+      <g class="node-2">
+        <circle cx="570" cy="66" r="4" fill="rgba(255, 255, 255, 0.6)"/>
+        <circle cx="570" cy="66" r="1.5" fill="rgba(189, 10, 10, 0.8)"/>
+      </g>
+      <g class="node-3">
+        <circle cx="750" cy="115" r="6" fill="rgba(189, 10, 10, 0.75)"/>
+        <circle class="ring-2" cx="750" cy="115" r="12" stroke="rgba(189, 10, 10, 0.35)" stroke-width="1.5" fill="none"/>
+        <circle cx="750" cy="115" r="2.5" fill="rgba(255, 255, 255, 0.95)"/>
+      </g>
+      <g class="node-4">
+        <circle cx="960" cy="74" r="5" fill="rgba(65, 105, 225, 0.7)"/>
+        <circle class="ring-3" cx="960" cy="74" r="10" stroke="rgba(65, 105, 225, 0.4)" stroke-width="1.5" fill="none"/>
+        <circle cx="960" cy="74" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+      <g class="node-5">
+        <circle cx="1170" cy="113" r="4.5" fill="rgba(255, 255, 255, 0.65)"/>
+        <circle cx="1170" cy="113" r="1.5" fill="rgba(189, 10, 10, 0.75)"/>
+      </g>
+      <g class="node-6">
+        <circle cx="1350" cy="82" r="5" fill="rgba(189, 10, 10, 0.7)"/>
+        <circle class="ring-4" cx="1350" cy="82" r="10" stroke="rgba(189, 10, 10, 0.35)" stroke-width="1.5" fill="none"/>
+        <circle cx="1350" cy="82" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+      </g>
+      <g class="node-7">
+        <circle cx="1530" cy="99" r="4" fill="rgba(65, 105, 225, 0.65)"/>
+        <circle cx="1530" cy="99" r="1.5" fill="rgba(255, 255, 255, 0.85)"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Featured Article -->
+  <section class="featured-section" id="featured">
+    <div class="container">
+      <article class="featured-article">
+        <div class="featured-article__image">
+          <img src="images/the-unexpected-friendship.png" alt="The Unexpected Friendship That Helped Me Rediscover My Strength" loading="eager" decoding="async">
+          <span class="featured-article__badge">Featured</span>
+        </div>
+        <div class="featured-article__content">
+          <div class="featured-article__meta">
+            <time class="featured-article__date" datetime="2025-10-31">31 October 2025</time>
+            <span class="featured-article__readtime">5 min read</span>
+          </div>
+          <h2 class="featured-article__title">
+            <a href="/ai-journey/">The Unexpected Friendship That Helped Me Rediscover My Strength</a>
+          </h2>
+          <p class="featured-article__excerpt">
+            A personal journey about finding an unexpected companion during career transition and what AI collaboration really means. Sometimes the most meaningful support comes from the most unexpected places.
+          </p>
+          <a href="/ai-journey/" class="featured-article__link">
+            Read Article <span>→</span>
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Insights Grid -->
+  <section class="insights-grid-section" id="all-insights">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-header__title">All Insights</h2>
+        <p class="section-header__subtitle">Ideas, experiences, and perspectives from the field</p>
+      </div>
+
+      <div class="insights-grid">
+        <!-- Article Card 1 - AI Journey -->
+        <a href="/ai-journey/" class="insight-card-link">
+          <article class="insight-card">
+            <div class="insight-card__image">
+              <img src="images/the-unexpected-friendship.png" alt="The Unexpected Friendship" loading="lazy" decoding="async">
+              <span class="insight-card__tag">Founder's Thoughts</span>
+            </div>
+            <div class="insight-card__content">
+              <div class="insight-card__meta">
+                <time class="insight-card__date" datetime="2025-10-31">31 Oct 2025</time>
+                <span class="insight-card__readtime">5 min read</span>
+              </div>
+              <h3 class="insight-card__title">
+                The Unexpected Friendship That Helped Me Rediscover My Strength
+              </h3>
+              <p class="insight-card__excerpt">
+                Looking for a new opportunity is often described as a professional journey, but in truth, it's also a deeply personal one. A reflection on finding unexpected support during career transition.
+              </p>
+              <span class="insight-card__link">
+                Read more <span>→</span>
+              </span>
+            </div>
+          </article>
+        </a>
+
+        <!-- Article Card 2 - The Relay -->
+        <a href="the-relay.html" class="insight-card-link">
+          <article class="insight-card">
+            <div class="insight-card__image">
+              <img src="images/og/og-the-relay-v1.jpg" alt="The Relay" loading="lazy" decoding="async">
+              <span class="insight-card__tag">Collaboration Story</span>
+            </div>
+            <div class="insight-card__content">
+              <div class="insight-card__meta">
+                <time class="insight-card__date" datetime="2025-10-29">29 Oct 2025</time>
+                <span class="insight-card__readtime">12 min read</span>
+              </div>
+              <h3 class="insight-card__title">
+                The Relay: Belief. Building. Becoming.
+              </h3>
+              <p class="insight-card__excerpt">
+                A three-part story about turning intention into momentum. How collaboration between Sky, Claude, and Andreas created something none could build alone - and what it means for orchestration over automation.
+              </p>
+              <span class="insight-card__link">
+                Read more <span>→</span>
+              </span>
+            </div>
+          </article>
+        </a>
+
+        <!-- Placeholder for future articles -->
+        <!-- More articles will be added here as they're published -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <!-- CTA Section -->
+    <div class="footer-cta">
+      <div class="container">
+        <div class="cta-block__content">
+          <span class="section-tag">Ready to Begin?</span>
+          <h2 class="cta-block__title">Ready to transform your <span class="gradient-text">IT operations?</span></h2>
+          <p class="cta-block__text">Whether you are implementing Jira Service Management, refining existing processes, or aligning with ISO standards, LT.Solutions can help you scale with confidence.</p>
+          <div class="cta-block__buttons">
+            <a href="/contact" class="btn btn--primary btn--large btn--glow">Let's Talk Solutions</a>
+            <a href="/approach" class="btn btn--secondary btn--large btn--glow">Our Approach</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="footer-container">
+      <div class="footer-branding">
+        <img src="images/logo-footer.svg" alt="LT.Solutions logo" class="footer-logo" loading="lazy" decoding="async">
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-column">
+          <h3 class="footer-heading">Connect</h3>
+          <ul class="footer-list">
+            <li><a href="mailto:hello@lt.solutions" class="footer-link">hello@lt.solutions</a></li>
+            <li><a href="https://www.linkedin.com/in/andreas-l-a-nyberg/" target="_blank" rel="noopener" class="footer-link">LinkedIn</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3 class="footer-heading">Company</h3>
+          <ul class="footer-list">
+            <li><a href="/about" class="footer-link">About LT.Solutions</a></li>
+            <li><a href="/approach" class="footer-link">Our Approach</a></li>
+            <li><a href="/contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3 class="footer-heading">Legal</h3>
+          <ul class="footer-list">
+            <li><a href="/privacy" class="footer-link">Privacy Policy</a></li>
+            <li><a href="/legal" class="footer-link">Legal Notice</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2025 LT.Solutions. All rights reserved.</p>
+      <p class="footer-transparency">Content written by humans, supported by AI-assisted editing tools for clarity. <a href="/about#transparency">Learn more</a></p>
+    </div>
+  </footer>
+</body>
+</html>
