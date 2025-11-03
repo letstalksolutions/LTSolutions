@@ -55,19 +55,31 @@
   <!-- Main JavaScript -->
   <script defer src="script.js"></script>
   <style>
-    /* Hero section with banner image */
+    /* Hero section with video */
     .hero-ai-journey {
       position: relative;
       width: 100%;
-      overflow: hidden;
       background: #000000;
+      padding: 0;
     }
 
-    .hero-ai-journey img {
+    .hero-video-container {
+      position: relative;
       width: 100%;
-      height: auto;
-      display: block;
-      max-width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+    }
+
+    .hero-video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
     /* Author/Date Byline */
@@ -242,7 +254,15 @@
 
   <!-- Hero Section -->
   <section class="hero-ai-journey">
-    <img src="images/the-unexpected-friendship.png" alt="A journey with AI during a career transition - personal portrait with title text and LT.Solutions branding" loading="eager" decoding="async">
+    <div class="hero-video-container">
+      <iframe
+        src="https://www.youtube.com/embed/X36dgBHebjA"
+        title="The Unexpected Friendship That Helped Me Rediscover My Strength"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        fetchpriority="high">
+      </iframe>
+    </div>
   </section>
 
   <!-- Main Content -->
@@ -256,6 +276,7 @@
         <span class="byline-separator">•</span>
         <span class="byline-readtime">4 min read</span>
       </div>
+      <p style="text-align: center; font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); margin-top: 1rem; font-style: italic;">Based on a video reflection originally shared on 1 June 2025</p>
     </div>
 
     <!-- Single Cohesive Article -->
