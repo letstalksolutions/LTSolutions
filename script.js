@@ -165,27 +165,13 @@ document.addEventListener('DOMContentLoaded', function() {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
-
-// =====================================================
-// Contact Form Submission Handler (LS-2021/LS-2022)
-// Enhanced with state management to prevent redirect issues
-        formFeedback.style.display = 'block';
-        formFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      } finally {
-        // Re-enable submit button
-        if (submitButton) {
-          submitButton.disabled = false;
-          submitButton.textContent = 'Send Message';
-        }
       }
-      
-      return false; // Prevent any form submission
     });
   }
+});
 
 // =====================================================
-// Contact Form Submission Handler (LS-2021/LS-2022)
-// Enhanced with state management to prevent redirect issues
+// Enhanced Contact Form Validation & Submission (LS-2032)
 // =====================================================
 document.addEventListener('DOMContentLoaded', function() {
   const contactForm = document.getElementById('contactForm');
@@ -198,37 +184,102 @@ document.addEventListener('DOMContentLoaded', function() {
     const submissionTime = sessionStorage.getItem('submissionTime');
     
     if (formJustSubmitted === 'true') {
-      // Show success message if submission was recent (within 5 minutes)
       const timeSince = Date.now() - parseInt(submissionTime || 0);
       if (timeSince < 300000) { // 5 minutes
         formFeedback.className = 'form-feedback success';
         formFeedback.innerHTML = '<strong>✓ Message sent successfully!</strong>Thank you for reaching out. We\'ll get back to you within 24 hours. <span style="display:block; margin-top:0.5rem; font-size:0.9rem; opacity:0.8;">You can continue browsing or submit another enquiry below.</span>';
         formFeedback.style.display = 'block';
-        contactForm.reset(); // Clear form
+        contactForm.reset();
         
-        // Clear the flag after showing message
         setTimeout(() => {
           sessionStorage.removeItem('formSubmitted');
           sessionStorage.removeItem('submissionTime');
         }, 1000);
       } else {
-        // Clean up old submission flags
         sessionStorage.removeItem('formSubmitted');
         sessionStorage.removeItem('submissionTime');
       }
     }
     
+    // Validation helper function
+    function validateForm() {
+      const errors = [];
+      
+      // Name validation
+      const name = document.getElementById('name');
+      if (!name.value.trim()) {
+        errors.push('Name is required');
+        name.classList.add('error');
+      } else {
+        name.classList.remove('error');
+      }
+      
+      // Email validation
+      const email = document.getElementById('email');
+      const emailValue = email.value.trim();
+      if (!emailValue) {
+        errors.push('Email address is required');
+        email.classList.add('error');
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
+        errors.push('Please enter a valid email address');
+        email.classList.add('error');
+      } else {
+        email.classList.remove('error');
+      }
+      
+      // Help type validation
+      const helpType = document.getElementById('help-type');
+      if (!helpType.value) {
+        errors.push('Please select how we can help you');
+        helpType.classList.add('error');
+      } else {
+        helpType.classList.remove('error');
+      }
+      
+      // Message validation
+      const message = document.getElementById('message');
+      if (!message.value.trim()) {
+        errors.push('Message is required');
+        message.classList.add('error');
+      } else {
+        message.classList.remove('error');
+      }
+      
+      // Privacy checkbox validation
+      const privacyCheckbox = document.querySelector('input[name="privacy-agree"]');
+      if (!privacyCheckbox.checked) {
+        errors.push('You must agree to the Privacy Policy');
+        privacyCheckbox.parentElement.classList.add('error');
+      } else {
+        privacyCheckbox.parentElement.classList.remove('error');
+      }
+      
+      return errors;
+    }
+    
     // Handle form submission
     contactForm.addEventListener('submit', async function(e) {
-      e.preventDefault(); // Prevent default form submission
-      e.stopPropagation(); // Stop event bubbling
+      e.preventDefault();
+      e.stopPropagation();
 
-      // Basic form validation
-      if (!contactForm.checkValidity()) {
+      // Validate form
+      const errors = validateForm();
+      
+      if (errors.length > 0) {
+        // Show validation errors
         formFeedback.className = 'form-feedback error';
-        formFeedback.innerHTML = '<strong>✗ Please fill in all required fields</strong>Make sure you\'ve completed all fields marked with an asterisk (*).';
+        formFeedback.innerHTML = '<strong>✗ Please fix the following errors:</strong><ul style="margin: 0.5rem 0 0 1.25rem; padding: 0;">' + 
+          errors.map(err => '<li>' + err + '</li>').join('') + 
+          '</ul>';
         formFeedback.style.display = 'block';
         formFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        
+        // Focus first error field
+        const firstErrorField = contactForm.querySelector('.error');
+        if (firstErrorField && firstErrorField.focus) {
+          firstErrorField.focus();
+        }
+        
         return false;
       }
 
@@ -254,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         if (response.ok) {
-          // Success - store state in sessionStorage
+          // Success
           sessionStorage.setItem('formSubmitted', 'true');
           sessionStorage.setItem('submissionTime', Date.now().toString());
           
@@ -262,24 +313,21 @@ document.addEventListener('DOMContentLoaded', function() {
           formFeedback.innerHTML = '<strong>✓ Message sent successfully!</strong>Thank you for reaching out. We\'ll get back to you within 24 hours. <span style="display:block; margin-top:0.5rem; font-size:0.9rem; opacity:0.8;">Feel free to continue browsing the site.</span>';
           formFeedback.style.display = 'block';
           
-          // Clear the form
           contactForm.reset();
-          
-          // Scroll to feedback
           formFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
           
         } else {
           // Server error
-          const data = await response.json();
+          const data = await response.json().catch(() => ({}));
           formFeedback.className = 'form-feedback error';
-          formFeedback.innerHTML = '<strong>✗ Submission failed</strong>' + (data.error || 'Please try again or email us directly at hello@lt.solutions');
+          formFeedback.innerHTML = '<strong>✗ Submission failed</strong><p style="margin: 0.5rem 0 0 0;">' + (data.error || 'Please try again or email us directly at <a href="mailto:hello@lt.solutions">hello@lt.solutions</a>') + '</p>';
           formFeedback.style.display = 'block';
           formFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
       } catch (error) {
         // Network error
         formFeedback.className = 'form-feedback error';
-        formFeedback.innerHTML = '<strong>✗ Connection error</strong>Please check your internet connection and try again, or email us at hello@lt.solutions';
+        formFeedback.innerHTML = '<strong>✗ Connection error</strong><p style="margin: 0.5rem 0 0 0;">Please check your internet connection and try again, or email us at <a href="mailto:hello@lt.solutions">hello@lt.solutions</a></p>';
         formFeedback.style.display = 'block';
         formFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       } finally {
@@ -290,7 +338,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
       
-      return false; // Prevent any form submission
+      return false;
+    });
+    
+    // Clear error styling on input
+    const formInputs = contactForm.querySelectorAll('.form-input, .form-textarea, .form-checkbox');
+    formInputs.forEach(input => {
+      input.addEventListener('input', function() {
+        this.classList.remove('error');
+      });
+      
+      input.addEventListener('change', function() {
+        this.classList.remove('error');
+      });
     });
   }
 });

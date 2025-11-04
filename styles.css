@@ -4989,3 +4989,25 @@ select.form-input {
   margin-bottom: 0.25rem;
   font-size: 1.05rem;
 }
+
+/* Form Field Error States (LS-2032) */
+.form-input.error,
+.form-textarea.error,
+select.error {
+  border-color: #ef4444 !important;
+  background-color: rgba(239, 68, 68, 0.05);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.form-input.error:focus,
+.form-textarea.error:focus,
+select.error:focus {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+.form-checkbox.error {
+  outline: 2px solid #ef4444;
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
