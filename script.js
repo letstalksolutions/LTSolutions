@@ -563,3 +563,62 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log('🎨 LT.Solutions - The Living Brand Experience initialized! 🚀');
 
 });
+// =====================================================
+// Contact Form Submission Handler (LS-2021/LS-2022)
+// =====================================================
+document.addEventListener('DOMContentLoaded', function() {
+  const contactForm = document.getElementById('contactForm');
+  const formFeedback = document.getElementById('formFeedback');
+
+  if (contactForm && formFeedback) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(contactForm);
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      
+      // Disable submit button during processing
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+      }
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          // Success
+          formFeedback.className = 'form-feedback success';
+          formFeedback.innerHTML = '<strong>✓ Message sent successfully!</strong>Thank you for reaching out. We\'ll get back to you within 24 hours.';
+          formFeedback.style.display = 'block';
+          contactForm.reset();
+        } else {
+          // Error
+          formFeedback.className = 'form-feedback error';
+          formFeedback.innerHTML = '<strong>✗ Submission failed</strong>Please try again or email us directly at hello@lt.solutions';
+          formFeedback.style.display = 'block';
+        }
+      } catch (error) {
+        // Network error
+        formFeedback.className = 'form-feedback error';
+        formFeedback.innerHTML = '<strong>✗ Connection error</strong>Please check your internet connection and try again, or email us at hello@lt.solutions';
+        formFeedback.style.display = 'block';
+      } finally {
+        // Re-enable submit button
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Send Message';
+        }
+        
+        // Scroll to feedback message
+        formFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  }
+});
