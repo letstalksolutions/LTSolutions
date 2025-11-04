@@ -149,10 +149,11 @@
           <!-- Form Feedback Messages -->
           <div id="formFeedback" class="form-feedback" role="alert" aria-live="polite" style="display:none;"></div>
 
-          <form class="contact-form" id="contactForm" action="https://formspree.io/f/xzzjllzo" method="POST">
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/xzzjllzo" method="POST" novalidate>
             <!-- Formspree hardening -->
             <input type="hidden" name="_subject" value="LT.Solutions - New contact form submission">
             <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://lt.solutions/contact#form-submitted">
             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
             <div class="form-row">

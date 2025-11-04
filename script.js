@@ -165,414 +165,72 @@ document.addEventListener('DOMContentLoaded', function() {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
-      }
-    });
-  }
 
-  /* ============================================
-     7. FORM VALIDATION
-     ============================================ */
-  const contactForm = document.querySelector('.contact-form');
-
-  if (contactForm) {
-    // Real-time validation
-    const formInputs = contactForm.querySelectorAll('.form-input, .form-textarea');
-
-    formInputs.forEach(input => {
-      // Validate on blur
-      input.addEventListener('blur', function() {
-        validateField(this);
-      });
-
-      // Clear error on input
-      input.addEventListener('input', function() {
-        if (this.classList.contains('error')) {
-          this.classList.remove('error');
-          const errorElement = this.parentElement.querySelector('.form-error');
-          if (errorElement) {
-            errorElement.classList.remove('visible');
-          }
-        }
-      });
-    });
-
-    // Validate on submit
-    contactForm.addEventListener('submit', function(e) {
-      let isValid = true;
-
-      formInputs.forEach(input => {
-        if (!validateField(input)) {
-          isValid = false;
-        }
-      });
-
-      if (!isValid) {
-        // Prevent submission if validation fails
-        e.preventDefault();
-
-        // Focus first error field
-        const firstError = contactForm.querySelector('.error');
-        if (firstError) {
-          firstError.focus();
-        }
-      }
-      // If valid, allow form to submit naturally to Formspree
-      // Formspree will handle the redirect and success message
-    });
-  }
-
-  /* ============================================
-     FORM VALIDATION HELPER FUNCTIONS
-     ============================================ */
-  function validateField(field) {
-    const value = field.value.trim();
-    const type = field.type;
-    const required = field.hasAttribute('required');
-    let isValid = true;
-    let errorMessage = '';
-
-    // Check if required field is empty
-    if (required && !value) {
-      isValid = false;
-      errorMessage = 'This field is required';
-    }
-
-    // Email validation
-    else if (type === 'email' && value) {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(value)) {
-        isValid = false;
-        errorMessage = 'Please enter a valid email address';
-      }
-    }
-
-    // Phone validation (optional - if field has name="phone")
-    else if (field.name === 'phone' && value) {
-      const phoneRegex = /^[\d\s\-\+\(\)]+$/;
-      if (!phoneRegex.test(value) || value.replace(/\D/g, '').length < 10) {
-        isValid = false;
-        errorMessage = 'Please enter a valid phone number';
-      }
-    }
-
-    // Minimum length check for textareas
-    else if (field.tagName === 'TEXTAREA' && value && value.length < 10) {
-      isValid = false;
-      errorMessage = 'Please provide more detail (minimum 10 characters)';
-    }
-
-    // Show/hide error
-    if (!isValid) {
-      field.classList.add('error');
-      showFieldError(field, errorMessage);
-    } else {
-      field.classList.remove('error');
-      hideFieldError(field);
-    }
-
-    return isValid;
-  }
-
-  function showFieldError(field, message) {
-    let errorElement = field.parentElement.querySelector('.form-error');
-
-    if (!errorElement) {
-      errorElement = document.createElement('div');
-      errorElement.className = 'form-error';
-      field.parentElement.appendChild(errorElement);
-    }
-
-    errorElement.textContent = message;
-    errorElement.classList.add('visible');
-  }
-
-  function hideFieldError(field) {
-    const errorElement = field.parentElement.querySelector('.form-error');
-    if (errorElement) {
-      errorElement.classList.remove('visible');
-    }
-  }
-
-  function showFormSuccess() {
-    const form = document.querySelector('.contact-form');
-
-    // Create success message using DOM methods (CSP-compliant)
-    const successDiv = document.createElement('div');
-    successDiv.className = 'form-success';
-    successDiv.style.cssText = 'background-color: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 1rem; border-radius: 4px; margin-bottom: 1rem; text-align: center;';
-
-    const strongEl = document.createElement('strong');
-    strongEl.textContent = 'Thank you!';
-
-    const textNode = document.createTextNode(' Your message has been received. We will get back to you soon.');
-
-    successDiv.appendChild(strongEl);
-    successDiv.appendChild(textNode);
-
-    // Insert at top of form
-    form.insertBefore(successDiv, form.firstChild);
-
-    // Reset form
-    form.reset();
-
-    // Remove success message after 5 seconds
-    setTimeout(function() {
-      successDiv.remove();
-    }, 5000);
-
-    // Scroll to success message
-    successDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-
-  /* ============================================
-     8. SCROLL REVEAL - DISABLED
-     ============================================ */
-  // Scroll reveal animations disabled for now
-  // All elements show immediately via CSS
-
-  /* ============================================
-     9. FLIP CARD INTERACTIONS
-     ============================================ */
-  const flipCards = document.querySelectorAll('.service-card-flip');
-  console.log('Found flip cards:', flipCards.length);
-
-  // Only enable flip interaction on devices with fine pointers (LS-116)
-  // This prevents accidental flips on touch devices while scrolling
-  const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
-
-  if (hasFinePointer) {
-    flipCards.forEach(card => {
-      card.addEventListener('click', function(e) {
-        console.log('Card clicked!', e.target);
-
-        // Don't flip if clicking on a link or if link is in the parent chain
-        let target = e.target;
-        while (target && target !== this) {
-          if (target.tagName === 'A') {
-            console.log('Link clicked, allowing navigation');
-            // Don't prevent default - let the link work
-            return;
-          }
-          target = target.parentElement;
-        }
-
-        // Toggle the flipped state
-        this.classList.toggle('flipped');
-        console.log('Card flipped! Has flipped class:', this.classList.contains('flipped'));
-      });
-
-      // Ensure links work on both sides
-      const links = card.querySelectorAll('.service-card__link');
-      links.forEach(link => {
-        link.addEventListener('click', function(e) {
-          // Stop propagation so card doesn't flip
-          e.stopPropagation();
-          console.log('Link clicked, navigating to:', this.href);
-          // Link will navigate normally
-        });
-      });
-    });
-  } else {
-    // On touch devices, keep cards unflipped to show front by default
-    console.log('Touch device detected - flip cards disabled for better UX');
-  }
-
-  /* ============================================
-     9B. VALUE ACCORDION (About Page)
-     ============================================ */
-  const valueCards = document.querySelectorAll('.value-accordion-card');
-  const valueContents = document.querySelectorAll('.value-content');
-  const contentContainer = document.querySelector('.values-accordion__content');
-
-  console.log('Found value accordion cards:', valueCards.length);
-
-  valueCards.forEach(card => {
-    card.addEventListener('click', function() {
-      const valueType = this.getAttribute('data-value');
-      const isCurrentlyActive = this.classList.contains('active');
-      console.log('Value card clicked:', valueType, 'Currently active:', isCurrentlyActive);
-
-      // If clicking the already active card, close everything
-      if (isCurrentlyActive) {
-        valueCards.forEach(c => c.classList.remove('active'));
-        valueContents.forEach(content => content.classList.remove('active'));
-        contentContainer.classList.remove('active');
-        console.log('Closing accordion');
-        return;
-      }
-
-      // Otherwise, remove active from all cards
-      valueCards.forEach(c => c.classList.remove('active'));
-
-      // Remove active class from all contents
-      valueContents.forEach(content => content.classList.remove('active'));
-
-      // Add active class to clicked card
-      this.classList.add('active');
-
-      // Show the corresponding content
-      const targetContent = document.querySelector(`.value-content[data-value="${valueType}"]`);
-      if (targetContent) {
-        targetContent.classList.add('active');
-        contentContainer.classList.add('active');
-        console.log('Showing content for:', valueType);
-      }
-    });
-  });
-
-  /* ============================================
-     10. SCROLL PROGRESS INDICATOR
-     ============================================ */
-  const scrollProgress = document.querySelector('.scroll-progress');
-  const scrollProgressBar = document.querySelector('.scroll-progress__bar');
-  const scrollProgressIndicator = document.querySelector('.scroll-progress__indicator');
-
-  if (scrollProgress && scrollProgressBar && scrollProgressIndicator) {
-    let ticking = false;
-
-    function updateScrollProgress() {
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-      // Calculate scroll percentage
-      const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
-
-      // Update bar height (fills from bottom)
-      scrollProgressBar.style.height = scrollPercentage + '%';
-
-      // Update indicator position (moves from top to bottom)
-      const indicatorPosition = (scrollPercentage / 100) * 110; // 110px = track height - indicator height
-      scrollProgressIndicator.style.top = indicatorPosition + 'px';
-
-      ticking = false;
-    }
-
-    window.addEventListener('scroll', function() {
-      if (!ticking) {
-        window.requestAnimationFrame(updateScrollProgress);
-        ticking = true;
-      }
-    });
-
-    // Initial update
-    updateScrollProgress();
-  }
-
-  /* ============================================
-     11. TESTIMONIAL CAROUSEL - Auto-rotating with manual controls
-     ============================================ */
-  const testimonialCarousel = document.querySelector('.testimonial-carousel');
-
-  if (testimonialCarousel) {
-    const slides = testimonialCarousel.querySelectorAll('.testimonial-slide');
-    const dots = testimonialCarousel.querySelectorAll('.carousel-dot');
-    let currentSlide = 0;
-    let autoRotateInterval;
-    const rotationDelay = 6000; // 6 seconds per slide
-
-    // Function to show a specific slide
-    function showSlide(index) {
-      // Remove active class from all slides and dots
-      slides.forEach(slide => slide.classList.remove('active'));
-      dots.forEach(dot => dot.classList.remove('active'));
-
-      // Add active class to target slide and dot
-      slides[index].classList.add('active');
-      dots[index].classList.add('active');
-
-      currentSlide = index;
-    }
-
-    // Function to show next slide
-    function nextSlide() {
-      const next = (currentSlide + 1) % slides.length;
-      showSlide(next);
-    }
-
-    // Function to start auto-rotation
-    function startAutoRotate() {
-      autoRotateInterval = setInterval(nextSlide, rotationDelay);
-    }
-
-    // Function to stop auto-rotation
-    function stopAutoRotate() {
-      clearInterval(autoRotateInterval);
-    }
-
-    // Add click handlers to dots
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        showSlide(index);
-        stopAutoRotate();
-        startAutoRotate(); // Restart rotation after manual change
-      });
-    });
-
-    // Pause auto-rotation on hover, resume on mouse leave
-    testimonialCarousel.addEventListener('mouseenter', stopAutoRotate);
-    testimonialCarousel.addEventListener('mouseleave', startAutoRotate);
-
-    // Start auto-rotation on page load
-    startAutoRotate();
-  }
-
-  /* ============================================
-     12. VALUE FLIP CARDS - ABOUT PAGE
-     ============================================ */
-  const valueFlipCards = document.querySelectorAll('.value-flip-card');
-
-  if (valueFlipCards.length > 0) {
-    valueFlipCards.forEach(card => {
-      card.addEventListener('click', function() {
-        // Toggle flip state
-        this.classList.toggle('flipped');
-      });
-
-      // Add keyboard accessibility
-      card.setAttribute('tabindex', '0');
-      card.setAttribute('role', 'button');
-
-      card.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          this.classList.toggle('flipped');
-        }
-      });
-    });
-
-    console.log(`💳 ${valueFlipCards.length} value flip cards initialized`);
-  }
-
-  /* ============================================
-     13. ACTIVE PAGE NAVIGATION INDICATOR
-     ============================================ */
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav__link').forEach(link => {
-    const linkHref = link.getAttribute('href');
-    if (linkHref === currentPage ||
-        (currentPage === '' && linkHref === 'index.html') ||
-        (currentPage === 'index.html' && linkHref === 'index.html')) {
-      link.classList.add('nav__link--active');
-    }
-  });
-
-  /* ============================================
-     14. INITIALIZE EVERYTHING
-     ============================================ */
-  console.log('🎨 LT.Solutions - The Living Brand Experience initialized! 🚀');
-
-});
 // =====================================================
 // Contact Form Submission Handler (LS-2021/LS-2022)
+// Enhanced with state management to prevent redirect issues
+        formFeedback.style.display = 'block';
+        formFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } finally {
+        // Re-enable submit button
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Send Message';
+        }
+      }
+      
+      return false; // Prevent any form submission
+    });
+  }
+
+// =====================================================
+// Contact Form Submission Handler (LS-2021/LS-2022)
+// Enhanced with state management to prevent redirect issues
 // =====================================================
 document.addEventListener('DOMContentLoaded', function() {
   const contactForm = document.getElementById('contactForm');
   const formFeedback = document.getElementById('formFeedback');
 
   if (contactForm && formFeedback) {
+    
+    // Check if user just submitted form (from page reload or back button)
+    const formJustSubmitted = sessionStorage.getItem('formSubmitted');
+    const submissionTime = sessionStorage.getItem('submissionTime');
+    
+    if (formJustSubmitted === 'true') {
+      // Show success message if submission was recent (within 5 minutes)
+      const timeSince = Date.now() - parseInt(submissionTime || 0);
+      if (timeSince < 300000) { // 5 minutes
+        formFeedback.className = 'form-feedback success';
+        formFeedback.innerHTML = '<strong>✓ Message sent successfully!</strong>Thank you for reaching out. We\'ll get back to you within 24 hours. <span style="display:block; margin-top:0.5rem; font-size:0.9rem; opacity:0.8;">You can continue browsing or submit another enquiry below.</span>';
+        formFeedback.style.display = 'block';
+        contactForm.reset(); // Clear form
+        
+        // Clear the flag after showing message
+        setTimeout(() => {
+          sessionStorage.removeItem('formSubmitted');
+          sessionStorage.removeItem('submissionTime');
+        }, 1000);
+      } else {
+        // Clean up old submission flags
+        sessionStorage.removeItem('formSubmitted');
+        sessionStorage.removeItem('submissionTime');
+      }
+    }
+    
+    // Handle form submission
     contactForm.addEventListener('submit', async function(e) {
-      e.preventDefault();
+      e.preventDefault(); // Prevent default form submission
+      e.stopPropagation(); // Stop event bubbling
+
+      // Basic form validation
+      if (!contactForm.checkValidity()) {
+        formFeedback.className = 'form-feedback error';
+        formFeedback.innerHTML = '<strong>✗ Please fill in all required fields</strong>Make sure you\'ve completed all fields marked with an asterisk (*).';
+        formFeedback.style.display = 'block';
+        formFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        return false;
+      }
 
       const formData = new FormData(contactForm);
       const submitButton = contactForm.querySelector('button[type="submit"]');
@@ -582,6 +240,9 @@ document.addEventListener('DOMContentLoaded', function() {
         submitButton.disabled = true;
         submitButton.textContent = 'Sending...';
       }
+
+      // Hide any previous messages
+      formFeedback.style.display = 'none';
 
       try {
         const response = await fetch(contactForm.action, {
@@ -593,32 +254,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         if (response.ok) {
-          // Success
+          // Success - store state in sessionStorage
+          sessionStorage.setItem('formSubmitted', 'true');
+          sessionStorage.setItem('submissionTime', Date.now().toString());
+          
           formFeedback.className = 'form-feedback success';
-          formFeedback.innerHTML = '<strong>✓ Message sent successfully!</strong>Thank you for reaching out. We\'ll get back to you within 24 hours.';
+          formFeedback.innerHTML = '<strong>✓ Message sent successfully!</strong>Thank you for reaching out. We\'ll get back to you within 24 hours. <span style="display:block; margin-top:0.5rem; font-size:0.9rem; opacity:0.8;">Feel free to continue browsing the site.</span>';
           formFeedback.style.display = 'block';
+          
+          // Clear the form
           contactForm.reset();
+          
+          // Scroll to feedback
+          formFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          
         } else {
-          // Error
+          // Server error
+          const data = await response.json();
           formFeedback.className = 'form-feedback error';
-          formFeedback.innerHTML = '<strong>✗ Submission failed</strong>Please try again or email us directly at hello@lt.solutions';
+          formFeedback.innerHTML = '<strong>✗ Submission failed</strong>' + (data.error || 'Please try again or email us directly at hello@lt.solutions');
           formFeedback.style.display = 'block';
+          formFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
       } catch (error) {
         // Network error
         formFeedback.className = 'form-feedback error';
         formFeedback.innerHTML = '<strong>✗ Connection error</strong>Please check your internet connection and try again, or email us at hello@lt.solutions';
         formFeedback.style.display = 'block';
+        formFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       } finally {
         // Re-enable submit button
         if (submitButton) {
           submitButton.disabled = false;
           submitButton.textContent = 'Send Message';
         }
-        
-        // Scroll to feedback message
-        formFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
+      
+      return false; // Prevent any form submission
     });
   }
 });
