@@ -294,3 +294,53 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// =====================================================
+// Scroll Progress Indicator (LS-2030)
+// =====================================================
+document.addEventListener('DOMContentLoaded', function() {
+  const scrollProgress = document.querySelector('.scroll-progress');
+  const scrollBar = document.querySelector('.scroll-progress__bar');
+  const scrollIndicator = document.querySelector('.scroll-progress__indicator');
+
+  if (scrollProgress && scrollBar && scrollIndicator) {
+    let ticking = false;
+
+    function updateScrollProgress() {
+      // Calculate scroll percentage
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      // Calculate percentage (0-100)
+      const maxScroll = documentHeight - windowHeight;
+      const scrollPercent = maxScroll > 0 ? (scrollTop / maxScroll) * 100 : 0;
+      
+      // Clamp between 0 and 100
+      const clampedPercent = Math.min(Math.max(scrollPercent, 0), 100);
+      
+      // Update bar height (fills from bottom)
+      scrollBar.style.height = `${clampedPercent}%`;
+      
+      // Update indicator position (moves from top to bottom)
+      const trackHeight = 120; // matches CSS height
+      const indicatorPosition = (clampedPercent / 100) * trackHeight;
+      scrollIndicator.style.top = `${indicatorPosition}px`;
+      
+      ticking = false;
+    }
+
+    function requestTick() {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScrollProgress);
+        ticking = true;
+      }
+    }
+
+    // Listen to scroll events
+    window.addEventListener('scroll', requestTick, { passive: true });
+    
+    // Initial update
+    updateScrollProgress();
+  }
+});
