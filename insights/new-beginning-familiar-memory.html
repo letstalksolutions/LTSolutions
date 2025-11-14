@@ -34,15 +34,13 @@
 
   <!-- Preload Critical Resources -->
   <link rel="preload" href="../styles.min.css" as="style">
-  <link rel="preload" href="article-styles.css" as="style">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" as="style">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Stylesheets -->
+  <!-- Main Stylesheet -->
   <link href="../styles.min.css" rel="stylesheet">
-  <link href="article-styles.css" rel="stylesheet">
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -68,92 +66,409 @@
 
   <!-- Main JavaScript -->
   <script defer src="../script.js"></script>
+
+  <style>
+    /* Smooth scroll behavior */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Dark background with mint/green tint overlay */
+    body {
+      background: rgba(10, 15, 30, 1);
+    }
+
+    .section--tint-mint {
+      position: relative;
+      background: rgba(10, 15, 30, 1);
+    }
+
+    .section--tint-mint::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 900px 700px at 30% 40%, rgba(76, 175, 80, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse 800px 600px at 75% 65%, rgba(46, 125, 50, 0.10) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .section--tint-mint.is-ambient::before {
+      animation: tintDrift 16s ease-in-out infinite alternate;
+      background-size: 140% 120%, 120% 140%;
+    }
+
+    .section--tint-mint > .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes tintDrift {
+      0%, 100% {
+        background-position: 30% 40%, 75% 65%;
+      }
+      50% {
+        background-position: 35% 45%, 70% 60%;
+      }
+    }
+
+    /* Hero styling matching The Relay */
+    .page-hero {
+      padding: 8rem 0 6rem;
+      text-align: left;
+      background: rgba(10, 15, 30, 1);
+      position: relative;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 900px 700px at 30% 40%, rgba(76, 175, 80, 0.15) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page-hero__content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-tag {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: rgba(76, 175, 80, 0.12);
+      border: 1px solid rgba(76, 175, 80, 0.4);
+      border-radius: 2rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-white);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .section-tag:hover {
+      background: rgba(76, 175, 80, 0.2);
+      border-color: rgba(76, 175, 80, 0.6);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+    }
+
+    .page-hero__title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+
+    .page-hero__subtitle {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 1rem;
+    }
+
+    .page-hero__meta {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 2rem;
+    }
+
+    /* Content article styling */
+    .content-article {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .content-article p {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .content-article h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 3rem 0 1.5rem;
+    }
+
+    .content-article h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin: 2rem 0 1rem;
+    }
+
+    .content-article strong {
+      color: #ffffff;
+    }
+
+    .content-article ul {
+      margin-left: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .content-article li {
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Image styling */
+    .article-image {
+      margin: 3rem 0;
+      text-align: center;
+    }
+
+    .article-image img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .article-image figcaption {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Callout box styling */
+    .callout-box {
+      background: rgba(76, 175, 80, 0.08);
+      border-left: 3px solid rgba(76, 175, 80, 0.5);
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 4px;
+    }
+
+    .callout-box h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: rgba(76, 175, 80, 0.9);
+      margin-bottom: 1rem;
+    }
+
+    .callout-box p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 0.75rem;
+    }
+
+    .callout-box a {
+      color: rgba(76, 175, 80, 0.9);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(76, 175, 80, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .callout-box a:hover {
+      color: rgba(76, 175, 80, 1);
+      border-bottom-color: rgba(76, 175, 80, 0.8);
+    }
+
+    /* Video embed */
+    .video-embed {
+      margin: 3rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .video-embed iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+    }
+
+    /* Blockquote styling */
+    blockquote {
+      margin: 2rem 0;
+      padding: 1.5rem 2rem;
+      background: rgba(76, 175, 80, 0.05);
+      border-left: 4px solid rgba(76, 175, 80, 0.5);
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.1rem;
+    }
+
+    blockquote p {
+      margin-bottom: 0;
+    }
+
+    /* Author bio */
+    .article-author-bio {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 4rem 0;
+    }
+
+    .article-author-bio h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+
+    .article-author-bio p {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    /* Related articles */
+    .related-articles {
+      margin: 4rem 0;
+    }
+
+    .related-articles h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+    }
+
+    .related-articles-grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .related-article-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 2rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .related-article-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(76, 175, 80, 0.3);
+      transform: translateY(-4px);
+    }
+
+    .related-article-card__category {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: rgba(76, 175, 80, 0.8);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .related-article-card__title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .related-article-card__description {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Footer dark theme */
+    .main-footer {
+      background: rgba(5, 10, 20, 1);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .page-hero__title {
+        font-size: 2rem;
+      }
+
+      .content-article {
+        padding: 2rem 1.5rem;
+      }
+
+      .video-embed iframe {
+        height: 300px;
+      }
+    }
+  </style>
 </head>
 
-<body class="article-wrapper">
-
-<!-- Navigation -->
-<nav class="main-nav" id="main-nav" role="navigation" aria-label="Main Navigation">
-  <div class="container">
-    <a href="../index.html" class="nav-logo" aria-label="LT.Solutions Home">
-      <strong>LT.Solutions</strong>
-    </a>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <ul class="nav-menu" id="nav-menu">
-      <li><a href="../index.html" class="nav-link">Home</a></li>
-      <li><a href="../about.html" class="nav-link">About</a></li>
-      <li><a href="../services.html" class="nav-link">Services</a></li>
-      <li><a href="../approach.html" class="nav-link">Approach</a></li>
-      <li><a href="../insights.html" class="nav-link nav-link--active" aria-current="page">Insights</a></li>
-      <li><a href="../contact.html" class="nav-link">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- Article Hero Section -->
-<header class="article-hero">
-  <div class="container">
-
-    <!-- Breadcrumb Navigation -->
-    <nav class="article-breadcrumb" aria-label="Breadcrumb">
-      <a href="../index.html">Home</a>
-      <span class="article-breadcrumb__separator">/</span>
-      <a href="../insights.html">Insights</a>
-      <span class="article-breadcrumb__separator">/</span>
-      <span class="article-breadcrumb__current">A New Beginning, A Familiar Memory</span>
-    </nav>
-
-    <!-- Article Meta Information -->
-    <div class="article-meta">
-      <span class="article-tag">Personal Reflections</span>
-      <span class="article-meta__separator">•</span>
-      <time datetime="2025-11-14" class="article-meta__date">14 November 2025</time>
-      <span class="article-meta__separator">•</span>
-      <span class="article-meta__read-time">6 min read</span>
+<body>
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__track">
+      <div class="scroll-progress__bar"></div>
+      <div class="scroll-progress__indicator"></div>
     </div>
+  </div>
 
-    <!-- Article Title -->
-    <h1 class="article-title">
-      A New Beginning, A Familiar Memory
-    </h1>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="../index.html" class="nav__logo" aria-label="LT.Solutions home">
+          <img src="../images/logo-full.png" alt="LT.Solutions - Atlassian consultancy" width="260" height="72" loading="eager" decoding="async">
+        </a>
 
-    <!-- Article Lead/Introduction -->
-    <p class="article-lead">
-      Starting a new job is usually a practical moment—new laptop, new logins, new team. But every now and then, life hands you something that feels a bit more symbolic, something that taps you on the shoulder and says: this chapter isn't just beginning, it's connecting.
-    </p>
+        <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="nav__toggle-icon"></span>
+        </button>
 
-    <!-- Author Information -->
-    <div class="article-author">
-      <div>
-        <div class="article-author__name">Andreas Nyberg</div>
-        <div class="article-author__title">Founder, LT.Solutions | Technical Architect</div>
+        <ul class="nav__menu">
+          <li><a href="../index.html" class="nav__link">Home</a></li>
+          <li><a href="../services.html" class="nav__link">Services</a></li>
+          <li><a href="../approach.html" class="nav__link">Our Approach</a></li>
+          <li><a href="../insights.html" class="nav__link nav__link--active">Insights</a></li>
+          <li><a href="../about.html" class="nav__link">About</a></li>
+          <li><a href="../contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="page-hero section--tint-mint is-ambient">
+    <div class="container page-hero__content">
+      <span class="section-tag">Personal Reflections</span>
+      <h1 class="page-hero__title">A New Beginning, A Familiar Memory</h1>
+      <p class="page-hero__subtitle">Sometimes the smallest gestures carry the weight of entire friendships</p>
+      <div class="page-hero__meta">
+        <time datetime="2025-11-14">14 November 2025</time> • 6 min read • Andreas Nyberg
       </div>
     </div>
+  </section>
 
-  </div>
-</header>
+  <!-- Main Article Content -->
+  <article class="section--tint-mint is-ambient">
+    <div class="content-article">
 
-<!-- Main Article Content -->
-<article class="article-content">
-  <div class="container">
+      <!-- Introduction -->
+      <p>
+        Starting a new job is usually a practical moment—new laptop, new logins, new team. But every now and then, life hands you something that feels a bit more symbolic, something that taps you on the shoulder and says: this chapter isn't just beginning, it's connecting.
+      </p>
 
-    <!-- Introduction Section -->
-    <section class="article-section">
-      <p class="text-lg">
+      <p>
         This week, I received a welcome pack from the organisation I'm joining on Monday. Among the usual bits—branded notebook, company swag, the standard "we're excited to have you" letter—there was a small plant pot with a packet of mint seeds.
       </p>
 
-      <p class="text-lg">
+      <p>
         A simple gift, nothing dramatic. The kind of thing most people would smile at, set on a windowsill, and probably forget to water. But for me, it landed in a place I didn't expect.
       </p>
-    </section>
 
-    <!-- The Memory Section -->
-    <section class="article-section">
+      <!-- The Friend Who Loved Plants -->
       <h2>The Friend Who Loved Plants</h2>
 
       <p>
@@ -184,10 +499,8 @@
       <p>
         It's become a ritual, not out of obligation, but because it feels necessary. A way to honour someone who meant something, who shaped how I think, who challenged me to be better, sharper, more honest.
       </p>
-    </section>
 
-    <!-- The Playlist Section -->
-    <section class="article-section">
+      <!-- Music Remembers -->
       <h2>Music Remembers for Us</h2>
 
       <p>
@@ -198,7 +511,7 @@
         You hear a song and suddenly you're back there—same conversation, same stupid joke, same feeling of being understood by someone who saw through your nonsense. The playlist isn't sacred or untouchable. It just exists, quietly, a reminder that some friendships transcend timelines.
       </p>
 
-      <div class="callout-box callout-box--info">
+      <div class="callout-box">
         <h4>Candy Apple Blue – Not A Day Goes By</h4>
         <p>
           Another part of that memory is linked to a band called <a href="https://www.youtube.com/watch?v=iaw_ABJzgaE" target="_blank" rel="noopener noreferrer">Candy Apple Blue</a>. They once invited their fans to submit photos of loved ones they had lost, to be included in a music video for <em>Not A Day Goes By</em>.
@@ -210,19 +523,14 @@
 
       <div class="video-embed">
         <iframe
-          width="100%"
-          height="450"
           src="https://www.youtube.com/embed/iaw_ABJzgaE"
           title="Candy Apple Blue - Not A Day Goes By"
-          frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen>
         </iframe>
       </div>
-    </section>
 
-    <!-- The Coincidence Section -->
-    <section class="article-section">
+      <!-- When Past Meets Future -->
       <h2>When the Past Meets the Future</h2>
 
       <p>
@@ -241,10 +549,8 @@
       <p>
         All of these threads—the mint, the bench, the playlist, the music video, and now this unexpected pot in a welcome pack—feel like they've tied themselves into the start of this new chapter.
       </p>
-    </section>
 
-    <!-- The New Chapter Section -->
-    <section class="article-section">
+      <!-- Starting Something Right -->
       <h2>Starting Something Right</h2>
 
       <p>
@@ -272,10 +578,8 @@
       <p>
         So I'm taking the mint seeds as a sign of sorts—not the mystical type, more a reminder that you carry your past, your people, your influences, and your stories into every next step. And sometimes, life nods back and says: yes, keep going.
       </p>
-    </section>
 
-    <!-- Closing Section -->
-    <section class="article-section">
+      <!-- This Is the Beginning -->
       <h2>This Is the Beginning</h2>
 
       <p>
@@ -286,99 +590,98 @@
         The mint will grow. The memories will stay. The work will be challenging and rewarding in ways I haven't fully mapped out yet. And somewhere in all of that, there's a thread connecting where I've been to where I'm going.
       </p>
 
-      <p class="font-weight-semibold">
-        Here's to new beginnings that honour old friendships. Here's to mint seeds and memory. Here's to carrying the people who shaped us into the chapters they'll never see.
+      <p>
+        <strong>Here's to new beginnings that honour old friendships. Here's to mint seeds and memory. Here's to carrying the people who shaped us into the chapters they'll never see.</strong>
       </p>
 
       <p>
         Will would have told me to stop being sentimental and just water the damn plant. So that's what I'll do.
       </p>
-    </section>
 
-    <!-- About the Author -->
-    <aside class="article-author-bio">
-      <h3>About the Author</h3>
-      <p>
-        <strong>Andreas Nyberg</strong> is the founder of LT.Solutions and a Technical Architect specializing in Atlassian platforms and ITSM. He believes in carrying forward the people who shaped us, honouring their memory through the work we do and the standards we hold.
-      </p>
-      <p>
-        This article is dedicated to Will, who taught me that it's okay to be grumpy, that plants are worth obsessing over, and that real friendship means telling the truth even when it's uncomfortable. His bench at Kew Gardens remains a place of quiet reflection and annual remembrance.
-      </p>
-      <p>
-        If you've lost someone who mattered, find your bench. Visit it. Remember them. They're worth it.
-      </p>
-    </aside>
-
-    <!-- Related Articles -->
-    <nav class="related-articles" aria-label="Related Articles">
-      <h3>Related Reading</h3>
-      <div class="related-articles-grid">
-        <a href="crypto-tax-reality" class="related-article-card">
-          <div class="related-article-card__category">Technology & Finance</div>
-          <div class="related-article-card__title">The Hidden Full-Time Job: Why Crypto Trading Isn't a Side Hustle</div>
-          <div class="related-article-card__description">The brutal reality of crypto tax compliance that nobody warns you about</div>
-        </a>
-      </div>
-    </nav>
-
-  </div>
-</article>
-
-<!-- Footer -->
-<footer class="main-footer">
-  <div class="container">
-    <div class="footer-content">
-
-      <div class="footer-section">
-        <h3 class="footer-title">LT.Solutions</h3>
-        <p class="footer-text">
-          Technical excellence meets strategic insight. Transforming complex Atlassian ecosystems into streamlined, high-performance platforms.
+      <!-- About the Author -->
+      <aside class="article-author-bio">
+        <h3>About the Author</h3>
+        <p>
+          <strong>Andreas Nyberg</strong> is the founder of LT.Solutions and a Technical Architect specializing in Atlassian platforms and ITSM. He believes in carrying forward the people who shaped us, honouring their memory through the work we do and the standards we hold.
         </p>
-        <div class="footer-social">
-          <a href="https://www.linkedin.com/in/andreasnyberg/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill="currentColor"/>
-            </svg>
+        <p>
+          This article is dedicated to Will, who taught me that it's okay to be grumpy, that plants are worth obsessing over, and that real friendship means telling the truth even when it's uncomfortable. His bench at Kew Gardens remains a place of quiet reflection and annual remembrance.
+        </p>
+        <p>
+          If you've lost someone who mattered, find your bench. Visit it. Remember them. They're worth it.
+        </p>
+      </aside>
+
+      <!-- Related Articles -->
+      <nav class="related-articles" aria-label="Related Articles">
+        <h3>Related Reading</h3>
+        <div class="related-articles-grid">
+          <a href="crypto-tax-reality" class="related-article-card">
+            <div class="related-article-card__category">Technology & Finance</div>
+            <div class="related-article-card__title">The Hidden Full-Time Job: Why Crypto Trading Isn't a Side Hustle</div>
+            <div class="related-article-card__description">The brutal reality of crypto tax compliance that nobody warns you about</div>
           </a>
         </div>
+      </nav>
+
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="site-footer main-footer">
+    <!-- CTA Section -->
+    <div class="footer-cta">
+      <div class="container">
+        <div class="cta-block__content">
+          <span class="section-tag">Ready to Begin?</span>
+          <h2 class="cta-block__title">Ready to transform your <span class="gradient-text">IT operations?</span></h2>
+          <p class="cta-block__text">Whether you are implementing Jira Service Management, refining existing processes, or aligning with ISO standards, LT.Solutions can help you scale with confidence.</p>
+          <div class="cta-block__buttons">
+            <a href="../contact.html" class="btn btn--primary btn--large btn--glow">Let's Talk Solutions</a>
+            <a href="../approach.html" class="btn btn--secondary btn--large btn--glow">Our Approach</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="footer-container">
+      <div class="footer-branding">
+        <img src="../images/logo-footer.svg" alt="LT.Solutions logo" class="footer-logo" loading="lazy" decoding="async">
       </div>
 
-      <div class="footer-section">
-        <h4 class="footer-section-title">Quick Links</h4>
-        <ul class="footer-links">
-          <li><a href="../about.html">About</a></li>
-          <li><a href="../services.html">Services</a></li>
-          <li><a href="../approach.html">Approach</a></li>
-          <li><a href="../insights.html">Insights</a></li>
-          <li><a href="../contact.html">Contact</a></li>
-        </ul>
-      </div>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h3 class="footer-heading">Connect</h3>
+          <ul class="footer-list">
+            <li><a href="mailto:hello@lt.solutions" class="footer-link">hello@lt.solutions</a></li>
+            <li><a href="https://www.linkedin.com/in/andreas-l-a-nyberg/" target="_blank" rel="noopener" class="footer-link">LinkedIn</a></li>
+          </ul>
+        </div>
 
-      <div class="footer-section">
-        <h4 class="footer-section-title">Services</h4>
-        <ul class="footer-links">
-          <li><a href="../services.html#technical-architecture">Technical Architecture</a></li>
-          <li><a href="../services.html#atlassian-migration">Atlassian Migration</a></li>
-          <li><a href="../services.html#itsm-consulting">ITSM Consulting</a></li>
-          <li><a href="../services.html#platform-optimization">Platform Optimization</a></li>
-        </ul>
-      </div>
+        <div class="footer-column">
+          <h3 class="footer-heading">Company</h3>
+          <ul class="footer-list">
+            <li><a href="../about.html" class="footer-link">About LT.Solutions</a></li>
+            <li><a href="../approach.html" class="footer-link">Our Approach</a></li>
+            <li><a href="../contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
 
-      <div class="footer-section">
-        <h4 class="footer-section-title">Legal</h4>
-        <ul class="footer-links">
-          <li><a href="../privacy.html">Privacy Policy</a></li>
-          <li><a href="../legal.html">Terms of Service</a></li>
-        </ul>
+        <div class="footer-column">
+          <h3 class="footer-heading">Legal</h3>
+          <ul class="footer-list">
+            <li><a href="../privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="../legal.html" class="footer-link">Legal Notice</a></li>
+          </ul>
+        </div>
       </div>
-
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2025 LT.Solutions. All rights reserved.</p>
+      <p class="footer-copyright">&copy; 2025 LT.Solutions. All rights reserved.</p>
+      <p class="footer-transparency">Content written by humans, supported by AI-assisted editing tools for clarity. <a href="../about.html#transparency">Learn more</a></p>
     </div>
-  </div>
-</footer>
-
+  </footer>
 </body>
 </html>
