@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A reflective story about new beginnings, memory, and a quiet coincidence involving mint seeds, a lost friend, and a new role.">
+  <meta name="description" content="A reflective story about a new role, a mint pot, and the memory of a friend who never really left.">
   <title>A New Beginning, A Familiar Memory | LT.Solutions</title>
 
   <!-- Favicon -->
@@ -14,7 +14,7 @@
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="A New Beginning, A Familiar Memory">
-  <meta property="og:description" content="A reflective story about new beginnings, memory, and a quiet coincidence involving mint seeds, a lost friend, and a new role.">
+  <meta property="og:description" content="A reflective story about a new role, a mint pot, and the memory of a friend who never really left.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://lt.solutions/insights/new-beginning-familiar-memory">
   <meta property="og:image" content="https://lt.solutions/images/og/new-beginning-memory.jpg">
@@ -25,7 +25,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="A New Beginning, A Familiar Memory">
-  <meta name="twitter:description" content="A reflective story about new beginnings, memory, and a quiet coincidence involving mint seeds, a lost friend, and a new role.">
+  <meta name="twitter:description" content="A reflective story about a new role, a mint pot, and the memory of a friend who never really left.">
   <meta name="twitter:image" content="https://lt.solutions/images/og/new-beginning-memory.jpg">
 
   <!-- Preconnect for Performance -->
@@ -48,7 +48,7 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "A New Beginning, A Familiar Memory",
-    "description": "A reflective story about new beginnings, memory, and a quiet coincidence involving mint seeds, a lost friend, and a new role.",
+    "description": "A reflective story about a new role, a mint pot, and the memory of a friend who never really left.",
     "author": {
       "@type": "Person",
       "name": "Andreas Nyberg"
@@ -66,393 +66,6 @@
 
   <!-- Main JavaScript -->
   <script defer src="/script.js"></script>
-
-  <style>
-    /* Smooth scroll behavior */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Dark background with mint/green tint overlay */
-    body {
-      background: rgba(10, 15, 30, 1);
-    }
-
-    .section--tint-mint {
-      position: relative;
-      background: rgba(10, 15, 30, 1);
-    }
-
-    .section--tint-mint::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 900px 700px at 30% 40%, rgba(76, 175, 80, 0.12) 0%, transparent 50%),
-        radial-gradient(ellipse 800px 600px at 75% 65%, rgba(46, 125, 50, 0.10) 0%, transparent 50%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .section--tint-mint.is-ambient::before {
-      animation: tintDrift 16s ease-in-out infinite alternate;
-      background-size: 140% 120%, 120% 140%;
-    }
-
-    .section--tint-mint > .container {
-      position: relative;
-      z-index: 1;
-    }
-
-    @keyframes tintDrift {
-      0%, 100% {
-        background-position: 30% 40%, 75% 65%;
-      }
-      50% {
-        background-position: 35% 45%, 70% 60%;
-      }
-    }
-
-    /* Hero styling matching The Relay */
-    .page-hero {
-      padding: 8rem 0 6rem;
-      text-align: left;
-      background: rgba(10, 15, 30, 1);
-      position: relative;
-    }
-
-    .page-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 900px 700px at 30% 40%, rgba(76, 175, 80, 0.15) 0%, transparent 50%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .page-hero__content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .section-tag {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      background: rgba(76, 175, 80, 0.12);
-      border: 1px solid rgba(76, 175, 80, 0.4);
-      border-radius: 2rem;
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--color-white);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 1.5rem;
-      transition: all 0.3s ease;
-    }
-
-    .section-tag:hover {
-      background: rgba(76, 175, 80, 0.2);
-      border-color: rgba(76, 175, 80, 0.6);
-      transform: translateY(-1px);
-      box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
-    }
-
-    .page-hero__title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 3rem;
-      font-weight: 700;
-      line-height: 1.2;
-      color: #ffffff;
-      margin-bottom: 1rem;
-    }
-
-    .page-hero__subtitle {
-      font-size: 1.3rem;
-      font-style: italic;
-      color: rgba(255, 255, 255, 0.7);
-      margin-bottom: 1rem;
-    }
-
-    .page-hero__meta {
-      font-size: 1rem;
-      color: rgba(255, 255, 255, 0.6);
-      margin-bottom: 2rem;
-    }
-
-    /* Content article styling */
-    .content-article {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-    }
-
-    .content-article p {
-      color: rgba(255, 255, 255, 0.85);
-      font-size: 1.1rem;
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-    }
-
-    .content-article h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin: 3rem 0 1.5rem;
-    }
-
-    .content-article h3 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: #ffffff;
-      margin: 2rem 0 1rem;
-    }
-
-    .content-article strong {
-      color: #ffffff;
-    }
-
-    .content-article ul {
-      margin-left: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .content-article li {
-      color: rgba(255, 255, 255, 0.85);
-      margin-bottom: 0.5rem;
-    }
-
-    /* Image styling */
-    .article-image {
-      margin: 3rem auto;
-      text-align: center;
-      max-width: 800px;
-    }
-
-    .article-image img {
-      width: 100%;
-      max-width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-    }
-
-    .article-image figcaption {
-      margin-top: 1rem;
-      font-size: 0.95rem;
-      font-style: italic;
-      color: rgba(255, 255, 255, 0.5);
-      text-align: center;
-    }
-
-    /* Callout box styling */
-    .callout-box {
-      background: rgba(76, 175, 80, 0.08);
-      border-left: 3px solid rgba(76, 175, 80, 0.5);
-      padding: 2rem;
-      margin: 3rem 0;
-      border-radius: 4px;
-    }
-
-    .callout-box h4 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: rgba(76, 175, 80, 0.9);
-      margin-bottom: 1rem;
-    }
-
-    .callout-box p {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 0.75rem;
-    }
-
-    .callout-box a {
-      color: rgba(76, 175, 80, 0.9);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(76, 175, 80, 0.3);
-      transition: all 0.3s ease;
-    }
-
-    .callout-box a:hover {
-      color: rgba(76, 175, 80, 1);
-      border-bottom-color: rgba(76, 175, 80, 0.8);
-    }
-
-    /* Video embed */
-    .video-embed {
-      margin: 3rem auto;
-      max-width: 800px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-    }
-
-    .video-embed iframe {
-      width: 100%;
-      height: 500px;
-      border: none;
-    }
-
-    /* Blockquote styling */
-    blockquote {
-      margin: 3rem 0;
-      padding: 1.5rem 2rem;
-      background: rgba(76, 175, 80, 0.05);
-      border-left: 4px solid rgba(76, 175, 80, 0.5);
-      font-style: italic;
-      color: rgba(255, 255, 255, 0.9);
-      font-size: 1.1rem;
-    }
-
-    blockquote p {
-      margin-bottom: 0;
-    }
-
-    /* Author bio */
-    .article-author-bio {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
-      padding: 2rem;
-      margin: 4rem 0;
-    }
-
-    .article-author-bio h3 {
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: #ffffff;
-      margin-bottom: 1rem;
-    }
-
-    .article-author-bio p {
-      color: rgba(255, 255, 255, 0.75);
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
-
-    /* Related articles */
-    .related-articles {
-      margin: 4rem 0;
-    }
-
-    .related-articles h3 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: #ffffff;
-      margin-bottom: 1.5rem;
-    }
-
-    .related-articles-grid {
-      display: grid;
-      gap: 2rem;
-    }
-
-    .related-article-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
-      padding: 2rem;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .related-article-card:hover {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(76, 175, 80, 0.3);
-      transform: translateY(-4px);
-    }
-
-    .related-article-card__category {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: rgba(76, 175, 80, 0.8);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.5rem;
-    }
-
-    .related-article-card__title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #ffffff;
-      margin-bottom: 0.5rem;
-    }
-
-    .related-article-card__description {
-      font-size: 0.95rem;
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    /* CTA Section */
-    .article-cta {
-      background: rgba(76, 175, 80, 0.05);
-      border: 1px solid rgba(76, 175, 80, 0.15);
-      border-radius: 12px;
-      padding: 3rem 2rem;
-      margin: 4rem 0;
-      text-align: center;
-    }
-
-    .article-cta .section-tag {
-      margin-bottom: 1.5rem;
-    }
-
-    .article-cta h3 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 1.5rem;
-      line-height: 1.3;
-    }
-
-    .article-cta__text {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: rgba(255, 255, 255, 0.75);
-      margin-bottom: 2rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .article-cta__buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    /* Footer dark theme */
-    .main-footer {
-      background: rgba(5, 10, 20, 1);
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    /* Mobile responsive */
-    @media (max-width: 768px) {
-      .page-hero__title {
-        font-size: 2rem;
-      }
-
-      .content-article {
-        padding: 2rem 1.5rem;
-      }
-
-      .video-embed iframe {
-        height: 300px;
-      }
-
-      .article-cta__buttons {
-        flex-direction: column;
-        align-items: stretch;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -488,254 +101,212 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="page-hero section--tint-mint is-ambient">
-    <div class="container page-hero__content">
-      <span class="section-tag">Personal Reflections</span>
-      <h1 class="page-hero__title">A New Beginning, A Familiar Memory</h1>
-      <p class="page-hero__subtitle">On carrying the past forward into new chapters</p>
-      <div class="page-hero__meta">
-        <time datetime="2025-11-14">14 November 2025</time> • 6 min read • Andreas Nyberg
-      </div>
-    </div>
-  </section>
+  <main class="insight-page">
 
-  <!-- Brand Separator Line -->
-  <div class="brand-separator" aria-hidden="true">
-    <div class="separator-line"></div>
-    <svg width="1920" height="200" viewBox="0 0 1920 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g class="connection-lines">
-        <line x1="390" y1="90" x2="570" y2="66" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5"/>
-        <line x1="570" y1="66" x2="750" y2="115" stroke="rgba(76, 175, 80, 0.2)" stroke-width="1.5"/>
-        <line x1="750" y1="115" x2="960" y2="74" stroke="rgba(76, 175, 80, 0.25)" stroke-width="1.5"/>
-        <line x1="960" y1="74" x2="1170" y2="113" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5"/>
-        <line x1="1170" y1="113" x2="1350" y2="82" stroke="rgba(76, 175, 80, 0.18)" stroke-width="1.5"/>
-        <line x1="1350" y1="82" x2="1530" y2="99" stroke="rgba(76, 175, 80, 0.15)" stroke-width="1.5"/>
-      </g>
-      <g class="node-1">
-        <circle cx="390" cy="90" r="5" fill="rgba(76, 175, 80, 0.7)"/>
-        <circle class="ring" cx="390" cy="90" r="10" stroke="rgba(76, 175, 80, 0.4)" stroke-width="1.5" fill="none"/>
-        <circle cx="390" cy="90" r="2" fill="rgba(255, 255, 255, 0.9)"/>
-      </g>
-      <g class="node-2">
-        <circle cx="570" cy="66" r="4" fill="rgba(255, 255, 255, 0.6)"/>
-        <circle cx="570" cy="66" r="1.5" fill="rgba(76, 175, 80, 0.8)"/>
-      </g>
-      <g class="node-3">
-        <circle cx="750" cy="115" r="6" fill="rgba(76, 175, 80, 0.75)"/>
-        <circle class="ring-2" cx="750" cy="115" r="12" stroke="rgba(76, 175, 80, 0.35)" stroke-width="1.5" fill="none"/>
-        <circle cx="750" cy="115" r="2.5" fill="rgba(255, 255, 255, 0.95)"/>
-      </g>
-      <g class="node-4">
-        <circle cx="960" cy="74" r="5" fill="rgba(76, 175, 80, 0.7)"/>
-        <circle class="ring-3" cx="960" cy="74" r="10" stroke="rgba(76, 175, 80, 0.4)" stroke-width="1.5" fill="none"/>
-        <circle cx="960" cy="74" r="2" fill="rgba(255, 255, 255, 0.9)"/>
-      </g>
-      <g class="node-5">
-        <circle cx="1170" cy="113" r="4.5" fill="rgba(255, 255, 255, 0.65)"/>
-        <circle cx="1170" cy="113" r="1.5" fill="rgba(76, 175, 80, 0.75)"/>
-      </g>
-      <g class="node-6">
-        <circle cx="1350" cy="82" r="5" fill="rgba(76, 175, 80, 0.7)"/>
-        <circle class="ring-4" cx="1350" cy="82" r="10" stroke="rgba(76, 175, 80, 0.35)" stroke-width="1.5" fill="none"/>
-        <circle cx="1350" cy="82" r="2" fill="rgba(255, 255, 255, 0.9)"/>
-      </g>
-      <g class="node-7">
-        <circle cx="1530" cy="99" r="4" fill="rgba(76, 175, 80, 0.65)"/>
-        <circle cx="1530" cy="99" r="1.5" fill="rgba(255, 255, 255, 0.85)"/>
-      </g>
-    </svg>
-  </div>
-
-  <!-- Main Article Content -->
-  <article class="section--tint-mint is-ambient">
-    <div class="content-article">
-
-      <!-- Introduction -->
-      <p>
-        This week I received a welcome pack for the role I start on Monday. Inside, among the standard items, was a small pot containing mint seeds. That single detail turned a routine moment into something more significant. Mint has been connected to the memory of someone I lost years ago, and finding it here, at the start of a new chapter, created an unexpected sense of continuity.
-      </p>
-
-      <p>
-        This is about how seemingly small things can carry weight, how memory travels with us, and what it means to move forward while honouring the people who shaped who we are.
-      </p>
-
-      <!-- Section 1 -->
-      <h2>A Gift That Meant More Than Expected</h2>
-
-      <p>
-        The welcome pack arrived with the usual contents: branded materials, an onboarding guide, practical information. The mint seeds were tucked in as a small gesture, likely chosen without particular thought. But for me, they landed differently.
-      </p>
-
-      <p>
-        Mint has always been tied to Will, a close friend I lost many years ago. He was the kind of person you only meet once if you are fortunate. Sharp, perceptive, endearingly grumpy. He had little patience for pretence and no interest in being told what he wanted to hear. If you asked for his opinion, you received it, unfiltered and direct.
-      </p>
-
-      <p>
-        That honesty made him difficult at times, but it also made him invaluable. He challenged assumptions, sharpened thinking, and refused to let mediocrity slide. He was also completely obsessed with plants.
-      </p>
-
-      <!-- Section 2 -->
-      <h2>Remembering Will</h2>
-
-      <p>
-        Will's dream was to work at Kew Gardens. Not as a visitor or occasional volunteer, but as someone embedded in the greenhouses and botanical collections, surrounded by the living systems he understood better than most people. He could talk for hours about soil chemistry, Latin classifications, and the specific conditions required to grow herbs most of us only recognise as ingredients.
-      </p>
-
-      <p>
-        Mint was his signature. He cultivated it everywhere: windowsills, garden beds, improvised containers in spaces that seemed too small to sustain anything green. He harvested it, dried it, brewed tea from it, and distributed bundles of it like a quiet evangelist. The scent of fresh mint still brings him back immediately.
-      </p>
-
-      <figure class="article-image">
-        <img src="/images/will-kew-bench.jpg" alt="A memorial bench dedicated to Will at Kew Gardens, surrounded by greenery in a quiet corner of the botanical gardens" loading="lazy">
-        <figcaption>Will's bench at Kew Gardens, a place I return to every year</figcaption>
-      </figure>
-
-      <p>
-        After he passed, I discovered a bench at Kew Gardens dedicated to him. It sits in a quiet corner, surrounded by the greenery he loved. Every year, I visit. I sit. I spend a quiet moment there, marking another year since he left.
-      </p>
-
-      <p>
-        It has become a ritual, not out of obligation, but because it feels necessary. A way to honour someone who meant something, who influenced how I think, who set standards I still try to meet.
-      </p>
-
-      <!-- Section 3 -->
-      <h2>Mint as a Thread Through Time</h2>
-
-      <p>
-        There is also a <a href="https://open.spotify.com/playlist/2QkWon6dRe5N0qVxslZ3Z2?si=f0d97e1bd87f456a" target="_blank" rel="noopener noreferrer">playlist called Mint</a>. It holds tracks we shared, argued about, and played too loudly in cars, bedrooms, and poorly lit pubs. Music has a particular ability to preserve memory in ways other things cannot.
-      </p>
-
-      <p>
-        A song plays, and suddenly you are back in a specific conversation, reliving a joke that should not still be funny, feeling understood by someone who saw through the noise. The playlist is not sacred. It simply exists, a reminder that some friendships extend beyond their original timelines.
-      </p>
-
-      <div class="callout-box">
-        <h4>The Mint Playlist</h4>
-        <p>
-          Listen to the <a href="https://open.spotify.com/playlist/2QkWon6dRe5N0qVxslZ3Z2?si=f0d97e1bd87f456a" target="_blank" rel="noopener noreferrer">Mint playlist on Spotify</a>: a collection of tracks that defined a friendship, preserved a memory, and continue to bring Will back through sound.
+    <!-- HERO SECTION -->
+    <section class="insight-hero">
+      <div class="container">
+        <p class="insight-hero__eyebrow">Insights</p>
+        <h1 class="insight-hero__title">A New Beginning, A Familiar Memory</h1>
+        <p class="insight-hero__subtitle">
+          A quiet story about a new role, a mint pot, and the memory of a friend who never really left.
         </p>
-      </div>
 
-      <!-- Section 4 -->
-      <h2>A Tribute in Music</h2>
-
-      <p>
-        Another thread in this memory involves a band called Candy Apple Blue. They invited fans to submit photos of people they had lost, to be included in a music video for their song *Not A Day Goes By*. I sent in a picture of Will.
-      </p>
-
-      <p>
-        It became part of something larger: a tribute woven into a piece of art that reaches people across the world. Every time I watch that video, I see him there, frozen in a moment, part of a collective act of remembrance for people who mattered.
-      </p>
-
-      <div class="callout-box">
-        <h4>Candy Apple Blue: Not A Day Goes By</h4>
-        <p>
-          The band <a href="https://www.youtube.com/watch?v=iaw_ABJzgaE" target="_blank" rel="noopener noreferrer">Candy Apple Blue</a> created a space for their fans to honour lost loved ones by including submitted photos in their music video. Will's image became part of that tribute, a small but meaningful inclusion in a work that acknowledges grief and memory with care.
-        </p>
-      </div>
-
-      <div class="video-embed">
-        <iframe
-          src="https://www.youtube.com/embed/iaw_ABJzgaE"
-          title="Candy Apple Blue - Not A Day Goes By music video tribute"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-      <!-- Section 5 -->
-      <h2>Beginning a New Chapter</h2>
-
-      <p>
-        When the mint seeds arrived in my welcome pack, they created a connection I had not anticipated. I do not believe in orchestrated cosmic signals, but I do think we notice patterns when we are ready to see them, when circumstances align in ways that feel meaningful.
-      </p>
-
-      <figure class="article-image">
-        <img src="/images/mint-seed-pot.jpg" alt="A small terracotta pot containing mint seeds from a new employer's welcome pack, representing unexpected connections between past and future" loading="lazy">
-        <figcaption>The unexpected gift that connected past and future</figcaption>
-      </figure>
-
-      <p>
-        The mint, the bench, the playlist, the music video, and now this pot of seeds have all become part of the same story. They tie themselves into this new chapter I am beginning.
-      </p>
-
-      <p>
-        I am joining a team and stepping into work that aligns with how I want to operate: structured, technically focused, and well-matched to what I do best. After years of navigating complex environments, building LT.Solutions, and managing the unpredictable demands of consultancy work, this feels like a deliberate move toward clarity and focus.
-      </p>
-
-      <p>
-        The coincidence with the mint seeds made it personal in a way I had not expected. Not mystical, but grounding. A reminder that you carry your past with you: the people, the influences, the standards, the stories. They do not disappear. They inform every next step.
-      </p>
-
-      <blockquote>
-        <p>
-          You do not leave your friends behind when they are gone. You carry them forward in the choices you make, the standards you hold, and the moments you pause to remember.
-        </p>
-      </blockquote>
-
-      <p>
-        Will would have interrogated this decision thoroughly. He would have asked direct questions about the role, challenged whether it was genuinely the right fit, then grudgingly conceded it sounded reasonable. That was how we worked.
-      </p>
-
-      <!-- Section 6 -->
-      <h2>Carrying Memory Into What Comes Next</h2>
-
-      <p>
-        This is the beginning of something new. It already feels grounded in what came before.
-      </p>
-
-      <p>
-        The mint will grow. The memories remain. The work ahead will be challenging and rewarding in ways I have not yet fully mapped. Somewhere in all of that, there is a thread connecting where I have been to where I am going.
-      </p>
-
-      <p>
-        New beginnings do not erase the past. They build on it. The people who shaped us, the lessons they taught, and the standards they set continue to inform how we move forward. That continuity matters. It grounds confidence, clarifies purpose, and reminds us why we set the bar where we do.
-      </p>
-
-      <p>
-        Will would tell me to stop overcomplicating it and water the plant. So I will.
-      </p>
-
-      <!-- CTA Section -->
-      <aside class="article-cta">
-        <span class="section-tag">Ready to Begin?</span>
-        <h3>Ready to transform your <span class="gradient-text">IT operations?</span></h3>
-        <p class="article-cta__text">Whether you are implementing Jira Service Management, refining existing processes, or aligning with ISO standards, LT.Solutions can help you scale with confidence.</p>
-        <div class="article-cta__buttons">
-          <a href="/contact" class="btn btn--primary btn--large btn--glow">Let's Talk Solutions</a>
-          <a href="/approach" class="btn btn--secondary btn--large btn--glow">Our Approach</a>
+        <!-- QUOTE DIRECTLY UNDER HERO -->
+        <div class="insight-hero__quote">
+          <blockquote>
+            <p>Some beginnings feel new on the surface, yet deeply connected underneath.</p>
+          </blockquote>
         </div>
-      </aside>
+      </div>
+    </section>
 
-      <!-- About the Author -->
-      <aside class="article-author-bio author-bio">
-        <h3>About the Author</h3>
-        <p>
-          <strong>Andreas Nyberg</strong> is the founder of LT.Solutions and a Technical Architect specializing in Atlassian platforms and ITSM. He believes in carrying forward the people who shaped us, honouring their memory through the work we do and the standards we hold.
-        </p>
-        <p>
-          This article is dedicated to Will, who demonstrated that integrity matters more than comfort, that plants deserve serious attention, and that real friendship means honest feedback even when it stings. His bench at Kew Gardens remains a place of quiet reflection and annual remembrance.
-        </p>
-        <p>
-          If you have lost someone who mattered, find your bench. Visit it. Remember them. They are worth it.
-        </p>
-      </aside>
-
-      <!-- Related Articles -->
-      <nav class="related-articles" aria-label="Related Articles">
-        <h3>Related Reading</h3>
-        <div class="related-articles-grid">
-          <a href="/insights/crypto-tax-reality" class="related-article-card">
-            <div class="related-article-card__category">Technology & Finance</div>
-            <div class="related-article-card__title">The Hidden Full-Time Job: Why Crypto Trading Isn't a Side Hustle</div>
-            <div class="related-article-card__description">The brutal reality of crypto tax compliance that nobody warns you about</div>
-          </a>
-        </div>
-      </nav>
-
+    <!-- Brand Separator Line -->
+    <div class="brand-separator" aria-hidden="true">
+      <div class="separator-line"></div>
+      <svg width="1920" height="200" viewBox="0 0 1920 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g class="connection-lines">
+          <line x1="390" y1="90" x2="570" y2="66" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5"/>
+          <line x1="570" y1="66" x2="750" y2="115" stroke="rgba(76, 175, 80, 0.2)" stroke-width="1.5"/>
+          <line x1="750" y1="115" x2="960" y2="74" stroke="rgba(76, 175, 80, 0.25)" stroke-width="1.5"/>
+          <line x1="960" y1="74" x2="1170" y2="113" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5"/>
+          <line x1="1170" y1="113" x2="1350" y2="82" stroke="rgba(76, 175, 80, 0.18)" stroke-width="1.5"/>
+          <line x1="1350" y1="82" x2="1530" y2="99" stroke="rgba(76, 175, 80, 0.15)" stroke-width="1.5"/>
+        </g>
+        <g class="node-1">
+          <circle cx="390" cy="90" r="5" fill="rgba(76, 175, 80, 0.7)"/>
+          <circle class="ring" cx="390" cy="90" r="10" stroke="rgba(76, 175, 80, 0.4)" stroke-width="1.5" fill="none"/>
+          <circle cx="390" cy="90" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+        </g>
+        <g class="node-2">
+          <circle cx="570" cy="66" r="4" fill="rgba(255, 255, 255, 0.6)"/>
+          <circle cx="570" cy="66" r="1.5" fill="rgba(76, 175, 80, 0.8)"/>
+        </g>
+        <g class="node-3">
+          <circle cx="750" cy="115" r="6" fill="rgba(76, 175, 80, 0.75)"/>
+          <circle class="ring-2" cx="750" cy="115" r="12" stroke="rgba(76, 175, 80, 0.35)" stroke-width="1.5" fill="none"/>
+          <circle cx="750" cy="115" r="2.5" fill="rgba(255, 255, 255, 0.95)"/>
+        </g>
+        <g class="node-4">
+          <circle cx="960" cy="74" r="5" fill="rgba(76, 175, 80, 0.7)"/>
+          <circle class="ring-3" cx="960" cy="74" r="10" stroke="rgba(76, 175, 80, 0.4)" stroke-width="1.5" fill="none"/>
+          <circle cx="960" cy="74" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+        </g>
+        <g class="node-5">
+          <circle cx="1170" cy="113" r="4.5" fill="rgba(255, 255, 255, 0.65)"/>
+          <circle cx="1170" cy="113" r="1.5" fill="rgba(76, 175, 80, 0.75)"/>
+        </g>
+        <g class="node-6">
+          <circle cx="1350" cy="82" r="5" fill="rgba(76, 175, 80, 0.7)"/>
+          <circle class="ring-4" cx="1350" cy="82" r="10" stroke="rgba(76, 175, 80, 0.35)" stroke-width="1.5" fill="none"/>
+          <circle cx="1350" cy="82" r="2" fill="rgba(255, 255, 255, 0.9)"/>
+        </g>
+        <g class="node-7">
+          <circle cx="1530" cy="99" r="4" fill="rgba(76, 175, 80, 0.65)"/>
+          <circle cx="1530" cy="99" r="1.5" fill="rgba(255, 255, 255, 0.85)"/>
+        </g>
+      </svg>
     </div>
-  </article>
+
+    <!-- ARTICLE BODY -->
+    <article class="insight-body">
+      <div class="container">
+
+        <p>Some moments arrive quietly, but stay with you. A small mint pot in a welcome pack did exactly that.</p>
+
+        <h2>A Gift That Meant More Than Expected</h2>
+
+        <p>
+          I am starting a new role next week. A new team, a new environment, and a new chapter that genuinely aligns with how I work.
+          Among the welcome materials was a small pot for growing mint. A simple gesture, but one that carried a weight I did not expect.
+        </p>
+
+        <p>
+          Mint has always been linked to someone I lost many years ago. His name was Will. He was sharp, thoughtful, and quietly funny in that way that stays with you.
+          He loved plants, understood them deeply, and always dreamed of working at Kew Gardens.
+        </p>
+
+        <p>
+          After he passed, I found a bench at Kew dedicated to him. Every year on his anniversary, I go there, sit for a moment, and take in the stillness.
+          It has become a ritual that grounds me.
+        </p>
+
+        <!-- IMAGE: Will's bench at Kew Gardens -->
+        <figure class="insight-media insight-media--image">
+          <img src="/images/will-kew-bench.jpg" alt="A memorial bench dedicated to Will at Kew Gardens, surrounded by greenery in a quiet corner of the botanical gardens" loading="lazy">
+          <figcaption>The bench at Kew Gardens dedicated to Will</figcaption>
+        </figure>
+
+        <p>
+          Seeing mint seeds in my welcome pack felt more than coincidental. It felt like a small connection across time,
+          a reminder that memory often waits quietly until it wants to be noticed.
+        </p>
+
+        <h2>Will's MINT Playlist</h2>
+
+        <p>
+          There is also a <a href="https://open.spotify.com/playlist/2QkWon6dRe5N0qVxslZ3Z2?si=f0d97e1bd87f456a" target="_blank" rel="noopener noreferrer">playlist called MINT</a>.
+          It was never debated or curated by one person. Instead, everyone who loved him contributed songs they knew he adored.
+          Tracks that were played during the gathering after the ceremony, and music that reflected his personality, his humour, and his energy.
+        </p>
+
+        <p>It is a shared memory, shaped by many people, held together through music.</p>
+
+        <!-- MID ARTICLE HIGHLIGHT QUOTE -->
+        <aside class="insight-quote">
+          <blockquote>
+            <p>
+              Memory is not held in a single place. It sits in a bench at Kew, a shared playlist,
+              a song in a tribute video, and even a small mint pot arriving at the right moment.
+            </p>
+          </blockquote>
+        </aside>
+
+        <h2>A Tribute in Music</h2>
+
+        <p>
+          Years ago, a band called Candy Apple Blue invited listeners to submit photos of loved ones they had lost,
+          for a tribute video to their song <em>Not A Day Goes By</em>. I sent in a picture of Will.
+          Seeing him included in that video felt like a quiet but meaningful tribute,
+          a moment shared far beyond our immediate circle, carried by music.
+        </p>
+
+        <!-- VIDEO: Candy Apple Blue – Not A Day Goes By -->
+        <div class="insight-media insight-media--video">
+          <iframe
+            width="100%"
+            height="500"
+            src="https://www.youtube.com/embed/iaw_ABJzgaE"
+            frameborder="0"
+            allowfullscreen
+            title="Candy Apple Blue - Not A Day Goes By music video tribute">
+          </iframe>
+        </div>
+
+        <h2>A Moment That Connected Past and Present</h2>
+
+        <p>
+          When I opened my welcome pack and saw the mint pot, it brought all of those moments together:
+          the bench at Kew, the playlist, the tribute video, and the people who helped shape those memories.
+        </p>
+
+        <p>
+          It reminded me that beginnings do not have to replace what came before.
+          Sometimes they sit alongside the past, acknowledging it without overshadowing it.
+        </p>
+
+        <!-- IMAGE: Mint seed pot from welcome pack -->
+        <figure class="insight-media insight-media--image">
+          <img src="/images/mint-seed-pot.jpg" alt="A small terracotta pot containing mint seeds from a new employer's welcome pack, representing unexpected connections between past and future" loading="lazy">
+          <figcaption>The mint pot from the welcome pack that brought everything together</figcaption>
+        </figure>
+
+        <h2>Carrying Memory Forward</h2>
+
+        <p>
+          Taking on this new role feels like the right move: more technical, more structured, and more aligned with what I do best.
+          And yet, this small coincidence made it feel personal in a way I did not anticipate.
+        </p>
+
+        <p>
+          We carry our people with us, in habits, in music, in places, and in subtle reminders that appear when we least expect them.
+          Mint, in its simplicity, has tied together part of my past with where I am heading next.
+        </p>
+
+        <p>Some stories continue quietly. This one just found its next page.</p>
+
+      </div>
+    </article>
+
+    <!-- CTA STRIP -->
+    <section class="insight-cta">
+      <div class="container">
+        <h2>Explore what comes next</h2>
+        <div class="insight-cta__buttons">
+          <a href="/approach" class="btn btn--primary">Explore Our Approach</a>
+          <a href="/contact" class="btn btn--secondary">Start the Conversation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT THE AUTHOR -->
+    <section class="insight-author">
+      <div class="container">
+        <div class="insight-author__inner">
+          <div class="insight-author__meta">
+            <h3>About the author</h3>
+            <p>
+              Andreas is the founder and principal consultant at LT.Solutions,
+              specialising in Atlassian based IT service management, workflow design, and knowledge enablement.
+              He uses a mix of hands on experience, structured frameworks, and thoughtful storytelling
+              to help teams modernise how they work.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <!-- Footer -->
   <footer class="site-footer main-footer">
