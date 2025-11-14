@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sometimes the smallest gestures carry the weight of entire friendships. A pot of mint seeds, a new beginning, and memories that refuse to fade.">
+  <meta name="description" content="A reflective story about new beginnings, memory, and a quiet coincidence involving mint seeds, a lost friend, and a new role.">
   <title>A New Beginning, A Familiar Memory | LT.Solutions</title>
 
   <!-- Favicon -->
@@ -14,7 +14,7 @@
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="A New Beginning, A Familiar Memory">
-  <meta property="og:description" content="Sometimes the smallest gestures carry the weight of entire friendships. A pot of mint seeds, a new beginning, and memories that refuse to fade.">
+  <meta property="og:description" content="A reflective story about new beginnings, memory, and a quiet coincidence involving mint seeds, a lost friend, and a new role.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://lt.solutions/insights/new-beginning-familiar-memory">
   <meta property="og:image" content="https://lt.solutions/images/og/new-beginning-memory.jpg">
@@ -25,7 +25,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="A New Beginning, A Familiar Memory">
-  <meta name="twitter:description" content="A pot of mint seeds, a friend's memory, and the unexpected connections that tie our past to our future.">
+  <meta name="twitter:description" content="A reflective story about new beginnings, memory, and a quiet coincidence involving mint seeds, a lost friend, and a new role.">
   <meta name="twitter:image" content="https://lt.solutions/images/og/new-beginning-memory.jpg">
 
   <!-- Preconnect for Performance -->
@@ -48,7 +48,7 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "A New Beginning, A Familiar Memory",
-    "description": "Sometimes the smallest gestures carry the weight of entire friendships. A pot of mint seeds, a new beginning, and memories that refuse to fade.",
+    "description": "A reflective story about new beginnings, memory, and a quiet coincidence involving mint seeds, a lost friend, and a new role.",
     "author": {
       "@type": "Person",
       "name": "Andreas Nyberg"
@@ -226,11 +226,13 @@
 
     /* Image styling */
     .article-image {
-      margin: 3rem 0;
+      margin: 3rem auto;
       text-align: center;
+      max-width: 800px;
     }
 
     .article-image img {
+      width: 100%;
       max-width: 100%;
       border-radius: 12px;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
@@ -240,7 +242,8 @@
       margin-top: 1rem;
       font-size: 0.95rem;
       font-style: italic;
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 0.5);
+      text-align: center;
     }
 
     /* Callout box styling */
@@ -248,7 +251,7 @@
       background: rgba(76, 175, 80, 0.08);
       border-left: 3px solid rgba(76, 175, 80, 0.5);
       padding: 2rem;
-      margin: 2rem 0;
+      margin: 3rem 0;
       border-radius: 4px;
     }
 
@@ -280,7 +283,8 @@
 
     /* Video embed */
     .video-embed {
-      margin: 3rem 0;
+      margin: 3rem auto;
+      max-width: 800px;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
@@ -294,7 +298,7 @@
 
     /* Blockquote styling */
     blockquote {
-      margin: 2rem 0;
+      margin: 3rem 0;
       padding: 1.5rem 2rem;
       background: rgba(76, 175, 80, 0.05);
       border-left: 4px solid rgba(76, 175, 80, 0.5);
@@ -383,6 +387,63 @@
       color: rgba(255, 255, 255, 0.7);
     }
 
+    /* CTA Section */
+    .article-cta {
+      background: rgba(76, 175, 80, 0.05);
+      border: 1px solid rgba(76, 175, 80, 0.15);
+      border-radius: 12px;
+      padding: 3rem 2rem;
+      margin: 4rem 0;
+      text-align: center;
+    }
+
+    .article-cta h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-cta__buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .article-cta__button {
+      display: inline-block;
+      padding: 0.875rem 2rem;
+      border-radius: 4px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .article-cta__button--primary {
+      background: rgba(76, 175, 80, 0.2);
+      border: 1px solid rgba(76, 175, 80, 0.5);
+      color: #ffffff;
+    }
+
+    .article-cta__button--primary:hover {
+      background: rgba(76, 175, 80, 0.3);
+      border-color: rgba(76, 175, 80, 0.7);
+      transform: translateY(-2px);
+    }
+
+    .article-cta__button--secondary {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .article-cta__button--secondary:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+    }
+
     /* Footer dark theme */
     .main-footer {
       background: rgba(5, 10, 20, 1);
@@ -401,6 +462,11 @@
 
       .video-embed iframe {
         height: 300px;
+      }
+
+      .article-cta__buttons {
+        flex-direction: column;
+        align-items: stretch;
       }
     }
   </style>
@@ -444,7 +510,7 @@
     <div class="container page-hero__content">
       <span class="section-tag">Personal Reflections</span>
       <h1 class="page-hero__title">A New Beginning, A Familiar Memory</h1>
-      <p class="page-hero__subtitle">Sometimes the smallest gestures carry the weight of entire friendships</p>
+      <p class="page-hero__subtitle">On carrying the past forward into new chapters</p>
       <div class="page-hero__meta">
         <time datetime="2025-11-14">14 November 2025</time> • 6 min read • Andreas Nyberg
       </div>
@@ -457,146 +523,151 @@
 
       <!-- Introduction -->
       <p>
-        Starting a new job is usually a practical moment—new laptop, new logins, new team. But every now and then, life hands you something that feels a bit more symbolic, something that taps you on the shoulder and says: this chapter isn't just beginning, it's connecting.
+        This week I received a welcome pack for the role I start on Monday. Inside, among the standard items, was a small pot containing mint seeds. That single detail turned a routine moment into something more significant. Mint has been connected to the memory of someone I lost years ago, and finding it here, at the start of a new chapter, created an unexpected sense of continuity.
       </p>
 
       <p>
-        This week, I received a welcome pack from the organisation I'm joining on Monday. Among the usual bits—branded notebook, company swag, the standard "we're excited to have you" letter—there was a small plant pot with a packet of mint seeds.
+        This is about how seemingly small things can carry weight, how memory travels with us, and what it means to move forward while honouring the people who shaped who we are.
+      </p>
+
+      <!-- Section 1 -->
+      <h2>A Gift That Meant More Than Expected</h2>
+
+      <p>
+        The welcome pack arrived with the usual contents: branded materials, an onboarding guide, practical information. The mint seeds were tucked in as a small gesture, likely chosen without particular thought. But for me, they landed differently.
       </p>
 
       <p>
-        A simple gift, nothing dramatic. The kind of thing most people would smile at, set on a windowsill, and probably forget to water. But for me, it landed in a place I didn't expect.
-      </p>
-
-      <!-- The Friend Who Loved Plants -->
-      <h2>The Friend Who Loved Plants</h2>
-
-      <p>
-        Mint has always been tied to the memory of someone I lost many years ago. His name was Will. A close friend, the kind of friend you only get once in a lifetime if you're lucky.
+        Mint has always been tied to Will, a close friend I lost many years ago. He was the kind of person you only meet once if you are fortunate. Sharp, perceptive, endearingly grumpy. He had little patience for pretence and no interest in being told what he wanted to hear. If you asked for his opinion, you received it, unfiltered and direct.
       </p>
 
       <p>
-        Will was clever, sharp-witted, grumpy in that endearing way that made you work harder to earn his smile. He was the person you'd call when you needed someone to tell you the truth, not what you wanted to hear. And he was completely, utterly obsessed with plants.
+        That honesty made him difficult at times, but it also made him invaluable. He challenged assumptions, sharpened thinking, and refused to let mediocrity slide. He was also completely obsessed with plants.
+      </p>
+
+      <!-- Section 2 -->
+      <h2>Remembering Will</h2>
+
+      <p>
+        Will's dream was to work at Kew Gardens. Not as a visitor or occasional volunteer, but as someone embedded in the greenhouses and botanical collections, surrounded by the living systems he understood better than most people. He could talk for hours about soil chemistry, Latin classifications, and the specific conditions required to grow herbs most of us only recognise as ingredients.
       </p>
 
       <p>
-        His dream was to work at Kew Gardens. Not just visit, not just volunteer—he wanted to be there among the greenhouses and botanical collections, surrounded by the living things he understood better than most people. He'd talk for hours about soil composition, Latin plant names, the perfect growing conditions for herbs that most of us only knew as pizza toppings.
-      </p>
-
-      <p>
-        Mint was his thing. He grew it everywhere—in pots, in gardens, in spaces you wouldn't think could sustain anything green. He'd harvest it, dry it, make tea from it, give bundles of it away like some kind of herbal evangelist. The smell of fresh mint still brings him back, instantly and vividly.
+        Mint was his signature. He cultivated it everywhere: windowsills, garden beds, improvised containers in spaces that seemed too small to sustain anything green. He harvested it, dried it, brewed tea from it, and distributed bundles of it like a quiet evangelist. The scent of fresh mint still brings him back immediately.
       </p>
 
       <figure class="article-image">
-        <img src="/images/will-kew-bench.jpg" alt="Memorial bench for Will at Kew Gardens" loading="lazy">
-        <figcaption>Will's bench at Kew Gardens—a place I return to every year</figcaption>
+        <img src="/images/will-kew-bench.jpg" alt="A memorial bench dedicated to Will at Kew Gardens, surrounded by greenery in a quiet corner of the botanical gardens" loading="lazy">
+        <figcaption>Will's bench at Kew Gardens, a place I return to every year</figcaption>
       </figure>
 
       <p>
-        After he passed, I found a bench there dedicated to him. It's tucked away in a quiet corner, surrounded by the greenery he loved. Every year, I go. I sit. I have a quiet moment. I mark another year since he left.
+        After he passed, I discovered a bench at Kew Gardens dedicated to him. It sits in a quiet corner, surrounded by the greenery he loved. Every year, I visit. I sit. I spend a quiet moment there, marking another year since he left.
       </p>
 
       <p>
-        It's become a ritual, not out of obligation, but because it feels necessary. A way to honour someone who meant something, who shaped how I think, who challenged me to be better, sharper, more honest.
+        It has become a ritual, not out of obligation, but because it feels necessary. A way to honour someone who meant something, who influenced how I think, who set standards I still try to meet.
       </p>
 
-      <!-- Music Remembers -->
-      <h2>Music Remembers for Us</h2>
+      <!-- Section 3 -->
+      <h2>Mint as a Thread Through Time</h2>
 
       <p>
-        There's also a playlist called "Mint". A collection of tracks we shared, argued about, laughed at, and played far too loudly in cars, bedrooms, badly lit pubs. Music has this peculiar ability to hold memory in a way nothing else can.
+        There is also a playlist called Mint. It holds tracks we shared, argued about, and played too loudly in cars, bedrooms, and poorly lit pubs. Music has a particular ability to preserve memory in ways other things cannot.
       </p>
 
       <p>
-        You hear a song and suddenly you're back there—same conversation, same stupid joke, same feeling of being understood by someone who saw through your nonsense. The playlist isn't sacred or untouchable. It just exists, quietly, a reminder that some friendships transcend timelines.
+        A song plays, and suddenly you are back in a specific conversation, reliving a joke that should not still be funny, feeling understood by someone who saw through the noise. The playlist is not sacred. It simply exists, a reminder that some friendships extend beyond their original timelines.
+      </p>
+
+      <!-- Section 4 -->
+      <h2>A Tribute in Music</h2>
+
+      <p>
+        Another thread in this memory involves a band called Candy Apple Blue. They invited fans to submit photos of people they had lost, to be included in a music video for their song *Not A Day Goes By*. I sent in a picture of Will.
+      </p>
+
+      <p>
+        It became part of something larger: a tribute woven into a piece of art that reaches people across the world. Every time I watch that video, I see him there, frozen in a moment, part of a collective act of remembrance for people who mattered.
       </p>
 
       <div class="callout-box">
-        <h4>Candy Apple Blue – Not A Day Goes By</h4>
+        <h4>Candy Apple Blue: Not A Day Goes By</h4>
         <p>
-          Another part of that memory is linked to a band called <a href="https://www.youtube.com/watch?v=iaw_ABJzgaE" target="_blank" rel="noopener noreferrer">Candy Apple Blue</a>. They once invited their fans to submit photos of loved ones they had lost, to be included in a music video for <em>Not A Day Goes By</em>.
-        </p>
-        <p>
-          I sent in a picture of Will, and it became part of something larger—a small but meaningful tribute inside a piece of art that reaches people all over the world. Every time I watch that video, I see him there, frozen in a moment, part of a collective remembrance for people who mattered.
+          The band <a href="https://www.youtube.com/watch?v=iaw_ABJzgaE" target="_blank" rel="noopener noreferrer">Candy Apple Blue</a> created a space for their fans to honour lost loved ones by including submitted photos in their music video. Will's image became part of that tribute, a small but meaningful inclusion in a work that acknowledges grief and memory with care.
         </p>
       </div>
 
       <div class="video-embed">
         <iframe
           src="https://www.youtube.com/embed/iaw_ABJzgaE"
-          title="Candy Apple Blue - Not A Day Goes By"
+          title="Candy Apple Blue - Not A Day Goes By music video tribute"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen>
         </iframe>
       </div>
 
-      <!-- When Past Meets Future -->
-      <h2>When the Past Meets the Future</h2>
+      <!-- Section 5 -->
+      <h2>Beginning a New Chapter</h2>
 
       <p>
-        So when this small pot of mint seeds showed up in my new-job welcome pack, it felt like a quiet nudge. A reminder that even when life moves forward—and it does, relentlessly—some memories walk with you.
+        When the mint seeds arrived in my welcome pack, they created a connection I had not anticipated. I do not believe in orchestrated cosmic signals, but I do think we notice patterns when we are ready to see them, when circumstances align in ways that feel meaningful.
       </p>
 
       <figure class="article-image">
-        <img src="/images/mint-seed-pot.jpg" alt="Small pot of mint seeds from welcome pack" loading="lazy">
+        <img src="/images/mint-seed-pot.jpg" alt="A small terracotta pot containing mint seeds from a new employer's welcome pack, representing unexpected connections between past and future" loading="lazy">
         <figcaption>The unexpected gift that connected past and future</figcaption>
       </figure>
 
       <p>
-        I'm not someone who leans heavily into signs or cosmic meanings. I don't think the universe orchestrates these things deliberately. But I do think we notice patterns when we're ready to see them, when something aligns in a way that feels meaningful.
+        The mint, the bench, the playlist, the music video, and now this pot of seeds have all become part of the same story. They tie themselves into this new chapter I am beginning.
       </p>
 
       <p>
-        All of these threads—the mint, the bench, the playlist, the music video, and now this unexpected pot in a welcome pack—feel like they've tied themselves into the start of this new chapter.
-      </p>
-
-      <!-- Starting Something Right -->
-      <h2>Starting Something Right</h2>
-
-      <p>
-        I'm about to join a new team and step into work that aligns with how I want to operate. More structured, more technical, and more in tune with what I'm good at. It feels like the right move at the right time.
+        I am joining a team and stepping into work that aligns with how I want to operate: structured, technically focused, and well-matched to what I do best. After years of navigating complex environments, building LT.Solutions, and managing the unpredictable demands of consultancy work, this feels like a deliberate move toward clarity and focus.
       </p>
 
       <p>
-        After years of navigating complex technical environments, after building LT.Solutions into something I'm proud of, after the chaos of crypto tax nightmares and late-night troubleshooting sessions, this feels like a deliberate step toward clarity and focus.
-      </p>
-
-      <p>
-        And this little coincidence with the mint seeds has made it feel strangely personal too. Not in a mystical, fate-driven way, but in the sense that you carry your past with you—your people, your influences, your stories—into every next step.
+        The coincidence with the mint seeds made it personal in a way I had not expected. Not mystical, but grounding. A reminder that you carry your past with you: the people, the influences, the standards, the stories. They do not disappear. They inform every next step.
       </p>
 
       <blockquote>
         <p>
-          You don't leave your friends behind when they're gone. You carry them forward, in the choices you make, the standards you hold, the moments you pause to remember.
+          You do not leave your friends behind when they are gone. You carry them forward in the choices you make, the standards you hold, and the moments you pause to remember.
         </p>
       </blockquote>
 
       <p>
-        Will would have liked this job, I think. He'd have asked sharp questions about what I'd actually be doing, challenged me on whether it was genuinely the right fit, then grudgingly admitted it sounded decent. That's how we worked.
+        Will would have interrogated this decision thoroughly. He would have asked direct questions about the role, challenged whether it was genuinely the right fit, then grudgingly conceded it sounded reasonable. That was how we worked.
+      </p>
+
+      <!-- Section 6 -->
+      <h2>Carrying Memory Into What Comes Next</h2>
+
+      <p>
+        This is the beginning of something new. It already feels grounded in what came before.
       </p>
 
       <p>
-        So I'm taking the mint seeds as a sign of sorts—not the mystical type, more a reminder that you carry your past, your people, your influences, and your stories into every next step. And sometimes, life nods back and says: yes, keep going.
-      </p>
-
-      <!-- This Is the Beginning -->
-      <h2>This Is the Beginning</h2>
-
-      <p>
-        This is the beginning of something new. And somehow, it already feels familiar.
+        The mint will grow. The memories remain. The work ahead will be challenging and rewarding in ways I have not yet fully mapped. Somewhere in all of that, there is a thread connecting where I have been to where I am going.
       </p>
 
       <p>
-        The mint will grow. The memories will stay. The work will be challenging and rewarding in ways I haven't fully mapped out yet. And somewhere in all of that, there's a thread connecting where I've been to where I'm going.
+        New beginnings do not erase the past. They build on it. The people who shaped us, the lessons they taught, and the standards they set continue to inform how we move forward. That continuity matters. It grounds confidence, clarifies purpose, and reminds us why we set the bar where we do.
       </p>
 
       <p>
-        <strong>Here's to new beginnings that honour old friendships. Here's to mint seeds and memory. Here's to carrying the people who shaped us into the chapters they'll never see.</strong>
+        Will would tell me to stop overcomplicating it and water the plant. So I will.
       </p>
 
-      <p>
-        Will would have told me to stop being sentimental and just water the damn plant. So that's what I'll do.
-      </p>
+      <!-- CTA Section -->
+      <aside class="article-cta">
+        <h3>Explore More from LT.Solutions</h3>
+        <div class="article-cta__buttons">
+          <a href="/approach" class="article-cta__button article-cta__button--primary">Our Approach</a>
+          <a href="/contact" class="article-cta__button article-cta__button--secondary">Start the Conversation</a>
+        </div>
+      </aside>
 
       <!-- About the Author -->
       <aside class="article-author-bio">
@@ -605,10 +676,10 @@
           <strong>Andreas Nyberg</strong> is the founder of LT.Solutions and a Technical Architect specializing in Atlassian platforms and ITSM. He believes in carrying forward the people who shaped us, honouring their memory through the work we do and the standards we hold.
         </p>
         <p>
-          This article is dedicated to Will, who taught me that it's okay to be grumpy, that plants are worth obsessing over, and that real friendship means telling the truth even when it's uncomfortable. His bench at Kew Gardens remains a place of quiet reflection and annual remembrance.
+          This article is dedicated to Will, who demonstrated that integrity matters more than comfort, that plants deserve serious attention, and that real friendship means honest feedback even when it stings. His bench at Kew Gardens remains a place of quiet reflection and annual remembrance.
         </p>
         <p>
-          If you've lost someone who mattered, find your bench. Visit it. Remember them. They're worth it.
+          If you have lost someone who mattered, find your bench. Visit it. Remember them. They are worth it.
         </p>
       </aside>
 
@@ -616,7 +687,7 @@
       <nav class="related-articles" aria-label="Related Articles">
         <h3>Related Reading</h3>
         <div class="related-articles-grid">
-          <a href="crypto-tax-reality" class="related-article-card">
+          <a href="/insights/crypto-tax-reality" class="related-article-card">
             <div class="related-article-card__category">Technology & Finance</div>
             <div class="related-article-card__title">The Hidden Full-Time Job: Why Crypto Trading Isn't a Side Hustle</div>
             <div class="related-article-card__description">The brutal reality of crypto tax compliance that nobody warns you about</div>
