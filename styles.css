@@ -4811,20 +4811,26 @@ select.form-input {
   color: rgba(255, 255, 255, 0.65);
 }
 
+/* Insights Preview - Standardized Card Design */
 .insights-preview {
   max-width: 900px;
   margin: 0 auto var(--spacing-lg);
+  --card-padding: 2rem;
+  --card-border-radius: 12px;
+  --card-gap: 0;
+  --image-aspect-ratio: 16 / 9;
 }
 
 .insight-preview-card {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: var(--spacing-lg);
+  gap: var(--card-gap);
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  border-radius: var(--card-border-radius);
   overflow: hidden;
   transition: all 0.4s ease;
+  min-height: 350px;
 }
 
 .insight-preview-card:hover {
@@ -4837,7 +4843,11 @@ select.form-input {
 .insight-preview-card__image {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: var(--image-aspect-ratio);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .insight-preview-card__image img {
@@ -4845,6 +4855,16 @@ select.form-input {
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
+}
+
+/* Special padding for specific images that need contain mode */
+.insight-preview-card__image--padded {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.insight-preview-card__image--padded img {
+  object-fit: contain;
 }
 
 .insight-preview-card:hover .insight-preview-card__image img {
@@ -4864,10 +4884,11 @@ select.form-input {
   letter-spacing: 0.05em;
   border-radius: 4px;
   backdrop-filter: blur(10px);
+  z-index: 1;
 }
 
 .insight-preview-card__content {
-  padding: var(--spacing-lg);
+  padding: var(--card-padding);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -4878,6 +4899,7 @@ select.form-input {
   color: rgba(255, 255, 255, 0.5);
   font-style: italic;
   margin-bottom: 1rem;
+  display: block;
 }
 
 .insight-preview-card__title {
@@ -4886,6 +4908,7 @@ select.form-input {
   font-weight: 700;
   line-height: 1.3;
   margin-bottom: 1rem;
+  margin-top: 0;
 }
 
 .insight-preview-card__title a {
@@ -4903,6 +4926,7 @@ select.form-input {
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 1.5rem;
+  margin-top: 0;
 }
 
 .insight-preview-card__link {
@@ -4912,6 +4936,7 @@ select.form-input {
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
+  margin-top: auto;
 }
 
 .insight-preview-card__link:hover {
@@ -4955,21 +4980,30 @@ select.form-input {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .insights-preview {
+    --card-padding: 1.5rem;
+  }
+
   .insight-preview-card {
     grid-template-columns: 1fr;
     gap: 0;
+    min-height: auto;
   }
 
   .insight-preview-card__content {
-    padding: var(--spacing-md);
+    padding: var(--card-padding);
   }
 
   .insight-preview-card__title {
     font-size: 1.5rem;
   }
 
+  .insight-preview-card__excerpt {
+    font-size: 1rem;
+  }
+
   .insights-carousel__track {
-    min-height: 500px;
+    min-height: 550px;
   }
 }
 
