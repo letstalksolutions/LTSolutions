@@ -4848,6 +4848,7 @@ select.form-input {
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
 }
 
 .insight-preview-card__image img {
@@ -4855,14 +4856,10 @@ select.form-input {
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
+  border-radius: 4px;
 }
 
 /* Special padding for specific images that need contain mode */
-.insight-preview-card__image--padded {
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.02);
-}
-
 .insight-preview-card__image--padded img {
   object-fit: contain;
 }
@@ -4873,8 +4870,8 @@ select.form-input {
 
 .insight-preview-card__tag {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: 1.5rem;
+  left: 1.5rem;
   padding: 0.5rem 1rem;
   background: rgba(75, 163, 195, 0.95);
   color: var(--color-white);
