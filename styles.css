@@ -4924,6 +4924,35 @@ select.form-input {
   margin-top: var(--spacing-lg);
 }
 
+/* Insights Carousel */
+.insights-carousel__track {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.insights-carousel__track .insight-preview-card {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.insights-carousel__track .insight-preview-card.active {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+}
+
+.insights-carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: var(--spacing-lg);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .insight-preview-card {
@@ -4937,6 +4966,10 @@ select.form-input {
 
   .insight-preview-card__title {
     font-size: 1.5rem;
+  }
+
+  .insights-carousel__track {
+    min-height: 500px;
   }
 }
 

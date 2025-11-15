@@ -399,8 +399,57 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Listen to scroll events
     window.addEventListener('scroll', requestTick, { passive: true });
-    
+
     // Initial update
     updateScrollProgress();
+  }
+
+  // Insights Carousel
+  const insightsCarousel = document.querySelector('.insights-carousel__track');
+  if (insightsCarousel) {
+    const cards = insightsCarousel.querySelectorAll('.insight-preview-card');
+    const dots = document.querySelectorAll('.insights-carousel__dots .carousel-dot');
+    let currentIndex = 0;
+    let autoRotateInterval;
+
+    function showCard(index) {
+      // Remove active class from all cards and dots
+      cards.forEach(card => card.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+
+      // Add active class to current card and dot
+      cards[index].classList.add('active');
+      dots[index].classList.add('active');
+      currentIndex = index;
+    }
+
+    function nextCard() {
+      const nextIndex = (currentIndex + 1) % cards.length;
+      showCard(nextIndex);
+    }
+
+    function startAutoRotate() {
+      autoRotateInterval = setInterval(nextCard, 5000); // Change every 5 seconds
+    }
+
+    function stopAutoRotate() {
+      clearInterval(autoRotateInterval);
+    }
+
+    // Dot click handlers
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        showCard(index);
+        stopAutoRotate();
+        startAutoRotate(); // Restart auto-rotate after manual interaction
+      });
+    });
+
+    // Start auto-rotation
+    startAutoRotate();
+
+    // Pause on hover
+    insightsCarousel.addEventListener('mouseenter', stopAutoRotate);
+    insightsCarousel.addEventListener('mouseleave', startAutoRotate);
   }
 });
