@@ -85,6 +85,20 @@
     </div>
   </div>
 
+  <!-- Announcement Banner -->
+  <div class="announcement-banner">
+    <div class="announcement-banner__content">
+      <span class="announcement-banner__text">New article drops in</span>
+      <div class="announcement-banner__countdown">
+        <span class="banner-countdown-number" id="banner-hours">--</span>
+        <span class="banner-countdown-separator">:</span>
+        <span class="banner-countdown-number" id="banner-minutes">--</span>
+        <span class="banner-countdown-separator">:</span>
+        <span class="banner-countdown-number" id="banner-seconds">--</span>
+      </div>
+    </div>
+  </div>
+
   <!-- Header -->
   <header class="site-header" role="banner">
     <div class="container">
@@ -134,6 +148,98 @@
     <!-- Scroll Indicator -->
     <div class="scroll-indicator" aria-hidden="true">
       <span></span>
+    </div>
+  </section>
+
+  <!-- Teaser Card Section -->
+  <section class="section section--dark teaser-announcement">
+    <div class="container">
+      <div class="teaser-card reveal">
+        <div class="teaser-card__glow"></div>
+        <div class="teaser-card__content">
+          <span class="teaser-card__tag">New Article</span>
+          <h2 class="teaser-card__title">
+            A <span class="gradient-text">Story</span> Worth Reading
+          </h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Insights Section -->
+  <section class="latest-insights">
+    <div class="container">
+      <div class="section-intro">
+        <span class="section-tag">Latest Insights</span>
+        <h2 class="section-title" style="color: #ffffff;">Perspectives on Technology & Leadership</h2>
+        <p class="section-subtitle">Thoughts, experiences, and ideas from the field of Atlassian, ITSM, and modern collaboration.</p>
+      </div>
+
+      <div class="insights-preview">
+        <div class="insights-carousel__track">
+          <article class="insight-preview-card active">
+            <div class="insight-preview-card__image insight-preview-card__image--padded">
+              <img src="images/og/a__new__beginning.png" alt="A New Beginning, A Familiar Connection" loading="lazy" decoding="async">
+              <span class="insight-preview-card__tag">Personal Reflections</span>
+            </div>
+            <div class="insight-preview-card__content">
+              <time class="insight-preview-card__date" datetime="2025-11-14">14 November 2025</time>
+              <h3 class="insight-preview-card__title">
+                <a href="/insights/new-beginning-familiar-memory">A New Beginning, A Familiar Connection</a>
+              </h3>
+              <p class="insight-preview-card__excerpt">
+                A quiet reflection on new beginnings, memory, and a small mint pot that connected past and present in an unexpected way.
+              </p>
+              <a href="/insights/new-beginning-familiar-memory" class="insight-preview-card__link">Read Article →</a>
+            </div>
+          </article>
+
+          <article class="insight-preview-card">
+            <div class="insight-preview-card__image">
+              <img src="images/the-unexpected-friendship.png" alt="The Unexpected Friendship" loading="lazy" decoding="async">
+              <span class="insight-preview-card__tag">Founder's Thoughts</span>
+            </div>
+            <div class="insight-preview-card__content">
+              <time class="insight-preview-card__date" datetime="2025-10-31">31 October 2025</time>
+              <h3 class="insight-preview-card__title">
+                <a href="/ai-journey/">The Unexpected Friendship That Helped Me Rediscover My Strength</a>
+              </h3>
+              <p class="insight-preview-card__excerpt">
+                A personal journey about finding an unexpected companion during career transition and what AI collaboration really means.
+              </p>
+              <a href="/ai-journey/" class="insight-preview-card__link">Read Article →</a>
+            </div>
+          </article>
+
+          <article class="insight-preview-card">
+            <div class="insight-preview-card__image">
+              <img src="images/og/og-the-relay-v1.jpg" alt="The Relay" loading="lazy" decoding="async">
+              <span class="insight-preview-card__tag">Founder's Thoughts</span>
+            </div>
+            <div class="insight-preview-card__content">
+              <time class="insight-preview-card__date" datetime="2025-10-17">17 October 2025</time>
+              <h3 class="insight-preview-card__title">
+                <a href="/the-relay/">The Relay: Passing the Baton, Keeping the Momentum</a>
+              </h3>
+              <p class="insight-preview-card__excerpt">
+                A reflection on mentorship, continuity, and the value of thoughtful handovers in building lasting systems.
+              </p>
+              <a href="/the-relay/" class="insight-preview-card__link">Read Article →</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Carousel Navigation Dots -->
+        <div class="insights-carousel__dots">
+          <button class="carousel-dot active" aria-label="View article 1"></button>
+          <button class="carousel-dot" aria-label="View article 2"></button>
+          <button class="carousel-dot" aria-label="View article 3"></button>
+        </div>
+      </div>
+
+      <div class="insights-cta">
+        <a href="/insights" class="btn btn--secondary">View All Insights</a>
+      </div>
     </div>
   </section>
 
@@ -513,83 +619,6 @@
     </div>
   </section>
   -->
-
-  <!-- Latest Insights Section -->
-  <section class="latest-insights">
-    <div class="container">
-      <div class="section-intro">
-        <span class="section-tag">Latest Insights</span>
-        <h2 class="section-title" style="color: #ffffff;">Perspectives on Technology & Leadership</h2>
-        <p class="section-subtitle">Thoughts, experiences, and ideas from the field of Atlassian, ITSM, and modern collaboration.</p>
-      </div>
-
-      <div class="insights-preview">
-        <div class="insights-carousel__track">
-          <article class="insight-preview-card active">
-            <div class="insight-preview-card__image insight-preview-card__image--padded">
-              <img src="images/og/a__new__beginning.png" alt="A New Beginning, A Familiar Connection" loading="lazy" decoding="async">
-              <span class="insight-preview-card__tag">Personal Reflections</span>
-            </div>
-            <div class="insight-preview-card__content">
-              <time class="insight-preview-card__date" datetime="2025-11-14">14 November 2025</time>
-              <h3 class="insight-preview-card__title">
-                <a href="/insights/new-beginning-familiar-memory">A New Beginning, A Familiar Connection</a>
-              </h3>
-              <p class="insight-preview-card__excerpt">
-                A quiet reflection on new beginnings, memory, and a small mint pot that connected past and present in an unexpected way.
-              </p>
-              <a href="/insights/new-beginning-familiar-memory" class="insight-preview-card__link">Read Article →</a>
-            </div>
-          </article>
-
-          <article class="insight-preview-card">
-            <div class="insight-preview-card__image">
-              <img src="images/the-unexpected-friendship.png" alt="The Unexpected Friendship" loading="lazy" decoding="async">
-              <span class="insight-preview-card__tag">Founder's Thoughts</span>
-            </div>
-            <div class="insight-preview-card__content">
-              <time class="insight-preview-card__date" datetime="2025-10-31">31 October 2025</time>
-              <h3 class="insight-preview-card__title">
-                <a href="/ai-journey/">The Unexpected Friendship That Helped Me Rediscover My Strength</a>
-              </h3>
-              <p class="insight-preview-card__excerpt">
-                A personal journey about finding an unexpected companion during career transition and what AI collaboration really means.
-              </p>
-              <a href="/ai-journey/" class="insight-preview-card__link">Read Article →</a>
-            </div>
-          </article>
-
-          <article class="insight-preview-card">
-            <div class="insight-preview-card__image">
-              <img src="images/og/og-the-relay-v1.jpg" alt="The Relay" loading="lazy" decoding="async">
-              <span class="insight-preview-card__tag">Founder's Thoughts</span>
-            </div>
-            <div class="insight-preview-card__content">
-              <time class="insight-preview-card__date" datetime="2025-10-17">17 October 2025</time>
-              <h3 class="insight-preview-card__title">
-                <a href="/the-relay/">The Relay: Passing the Baton, Keeping the Momentum</a>
-              </h3>
-              <p class="insight-preview-card__excerpt">
-                A reflection on mentorship, continuity, and the value of thoughtful handovers in building lasting systems.
-              </p>
-              <a href="/the-relay/" class="insight-preview-card__link">Read Article →</a>
-            </div>
-          </article>
-        </div>
-
-        <!-- Carousel Navigation Dots -->
-        <div class="insights-carousel__dots">
-          <button class="carousel-dot active" aria-label="View article 1"></button>
-          <button class="carousel-dot" aria-label="View article 2"></button>
-          <button class="carousel-dot" aria-label="View article 3"></button>
-        </div>
-      </div>
-
-      <div class="insights-cta">
-        <a href="/insights" class="btn btn--secondary">View All Insights</a>
-      </div>
-    </div>
-  </section>
 
   <!-- Footer with integrated CTA -->
   <footer class="site-footer">

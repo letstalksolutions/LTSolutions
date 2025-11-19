@@ -452,4 +452,41 @@ document.addEventListener('DOMContentLoaded', function() {
     insightsCarousel.addEventListener('mouseenter', stopAutoRotate);
     insightsCarousel.addEventListener('mouseleave', startAutoRotate);
   }
+
+  /* ============================================
+     BANNER COUNTDOWN TIMER
+     ============================================ */
+  const bannerHours = document.getElementById('banner-hours');
+  const bannerMinutes = document.getElementById('banner-minutes');
+  const bannerSeconds = document.getElementById('banner-seconds');
+
+  if (bannerHours && bannerMinutes && bannerSeconds) {
+    // Set target to 20 hours from now
+    const now = new Date().getTime();
+    const targetDate = now + (20 * 60 * 60 * 1000); // 20 hours in milliseconds
+
+    function updateBannerCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        bannerHours.textContent = '00';
+        bannerMinutes.textContent = '00';
+        bannerSeconds.textContent = '00';
+        return;
+      }
+
+      const hours = Math.floor(distance / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      bannerHours.textContent = String(hours).padStart(2, '0');
+      bannerMinutes.textContent = String(minutes).padStart(2, '0');
+      bannerSeconds.textContent = String(seconds).padStart(2, '0');
+    }
+
+    // Update countdown immediately and then every second
+    updateBannerCountdown();
+    setInterval(updateBannerCountdown, 1000);
+  }
 });
