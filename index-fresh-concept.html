@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fresh Design Concept | LT.Solutions</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: linear-gradient(135deg, #000000 0%, #0B1728 100%);
+      color: #ffffff;
+      line-height: 1.6;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        radial-gradient(circle at 80% 20%, rgba(196, 30, 58, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(59, 127, 232, 0.06) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+  </style>
+
+  <link href="styles-fresh.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header style="padding: 2rem 0; text-align: center; margin-bottom: 3rem;">
+    <div class="container">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem;">Fresh Design Concept</h1>
+      <p style="color: rgba(255,255,255,0.6);">A modern, unified aesthetic for LT.Solutions</p>
+    </div>
+  </header>
+
+  <!-- Value Proposition Section -->
+  <section class="modern-section">
+    <div class="container">
+      <div class="modern-section__header">
+        <span class="modern-tag">Why LT.Solutions</span>
+        <h2 class="modern-title">Practical expertise. Real results. Knowledge that stays.</h2>
+        <p class="modern-subtitle">We combine hands-on Atlassian expertise with a structured approach that helps your teams work smarter, scale faster, and stay independent.</p>
+      </div>
+
+      <div class="modern-grid modern-grid--3">
+        <div class="modern-value-card">
+          <div class="modern-value-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3 class="modern-value-card__title">Built on Experience</h3>
+          <p class="modern-value-card__text">Fourteen years of real-world problem-solving means we understand the pressure of broken tools and tight deadlines. We've been there.</p>
+        </div>
+
+        <div class="modern-value-card">
+          <div class="modern-value-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3 class="modern-value-card__title">Designed to Empower</h3>
+          <p class="modern-value-card__text">Every engagement builds your internal capability so your teams can sustain progress long after we've stepped back.</p>
+        </div>
+
+        <div class="modern-value-card">
+          <div class="modern-value-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <h3 class="modern-value-card__title">Tailored for You</h3>
+          <p class="modern-value-card__text">We shape our framework around your context, creating smart, scalable solutions that fit your ways of working.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="modern-section" style="background: rgba(255,255,255,0.01);">
+    <div class="container">
+      <div class="modern-section__header">
+        <span class="modern-tag">What We Offer</span>
+        <h2 class="modern-title">Services that drive smarter IT operations</h2>
+        <p class="modern-subtitle">We specialise in practical Atlassian implementation, clean workflows, automation, and capability building.</p>
+      </div>
+
+      <div class="modern-grid modern-grid--3">
+        <div class="modern-service-card">
+          <div class="modern-service-card__inner">
+            <div class="modern-service-card__front">
+              <span class="modern-service-card__number">01</span>
+              <h3 class="modern-service-card__title">Atlassian Architecture & Implementation</h3>
+              <p class="modern-service-card__description">We design and implement Jira, Confluence, and related Atlassian tools to create solid foundations for modern service management.</p>
+              <p style="color: rgba(255,255,255,0.5); font-size: 0.875rem; margin-top: auto;">Hover to see deliverables →</p>
+            </div>
+            <div class="modern-service-card__back">
+              <h4 style="font-size: 1.125rem; margin-bottom: 1.5rem; color: #fff;">Deliverables</h4>
+              <ul class="modern-service-card__features">
+                <li>Jira Service Management setup</li>
+                <li>CMDB and Assets design</li>
+                <li>Integrations & automation</li>
+                <li>Cloud migration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="modern-service-card">
+          <div class="modern-service-card__inner">
+            <div class="modern-service-card__front">
+              <span class="modern-service-card__number">02</span>
+              <h3 class="modern-service-card__title">Workflow Automation & Efficiency</h3>
+              <p class="modern-service-card__description">We create smarter workflows that reduce friction, streamline operations, and deliver real-time visibility to stakeholders.</p>
+              <p style="color: rgba(255,255,255,0.5); font-size: 0.875rem; margin-top: auto;">Hover to see deliverables →</p>
+            </div>
+            <div class="modern-service-card__back">
+              <h4 style="font-size: 1.125rem; margin-bottom: 1.5rem; color: #fff;">Deliverables</h4>
+              <ul class="modern-service-card__features">
+                <li>End-to-end process automation</li>
+                <li>Smart escalation paths</li>
+                <li>Reporting dashboards</li>
+                <li>Continuous optimization</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="modern-service-card">
+          <div class="modern-service-card__inner">
+            <div class="modern-service-card__front">
+              <span class="modern-service-card__number">03</span>
+              <h3 class="modern-service-card__title">Knowledge Enablement & Training</h3>
+              <p class="modern-service-card__description">We ensure transformation lasts by transferring knowledge and embedding best practice in your teams.</p>
+              <p style="color: rgba(255,255,255,0.5); font-size: 0.875rem; margin-top: auto;">Hover to see deliverables →</p>
+            </div>
+            <div class="modern-service-card__back">
+              <h4 style="font-size: 1.125rem; margin-bottom: 1.5rem; color: #fff;">Deliverables</h4>
+              <ul class="modern-service-card__features">
+                <li>Confluence knowledge hubs</li>
+                <li>Structured training</li>
+                <li>Improvement frameworks</li>
+                <li>Clear handovers</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="/services" class="modern-btn modern-btn--primary">Explore All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Insights Section -->
+  <section class="modern-section">
+    <div class="container">
+      <div class="modern-section__header">
+        <span class="modern-tag">Latest Insights</span>
+        <h2 class="modern-title">Perspectives on Technology & Leadership</h2>
+        <p class="modern-subtitle">Thoughts, experiences, and ideas from the field of Atlassian, ITSM, and modern collaboration.</p>
+      </div>
+
+      <div class="modern-grid modern-grid--3">
+        <article class="modern-insight-card">
+          <div class="modern-insight-card__image">
+            <img src="images/og/a__new__beginning.png" alt="A New Beginning">
+            <span class="modern-insight-card__tag">Personal Reflections</span>
+          </div>
+          <div class="modern-insight-card__content">
+            <time class="modern-insight-card__date">14 November 2025</time>
+            <h3 class="modern-insight-card__title">
+              <a href="/insights/new-beginning-familiar-memory">A New Beginning, A Familiar Connection</a>
+            </h3>
+            <p class="modern-insight-card__excerpt">
+              A quiet reflection on new beginnings, memory, and a small mint pot that connected past and present in an unexpected way.
+            </p>
+            <a href="/insights/new-beginning-familiar-memory" class="modern-insight-card__link">Read Article →</a>
+          </div>
+        </article>
+
+        <article class="modern-insight-card">
+          <div class="modern-insight-card__image">
+            <img src="images/the-unexpected-friendship.png" alt="The Unexpected Friendship">
+            <span class="modern-insight-card__tag">Founder's Thoughts</span>
+          </div>
+          <div class="modern-insight-card__content">
+            <time class="modern-insight-card__date">31 October 2025</time>
+            <h3 class="modern-insight-card__title">
+              <a href="/ai-journey/">The Unexpected Friendship</a>
+            </h3>
+            <p class="modern-insight-card__excerpt">
+              A personal journey about finding an unexpected companion during career transition and what AI collaboration really means.
+            </p>
+            <a href="/ai-journey/" class="modern-insight-card__link">Read Article →</a>
+          </div>
+        </article>
+
+        <article class="modern-insight-card">
+          <div class="modern-insight-card__image">
+            <img src="images/og/og-the-relay-v1.jpg" alt="The Relay">
+            <span class="modern-insight-card__tag">Founder's Thoughts</span>
+          </div>
+          <div class="modern-insight-card__content">
+            <time class="modern-insight-card__date">17 October 2025</time>
+            <h3 class="modern-insight-card__title">
+              <a href="/the-relay/">The Relay: Passing the Baton</a>
+            </h3>
+            <p class="modern-insight-card__excerpt">
+              A reflection on mentorship, continuity, and the value of thoughtful handovers in building lasting systems.
+            </p>
+            <a href="/the-relay/" class="modern-insight-card__link">Read Article →</a>
+          </div>
+        </article>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="/insights" class="modern-btn modern-btn--secondary">View All Insights</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Note -->
+  <footer style="padding: 4rem 0 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 4rem;">
+    <div class="container">
+      <p style="color: rgba(255,255,255,0.4); font-size: 0.875rem;">
+        This is a proof of concept showcasing a fresh, unified design system<br>
+        <strong style="color: rgba(255,255,255,0.6);">Jony Ive-inspired minimalism meets modern web design</strong>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

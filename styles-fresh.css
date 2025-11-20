@@ -1,0 +1,575 @@
+/* ============================================
+   LT.Solutions - Fresh Design Concept
+   Proof of Concept - Modern, Unified Aesthetic
+   ============================================ */
+
+/* ============================================
+   DESIGN SYSTEM - UNIFIED TOKENS
+   ============================================ */
+:root {
+  /* Refined Color Palette */
+  --primary-navy: #0B1728;
+  --primary-red: #C41E3A;
+  --primary-white: #FFFFFF;
+  --neutral-50: #F8FAFB;
+  --neutral-100: #F1F4F6;
+  --neutral-200: #E4E9ED;
+  --neutral-700: #3D4957;
+  --neutral-800: #2A3441;
+  --accent-blue: #3B7FE8;
+
+  /* Unified Card System - Lighter transparency */
+  --card-bg: rgba(255, 255, 255, 0.04);
+  --card-border: rgba(255, 255, 255, 0.12);
+  --card-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --card-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --card-shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
+  --card-hover-lift: -4px;
+
+  /* Modern Spacing Scale (8px base) */
+  --space-1: 0.5rem;   /* 8px */
+  --space-2: 1rem;     /* 16px */
+  --space-3: 1.5rem;   /* 24px */
+  --space-4: 2rem;     /* 32px */
+  --space-5: 2.5rem;   /* 40px */
+  --space-6: 3rem;     /* 48px */
+  --space-8: 4rem;     /* 64px */
+  --space-10: 5rem;    /* 80px */
+  --space-12: 6rem;    /* 96px */
+
+  /* Typography Scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+
+  /* Modern Radius System */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+
+  /* Refined Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Modern Backdrop Blur */
+  --blur-sm: 8px;
+  --blur-md: 16px;
+  --blur-lg: 24px;
+}
+
+/* ============================================
+   UNIFIED CARD COMPONENT
+   ============================================ */
+.modern-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  box-shadow: var(--card-shadow-md);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent
+  );
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.modern-card:hover {
+  transform: translateY(var(--card-hover-lift));
+  box-shadow: var(--card-shadow-lg);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.modern-card:hover::before {
+  opacity: 1;
+}
+
+/* Card with accent border */
+.modern-card--accent {
+  border-top: 2px solid var(--primary-red);
+}
+
+.modern-card--blue-accent {
+  border-top: 2px solid var(--accent-blue);
+}
+
+/* ============================================
+   MODERN SECTION LAYOUTS
+   ============================================ */
+.modern-section {
+  padding: var(--space-12) 0;
+  position: relative;
+}
+
+.modern-section__header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto var(--space-10);
+}
+
+.modern-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  background: rgba(196, 30, 58, 0.1);
+  border: 1px solid rgba(196, 30, 58, 0.2);
+  border-radius: 999px;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--primary-red);
+  margin-bottom: var(--space-3);
+}
+
+.modern-tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--primary-red);
+  border-radius: 50%;
+  animation: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.modern-title {
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary-white);
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.02em;
+}
+
+.modern-subtitle {
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 65ch;
+  margin: 0 auto;
+}
+
+/* ============================================
+   MODERN GRID SYSTEM
+   ============================================ */
+.modern-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.modern-grid--2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.modern-grid--3 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* ============================================
+   VALUE CARDS - REDESIGNED
+   ============================================ */
+.modern-value-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  backdrop-filter: blur(var(--blur-md));
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-value-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at top right,
+    rgba(196, 30, 58, 0.05),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  pointer-events: none;
+}
+
+.modern-value-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(196, 30, 58, 0.3);
+  box-shadow: var(--card-shadow-lg);
+}
+
+.modern-value-card:hover::after {
+  opacity: 1;
+}
+
+.modern-value-card__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(196, 30, 58, 0.1);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-4);
+  position: relative;
+}
+
+.modern-value-card__icon::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 2px solid rgba(196, 30, 58, 0.2);
+  border-radius: var(--radius-md);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.modern-value-card:hover .modern-value-card__icon::after {
+  opacity: 1;
+}
+
+.modern-value-card__icon svg {
+  width: 24px;
+  height: 24px;
+  color: var(--primary-red);
+}
+
+.modern-value-card__title {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--primary-white);
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.01em;
+}
+
+.modern-value-card__text {
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ============================================
+   SERVICE CARDS - MODERN FLIP DESIGN
+   ============================================ */
+.modern-service-card {
+  perspective: 1000px;
+  height: 400px;
+}
+
+.modern-service-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.modern-service-card:hover .modern-service-card__inner {
+  transform: rotateY(180deg);
+}
+
+.modern-service-card__front,
+.modern-service-card__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  backdrop-filter: blur(var(--blur-md));
+  display: flex;
+  flex-direction: column;
+}
+
+.modern-service-card__back {
+  transform: rotateY(180deg);
+  background: linear-gradient(
+    135deg,
+    rgba(196, 30, 58, 0.05),
+    rgba(59, 127, 232, 0.05)
+  );
+}
+
+.modern-service-card__number {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-2);
+}
+
+.modern-service-card__title {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--primary-white);
+  margin-bottom: var(--space-3);
+  line-height: 1.3;
+}
+
+.modern-service-card__description {
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: auto;
+}
+
+.modern-service-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modern-service-card__features li {
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.modern-service-card__features li::before {
+  content: '✓';
+  color: var(--primary-red);
+  font-weight: 700;
+}
+
+/* ============================================
+   INSIGHTS CARDS - CLEAN & MODERN
+   ============================================ */
+.modern-insight-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.modern-insight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-lg);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.modern-insight-card__image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, rgba(196, 30, 58, 0.1), rgba(59, 127, 232, 0.1));
+}
+
+.modern-insight-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.modern-insight-card:hover .modern-insight-card__image img {
+  transform: scale(1.05);
+}
+
+.modern-insight-card__tag {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  padding: var(--space-1) var(--space-2);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(var(--blur-sm));
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--primary-white);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.modern-insight-card__content {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.modern-insight-card__date {
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-2);
+}
+
+.modern-insight-card__title {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--primary-white);
+  margin-bottom: var(--space-3);
+  line-height: 1.4;
+}
+
+.modern-insight-card__title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.modern-insight-card:hover .modern-insight-card__title a {
+  color: var(--primary-red);
+}
+
+.modern-insight-card__excerpt {
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: var(--space-4);
+  flex: 1;
+}
+
+.modern-insight-card__link {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--primary-red);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  transition: gap var(--transition-fast);
+}
+
+.modern-insight-card:hover .modern-insight-card__link {
+  gap: var(--space-2);
+}
+
+/* ============================================
+   MODERN BUTTON SYSTEM
+   ============================================ */
+.modern-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  font-size: var(--text-base);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width var(--transition-base), height var(--transition-base);
+}
+
+.modern-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.modern-btn--primary {
+  background: linear-gradient(135deg, var(--primary-red), #A81729);
+  color: var(--primary-white);
+  box-shadow: 0 4px 16px rgba(196, 30, 58, 0.3);
+}
+
+.modern-btn--primary:hover {
+  box-shadow: 0 8px 24px rgba(196, 30, 58, 0.4);
+  transform: translateY(-2px);
+}
+
+.modern-btn--secondary {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--primary-white);
+  backdrop-filter: blur(var(--blur-sm));
+}
+
+.modern-btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+  .modern-section {
+    padding: var(--space-8) 0;
+  }
+
+  .modern-title {
+    font-size: var(--text-3xl);
+  }
+
+  .modern-card {
+    padding: var(--space-4);
+  }
+
+  .modern-grid--2,
+  .modern-grid--3 {
+    grid-template-columns: 1fr;
+  }
+
+  .modern-service-card {
+    height: auto;
+    min-height: 350px;
+  }
+}
