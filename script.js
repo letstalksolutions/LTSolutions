@@ -464,14 +464,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const teaserSeconds = document.getElementById('teaser-seconds');
 
   if (bannerHours && bannerMinutes && bannerSeconds) {
-    // Set target to 5pm today (17:00)
-    const targetDate = new Date();
-    targetDate.setHours(17, 0, 0, 0); // 5pm today
-
-    // If it's already past 5pm, set to 5pm tomorrow
-    if (targetDate.getTime() < new Date().getTime()) {
-      targetDate.setDate(targetDate.getDate() + 1);
-    }
+    // Set target to 20 hours from commit time: Nov 21, 2025 00:04:11 UTC
+    const targetDate = new Date('2025-11-21T00:04:11Z');
 
     function updateCountdowns() {
       const now = new Date().getTime();
