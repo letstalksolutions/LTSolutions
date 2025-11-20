@@ -464,6 +464,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const teaserSeconds = document.getElementById('teaser-seconds');
 
   if (bannerHours && bannerMinutes && bannerSeconds) {
+    // Running late - extended timeline to complete final preparations
     // Set target to 8am London time tomorrow (November 21, 2025)
     const targetDate = new Date();
     targetDate.setDate(targetDate.getDate() + 1); // Tomorrow
