@@ -454,25 +454,33 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   /* ============================================
-     BANNER COUNTDOWN TIMER
+     COUNTDOWN TIMER (Banner + Teaser)
      ============================================ */
   const bannerHours = document.getElementById('banner-hours');
   const bannerMinutes = document.getElementById('banner-minutes');
   const bannerSeconds = document.getElementById('banner-seconds');
+  const teaserHours = document.getElementById('teaser-hours');
+  const teaserMinutes = document.getElementById('teaser-minutes');
+  const teaserSeconds = document.getElementById('teaser-seconds');
 
   if (bannerHours && bannerMinutes && bannerSeconds) {
     // Set target to 20 hours from now
     const now = new Date().getTime();
     const targetDate = now + (20 * 60 * 60 * 1000); // 20 hours in milliseconds
 
-    function updateBannerCountdown() {
+    function updateCountdowns() {
       const now = new Date().getTime();
       const distance = targetDate - now;
 
       if (distance < 0) {
+        // Update banner
         bannerHours.textContent = '00';
         bannerMinutes.textContent = '00';
         bannerSeconds.textContent = '00';
+        // Update teaser if exists
+        if (teaserHours) teaserHours.textContent = '00';
+        if (teaserMinutes) teaserMinutes.textContent = '00';
+        if (teaserSeconds) teaserSeconds.textContent = '00';
         return;
       }
 
@@ -480,13 +488,19 @@ document.addEventListener('DOMContentLoaded', function() {
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+      // Update banner
       bannerHours.textContent = String(hours).padStart(2, '0');
       bannerMinutes.textContent = String(minutes).padStart(2, '0');
       bannerSeconds.textContent = String(seconds).padStart(2, '0');
+
+      // Update teaser if exists
+      if (teaserHours) teaserHours.textContent = String(hours).padStart(2, '0');
+      if (teaserMinutes) teaserMinutes.textContent = String(minutes).padStart(2, '0');
+      if (teaserSeconds) teaserSeconds.textContent = String(seconds).padStart(2, '0');
     }
 
     // Update countdown immediately and then every second
-    updateBannerCountdown();
-    setInterval(updateBannerCountdown, 1000);
+    updateCountdowns();
+    setInterval(updateCountdowns, 1000);
   }
 });
