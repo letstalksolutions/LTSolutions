@@ -464,13 +464,18 @@ document.addEventListener('DOMContentLoaded', function() {
   const teaserSeconds = document.getElementById('teaser-seconds');
 
   if (bannerHours && bannerMinutes && bannerSeconds) {
-    // Set target to 20 hours from now
-    const now = new Date().getTime();
-    const targetDate = now + (20 * 60 * 60 * 1000); // 20 hours in milliseconds
+    // Set target to 8pm today (20:00)
+    const targetDate = new Date();
+    targetDate.setHours(20, 0, 0, 0); // 8pm tonight
+
+    // If it's already past 8pm, set to 8pm tomorrow
+    if (targetDate.getTime() < new Date().getTime()) {
+      targetDate.setDate(targetDate.getDate() + 1);
+    }
 
     function updateCountdowns() {
       const now = new Date().getTime();
-      const distance = targetDate - now;
+      const distance = targetDate.getTime() - now;
 
       if (distance < 0) {
         // Update banner
