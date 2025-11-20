@@ -45,8 +45,23 @@
   </style>
 
   <link href="styles-fresh.css" rel="stylesheet">
+  <script defer src="script.js"></script>
 </head>
 <body>
+
+  <!-- Announcement Banner -->
+  <div class="announcement-banner">
+    <div class="announcement-banner__content">
+      <span class="announcement-banner__text">New article drops in</span>
+      <div class="announcement-banner__countdown">
+        <span class="banner-countdown-number" id="banner-hours">--</span>
+        <span class="banner-countdown-separator">:</span>
+        <span class="banner-countdown-number" id="banner-minutes">--</span>
+        <span class="banner-countdown-separator">:</span>
+        <span class="banner-countdown-number" id="banner-seconds">--</span>
+      </div>
+    </div>
+  </div>
 
   <!-- Header -->
   <header style="padding: 2rem 0; text-align: center; margin-bottom: 3rem;">
