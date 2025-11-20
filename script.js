@@ -464,11 +464,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const teaserSeconds = document.getElementById('teaser-seconds');
 
   if (bannerHours && bannerMinutes && bannerSeconds) {
-    // Set target to 8pm today (20:00)
+    // Set target to 5pm today (17:00)
     const targetDate = new Date();
-    targetDate.setHours(20, 0, 0, 0); // 8pm tonight
+    targetDate.setHours(17, 0, 0, 0); // 5pm today
 
-    // If it's already past 8pm, set to 8pm tomorrow
+    // If it's already past 5pm, set to 5pm tomorrow
     if (targetDate.getTime() < new Date().getTime()) {
       targetDate.setDate(targetDate.getDate() + 1);
     }
