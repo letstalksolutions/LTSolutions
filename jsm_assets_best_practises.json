@@ -1,0 +1,487 @@
+{
+  "schema": {
+    "name": "Operational CMDB for JSM Assets",
+    "purpose": "ITIL-aligned Configuration Management Database for tracking IT infrastructure, applications, services, and their relationships in support of Incident, Problem, and Change Management.",
+    "version": "1.0",
+    "framework": "ITIL v4",
+    "notes": "Designed for JSM Assets with focus on service availability, dependency mapping, and operational support."
+  },
+  "objectTypes": [
+    {
+      "name": "BusinessService",
+      "description": "Customer-facing or business-critical services delivered to end users. Top-level services in the service model.",
+      "attributes": [
+        { "name": "Name", "type": "text", "required": true, "unique": true },
+        { "name": "Service ID", "type": "text", "required": false, "unique": true, "notes": "Unique service identifier" },
+        { "name": "Description", "type": "textarea", "required": false },
+        { "name": "Service Owner", "type": "object", "required": true, "referenceObjectType": "Person", "cardinality": "single" },
+        { "name": "Business Owner", "type": "object", "required": false, "referenceObjectType": "Person", "cardinality": "single" },
+        { "name": "Support Organization", "type": "object", "required": true, "referenceObjectType": "SupportGroup", "cardinality": "single" },
+        { "name": "Service Type", "type": "select", "required": true, "allowedValues": ["Customer Facing", "Internal", "Supporting", "Infrastructure"] },
+        { "name": "Criticality", "type": "select", "required": true, "allowedValues": ["Mission Critical", "Business Critical", "Business Operational", "Administrative"] },
+        { "name": "Operational Status", "type": "status", "required": true, "allowedValues": ["Operational", "Degraded", "Outage", "Maintenance", "Retired"] },
+        { "name": "Lifecycle Status", "type": "select", "required": true, "allowedValues": ["Design", "Transition", "Operational", "Retiring", "Retired"] },
+        { "name": "SLA Target", "type": "text", "required": false, "notes": "e.g., 99.9% uptime" },
+        { "name": "Recovery Time Objective (RTO)", "type": "text", "required": false },
+        { "name": "Recovery Point Objective (RPO)", "type": "text", "required": false },
+        { "name": "Service Catalog URL", "type": "text", "required": false },
+        { "name": "Documentation URL", "type": "text", "required": false },
+        { "name": "Cost Center", "type": "text", "required": false },
+        { "name": "Annual Operating Cost", "type": "text", "required": false },
+        { "name": "Go Live Date", "type": "date", "required": false },
+        { "name": "End of Life Date", "type": "date", "required": false },
+        { "name": "Notes", "type": "textarea", "required": false }
+      ]
+    },
+    {
+      "name": "Application",
+      "description": "Software applications including COTS, SaaS, custom-built, and internal tools.",
+      "attributes": [
+        { "name": "Name", "type": "text", "required": true, "unique": true },
+        { "name": "Application ID", "type": "text", "required": false, "unique": true },
+        { "name": "Description", "type": "textarea", "required": false },
+        { "name": "Application Type", "type": "select", "required": true, "allowedValues": ["COTS", "SaaS", "Custom Built", "Open Source", "Internal Tool"] },
+        { "name": "Version", "type": "text", "required": false },
+        { "name": "Vendor", "type": "object", "required": false, "referenceObjectType": "Vendor", "cardinality": "single" },
+        { "name": "Application Owner", "type": "object", "required": true, "referenceObjectType": "Person", "cardinality": "single" },
+        { "name": "Technical Owner", "type": "object", "required": false, "referenceObjectType": "Person", "cardinality": "single" },
+        { "name": "Support Group", "type": "object", "required": true, "referenceObjectType": "SupportGroup", "cardinality": "single" },
+        { "name": "Environment", "type": "select", "required": true, "allowedValues": ["Production", "UAT", "Test", "Development", "DR"] },
+        { "name": "Criticality", "type": "select", "required": true, "allowedValues": ["Mission Critical", "Business Critical", "Business Operational", "Administrative"] },
+        { "name": "Operational Status", "type": "status", "required": true, "allowedValues": ["Operational", "Non-Operational", "Under Maintenance", "Decommissioned"] },
+        { "name": "Lifecycle Status", "type": "select", "required": true, "allowedValues": ["Planned", "In Development", "Production", "End of Life", "Retired"] },
+        { "name": "License Type", "type": "select", "required": false, "allowedValues": ["Perpetual", "Subscription", "Concurrent", "Named User", "Site License", "Open Source"] },
+        { "name": "License Count", "type": "text", "required": false },
+        { "name": "License Expiry Date", "type": "date", "required": false },
+        { "name": "Discovery Source", "type": "select", "required": false, "allowedValues": ["Manual Entry", "Auto Discovery", "API Import", "CMDB Sync", "Agent Based"] },
+        { "name": "Last Discovery Date", "type": "date", "required": false },
+        { "name": "URL", "type": "text", "required": false, "notes": "Application access URL" },
+        { "name": "Documentation URL", "type": "text", "required": false },
+        { "name": "Source Code Repository", "type": "text", "required": false },
+        { "name": "Deployment Method", "type": "select", "required": false, "allowedValues": ["On-Premise", "Cloud", "Hybrid", "Container", "Serverless"] },
+        { "name": "Install Date", "type": "date", "required": false },
+        { "name": "Last Patched Date", "type": "date", "required": false },
+        { "name": "Notes", "type": "textarea", "required": false }
+      ]
+    },
+    {
+      "name": "Server",
+      "description": "Physical or virtual servers including compute instances.",
+      "attributes": [
+        { "name": "Name", "type": "text", "required": true, "unique": true },
+        { "name": "Hostname", "type": "text", "required": false },
+        { "name": "FQDN", "type": "text", "required": false, "notes": "Fully Qualified Domain Name" },
+        { "name": "IP Address", "type": "text", "required": false },
+        { "name": "Server Type", "type": "select", "required": true, "allowedValues": ["Physical", "Virtual", "Cloud Instance", "Container Host"] },
+        { "name": "Operating System", "type": "text", "required": false },
+        { "name": "OS Version", "type": "text", "required": false },
+        { "name": "Manufacturer", "type": "text", "required": false },
+        { "name": "Model", "type": "text", "required": false },
+        { "name": "Serial Number", "type": "text", "required": false },
+        { "name": "Asset Tag", "type": "text", "required": false, "unique": true },
+        { "name": "CPU", "type": "text", "required": false, "notes": "e.g., 8 vCPU or Intel Xeon 2.4GHz" },
+        { "name": "RAM (GB)", "type": "text", "required": false },
+        { "name": "Storage (GB)", "type": "text", "required": false },
+        { "name": "Server Owner", "type": "object", "required": true, "referenceObjectType": "Person", "cardinality": "single" },
+        { "name": "Support Group", "type": "object", "required": true, "referenceObjectType": "SupportGroup", "cardinality": "single" },
+        { "name": "Location", "type": "object", "required": false, "referenceObjectType": "Location", "cardinality": "single" },
+        { "name": "Environment", "type": "select", "required": true, "allowedValues": ["Production", "UAT", "Test", "Development", "DR"] },
+        { "name": "Criticality", "type": "select", "required": true, "allowedValues": ["Mission Critical", "Business Critical", "Business Operational", "Administrative"] },
+        { "name": "Operational Status", "type": "status", "required": true, "allowedValues": ["Operational", "Non-Operational", "Under Maintenance", "Standby", "Decommissioned"] },
+        { "name": "Lifecycle Status", "type": "select", "required": true, "allowedValues": ["Ordered", "In Stock", "In Use", "In Repair", "Retired"] },
+        { "name": "Discovery Source", "type": "select", "required": false, "allowedValues": ["Manual Entry", "Auto Discovery", "API Import", "CMDB Sync", "Agent Based"] },
+        { "name": "Last Discovery Date", "type": "date", "required": false },
+        { "name": "Purchase Date", "type": "date", "required": false },
+        { "name": "Warranty Expiry Date", "type": "date", "required": false },
+        { "name": "Install Date", "type": "date", "required": false },
+        { "name": "Last Patched Date", "type": "date", "required": false },
+        { "name": "Backup Status", "type": "select", "required": false, "allowedValues": ["Protected", "Not Protected", "Exception Approved"] },
+        { "name": "Monitoring Status", "type": "select", "required": false, "allowedValues": ["Monitored", "Not Monitored", "Exception Approved"] },
+        { "name": "Cloud Provider", "type": "select", "required": false, "allowedValues": ["AWS", "Azure", "GCP", "Oracle Cloud", "On-Premise", "Other"] },
+        { "name": "Cloud Instance ID", "type": "text", "required": false },
+        { "name": "Notes", "type": "textarea", "required": false }
+      ]
+    },
+    {
+      "name": "Database",
+      "description": "Database instances and database management systems.",
+      "attributes": [
+        { "name": "Name", "type": "text", "required": true, "unique": true },
+        { "name": "Database ID", "type": "text", "required": false },
+        { "name": "Description", "type": "textarea", "required": false },
+        { "name": "Database Type", "type": "select", "required": true, "allowedValues": ["Relational", "NoSQL", "Graph", "Time Series", "In-Memory", "Data Warehouse"] },
+        { "name": "Database Platform", "type": "select", "required": true, "allowedValues": ["Oracle", "SQL Server", "MySQL", "PostgreSQL", "MongoDB", "Cassandra", "Redis", "Other"] },
+        { "name": "Version", "type": "text", "required": false },
+        { "name": "Database Owner", "type": "object", "required": true, "referenceObjectType": "Person", "cardinality": "single" },
+        { "name": "DBA", "type": "object", "required": false, "referenceObjectType": "Person", "cardinality": "single", "notes": "Database Administrator" },
+        { "name": "Support Group", "type": "object", "required": true, "referenceObjectType": "SupportGroup", "cardinality": "single" },
+        { "name": "Environment", "type": "select", "required": true, "allowedValues": ["Production", "UAT", "Test", "Development", "DR"] },
+        { "name": "Criticality", "type": "select", "required": true, "allowedValues": ["Mission Critical", "Business Critical", "Business Operational", "Administrative"] },
+        { "name": "Operational Status", "type": "status", "required": true, "allowedValues": ["Operational", "Non-Operational", "Under Maintenance", "Decommissioned"] },
+        { "name": "Lifecycle Status", "type": "select", "required": true, "allowedValues": ["Planned", "Production", "End of Life", "Retired"] },
+        { "name": "Instance Name", "type": "text", "required": false },
+        { "name": "Port", "type": "text", "required": false },
+        { "name": "Connection String", "type": "text", "required": false, "notes": "Non-sensitive connection details" },
+        { "name": "Size (GB)", "type": "text", "required": false },
+        { "name": "Backup Frequency", "type": "select", "required": false, "allowedValues": ["Continuous", "Hourly", "Daily", "Weekly", "Not Backed Up"] },
+        { "name": "Last Backup Date", "type": "date", "required": false },
+        { "name": "Discovery Source", "type": "select", "required": false, "allowedValues": ["Manual Entry", "Auto Discovery", "API Import", "CMDB Sync", "Agent Based"] },
+        { "name": "Last Discovery Date", "type": "date", "required": false },
+        { "name": "Notes", "type": "textarea", "required": false }
+      ]
+    },
+    {
+      "name": "NetworkDevice",
+      "description": "Network infrastructure including routers, switches, firewalls, load balancers.",
+      "attributes": [
+        { "name": "Name", "type": "text", "required": true, "unique": true },
+        { "name": "Hostname", "type": "text", "required": false },
+        { "name": "IP Address", "type": "text", "required": false },
+        { "name": "Device Type", "type": "select", "required": true, "allowedValues": ["Router", "Switch", "Firewall", "Load Balancer", "VPN Gateway", "Wireless Access Point", "Other"] },
+        { "name": "Manufacturer", "type": "text", "required": false },
+        { "name": "Model", "type": "text", "required": false },
+        { "name": "Serial Number", "type": "text", "required": false },
+        { "name": "Asset Tag", "type": "text", "required": false, "unique": true },
+        { "name": "Firmware Version", "type": "text", "required": false },
+        { "name": "Device Owner", "type": "object", "required": true, "referenceObjectType": "Person", "cardinality": "single" },
+        { "name": "Support Group", "type": "object", "required": true, "referenceObjectType": "SupportGroup", "cardinality": "single" },
+        { "name": "Location", "type": "object", "required": true, "referenceObjectType": "Location", "cardinality": "single" },
+        { "name": "Environment", "type": "select", "required": true, "allowedValues": ["Production", "UAT", "Test", "Development", "DR"] },
+        { "name": "Criticality", "type": "select", "required": true, "allowedValues": ["Mission Critical", "Business Critical", "Business Operational", "Administrative"] },
+        { "name": "Operational Status", "type": "status", "required": true, "allowedValues": ["Operational", "Non-Operational", "Under Maintenance", "Standby", "Decommissioned"] },
+        { "name": "Lifecycle Status", "type": "select", "required": true, "allowedValues": ["Ordered", "In Stock", "In Use", "In Repair", "Retired"] },
+        { "name": "Port Count", "type": "text", "required": false },
+        { "name": "Management IP", "type": "text", "required": false },
+        { "name": "Discovery Source", "type": "select", "required": false, "allowedValues": ["Manual Entry", "SNMP Discovery", "API Import", "Network Scan", "Agent Based"] },
+        { "name": "Last Discovery Date", "type": "date", "required": false },
+        { "name": "Purchase Date", "type": "date", "required": false },
+        { "name": "Warranty Expiry Date", "type": "date", "required": false },
+        { "name": "Install Date", "type": "date", "required": false },
+        { "name": "Last Configuration Change", "type": "date", "required": false },
+        { "name": "Monitoring Status", "type": "select", "required": false, "allowedValues": ["Monitored", "Not Monitored", "Exception Approved"] },
+        { "name": "Notes", "type": "textarea", "required": false }
+      ]
+    },
+    {
+      "name": "StorageDevice",
+      "description": "Storage arrays, NAS, SAN, and storage infrastructure.",
+      "attributes": [
+        { "name": "Name", "type": "text", "required": true, "unique": true },
+        { "name": "Storage Type", "type": "select", "required": true, "allowedValues": ["SAN", "NAS", "DAS", "Object Storage", "Block Storage", "File Storage"] },
+        { "name": "Manufacturer", "type": "text", "required": false },
+        { "name": "Model", "type": "text", "required": false },
+        { "name": "Serial Number", "type": "text", "required": false },
+        { "name": "Asset Tag", "type": "text", "required": false, "unique": true },
+        { "name": "Capacity (TB)", "type": "text", "required": false },
+        { "name": "Used Capacity (TB)", "type": "text", "required": false },
+        { "name": "Storage Owner", "type": "object", "required": true, "referenceObjectType": "Person", "cardinality": "single" },
+        { "name": "Support Group", "type": "object", "required": true, "referenceObjectType": "SupportGroup", "cardinality": "single" },
+        { "name": "Location", "type": "object", "required": false, "referenceObjectType": "Location", "cardinality": "single" },
+        { "name": "Environment", "type": "select", "required": true, "allowedValues": ["Production", "UAT", "Test", "Development", "DR"] },
+        { "name": "Criticality", "type": "select", "required": true, "allowedValues": ["Mission Critical", "Business Critical", "Business Operational", "Administrative"] },
+        { "name": "Operational Status", "type": "status", "required": true, "allowedValues": ["Operational", "Non-Operational", "Under Maintenance", "Decommissioned"] },
+        { "name": "Lifecycle Status", "type": "select", "required": true, "allowedValues": ["Ordered", "In Stock", "In Use", "In Repair", "Retired"] },
+        { "name": "RAID Level", "type": "text", "required": false },
+        { "name": "Discovery Source", "type": "select", "required": false, "allowedValues": ["Manual Entry", "Auto Discovery", "API Import", "CMDB Sync", "Agent Based"] },
+        { "name": "Last Discovery Date", "type": "date", "required": false },
+        { "name": "Purchase Date", "type": "date", "required": false },
+        { "name": "Warranty Expiry Date", "type": "date", "required": false },
+        { "name": "Notes", "type": "textarea", "required": false }
+      ]
+    },
+    {
+      "name": "Person",
+      "description": "Individuals who own, manage, or support CIs and services.",
+      "attributes": [
+        { "name": "Name", "type": "text", "required": true, "unique": true },
+        { "name": "Full Name", "type": "text", "required": false },
+        { "name": "Email", "type": "text", "required": true },
+        { "name": "Employee ID", "type": "text", "required": false },
+        { "name": "Job Title", "type": "text", "required": false },
+        { "name": "Department", "type": "text", "required": false },
+        { "name": "Phone Number", "type": "text", "required": false },
+        { "name": "Mobile Number", "type": "text", "required": false },
+        { "name": "Manager", "type": "object", "required": false, "referenceObjectType": "Person", "cardinality": "single" },
+        { "name": "Location", "type": "object", "required": false, "referenceObjectType": "Location", "cardinality": "single" },
+        { "name": "Active", "type": "status", "required": true, "allowedValues": ["Active", "Inactive", "On Leave"] },
+        { "name": "ITSM User ID", "type": "text", "required": false, "notes": "Jira/JSM account ID for automation" },
+        { "name": "HR System ID", "type": "text", "required": false },
+        { "name": "Notes", "type": "textarea", "required": false }
+      ]
+    },
+    {
+      "name": "SupportGroup",
+      "description": "Teams responsible for supporting CIs and services.",
+      "attributes": [
+        { "name": "Name", "type": "text", "required": true, "unique": true },
+        { "name": "Group Type", "type": "select", "required": true, "allowedValues": ["Internal", "External", "Vendor", "Shared Service"] },
+        { "name": "Description", "type": "textarea", "required": false },
+        { "name": "Group Manager", "type": "object", "required": false, "referenceObjectType": "Person", "cardinality": "single" },
+        { "name": "Email", "type": "text", "required": false, "notes": "Group distribution list" },
+        { "name": "Escalation Contact", "type": "object", "required": false, "referenceObjectType": "Person", "cardinality": "single" },
+        { "name": "Support Hours", "type": "text", "required": false, "notes": "e.g., 24/7, Business Hours" },
+        { "name": "Department", "type": "text", "required": false },
+        { "name": "Cost Center", "type": "text", "required": false },
+        { "name": "Active", "type": "status", "required": true, "allowedValues": ["Active", "Inactive"] },
+        { "name": "ITSM Group ID", "type": "text", "required": false, "notes": "Jira/JSM group name for routing" },
+        { "name": "Notes", "type": "textarea", "required": false }
+      ]
+    },
+    {
+      "name": "Vendor",
+      "description": "External suppliers and service providers.",
+      "attributes": [
+        { "name": "Name", "type": "text", "required": true, "unique": true },
+        { "name": "Vendor Type", "type": "select", "required": true, "allowedValues": ["Software Vendor", "Hardware Vendor", "Service Provider", "Consultant", "MSP", "Cloud Provider"] },
+        { "name": "Description", "type": "textarea", "required": false },
+        { "name": "Primary Contact", "type": "object", "required": false, "referenceObjectType": "Person", "cardinality": "single" },
+        { "name": "Account Manager", "type": "object", "required": false, "referenceObjectType": "Person", "cardinality": "single", "notes": "Internal account manager" },
+        { "name": "Support Email", "type": "text", "required": false },
+        { "name": "Support Phone", "type": "text", "required": false },
+        { "name": "Support Portal URL", "type": "text", "required": false },
+        { "name": "Contract Number", "type": "text", "required": false },
+        { "name": "Contract Start Date", "type": "date", "required": false },
+        { "name": "Contract End Date", "type": "date", "required": false },
+        { "name": "SLA", "type": "text", "required": false },
+        { "name": "Status", "type": "status", "required": true, "allowedValues": ["Active", "Inactive", "Under Review"] },
+        { "name": "Vendor ID", "type": "text", "required": false, "notes": "External system ID" },
+        { "name": "Notes", "type": "textarea", "required": false }
+      ]
+    },
+    {
+      "name": "Location",
+      "description": "Physical locations including data centers, offices, and facilities.",
+      "attributes": [
+        { "name": "Name", "type": "text", "required": true, "unique": true },
+        { "name": "Location Type", "type": "select", "required": true, "allowedValues": ["Data Center", "Office", "Branch Office", "Co-Location", "Cloud Region", "Remote"] },
+        { "name": "Address", "type": "textarea", "required": false },
+        { "name": "City", "type": "text", "required": false },
+        { "name": "State/Province", "type": "text", "required": false },
+        { "name": "Country", "type": "text", "required": true },
+        { "name": "Region", "type": "select", "required": false, "allowedValues": ["EMEA", "APAC", "Americas", "NA", "LATAM"] },
+        { "name": "Postal Code", "type": "text", "required": false },
+        { "name": "Facility Manager", "type": "object", "required": false, "referenceObjectType": "Person", "cardinality": "single" },
+        { "name": "Primary Contact", "type": "object", "required": false, "referenceObjectType": "Person", "cardinality": "single" },
+        { "name": "Time Zone", "type": "text", "required": false },
+        { "name": "Status", "type": "status", "required": true, "allowedValues": ["Active", "Inactive", "Under Construction"] },
+        { "name": "Notes", "type": "textarea", "required": false }
+      ]
+    },
+    {
+      "name": "CIRelationship",
+      "description": "Join object defining relationships and dependencies between Configuration Items.",
+      "attributes": [
+        { "name": "Source CI Type", "type": "select", "required": true, "allowedValues": ["BusinessService", "Application", "Server", "Database", "NetworkDevice", "StorageDevice"] },
+        { "name": "Source CI", "type": "text", "required": true, "notes": "Reference to source CI (use object reference in actual implementation)" },
+        { "name": "Target CI Type", "type": "select", "required": true, "allowedValues": ["BusinessService", "Application", "Server", "Database", "NetworkDevice", "StorageDevice"] },
+        { "name": "Target CI", "type": "text", "required": true, "notes": "Reference to target CI (use object reference in actual implementation)" },
+        { "name": "Relationship Type", "type": "select", "required": true, "allowedValues": [
+          "Depends On",
+          "Runs On", 
+          "Hosts",
+          "Connects To",
+          "Uses",
+          "Backed Up By",
+          "Monitors",
+          "Supports",
+          "Part Of",
+          "Installed On",
+          "Managed By"
+        ]},
+        { "name": "Relationship Direction", "type": "select", "required": true, "allowedValues": ["Upstream", "Downstream", "Bidirectional"], "notes": "Helps with impact analysis" },
+        { "name": "Criticality", "type": "select", "required": false, "allowedValues": ["Critical", "High", "Medium", "Low"], "notes": "Impact if relationship breaks" },
+        { "name": "Status", "type": "status", "required": true, "allowedValues": ["Active", "Inactive", "Planned"] },
+        { "name": "Discovery Source", "type": "select", "required": false, "allowedValues": ["Manual Entry", "Auto Discovery", "API Import", "Dependency Mapping Tool"] },
+        { "name": "Last Verified Date", "type": "date", "required": false },
+        { "name": "Notes", "type": "textarea", "required": false }
+      ],
+      "constraints": [
+        { "type": "uniqueComposite", "fields": ["Source CI", "Target CI", "Relationship Type"], "notes": "Prevents duplicate relationships" }
+      ]
+    },
+    {
+      "name": "ChangeRecord",
+      "description": "Links CIs to Change Management records for audit and compliance.",
+      "attributes": [
+        { "name": "Change Number", "type": "text", "required": true, "unique": true },
+        { "name": "Change Type", "type": "select", "required": true, "allowedValues": ["Standard", "Normal", "Emergency", "Pre-Approved"] },
+        { "name": "Summary", "type": "text", "required": true },
+        { "name": "Status", "type": "status", "required": true, "allowedValues": ["Draft", "Pending Approval", "Approved", "Scheduled", "In Progress", "Completed", "Failed", "Cancelled"] },
+        { "name": "Requested By", "type": "object", "required": true, "referenceObjectType": "Person", "cardinality": "single" },
+        { "name": "Assigned To", "type": "object", "required": false, "referenceObjectType": "Person", "cardinality": "single" },
+        { "name": "Implementation Group", "type": "object", "required": false, "referenceObjectType": "SupportGroup", "cardinality": "single" },
+        { "name": "Scheduled Start", "type": "date", "required": false },
+        { "name": "Scheduled End", "type": "date", "required": false },
+        { "name": "Risk Level", "type": "select", "required": true, "allowedValues": ["Critical", "High", "Medium", "Low"] },
+        { "name": "JSM Issue Key", "type": "text", "required": false, "notes": "Link to JSM Change issue" },
+        { "name": "Notes", "type": "textarea", "required": false }
+      ]
+    },
+    {
+      "name": "CIChange",
+      "description": "Join object linking CIs to Change Records - tracks which CIs are affected by which changes.",
+      "attributes": [
+        { "name": "Change", "type": "object", "required": true, "referenceObjectType": "ChangeRecord", "cardinality": "single" },
+        { "name": "CI Type", "type": "select", "required": true, "allowedValues": ["BusinessService", "Application", "Server", "Database", "NetworkDevice", "StorageDevice"] },
+        { "name": "CI", "type": "text", "required": true, "notes": "Reference to affected CI" },
+        { "name": "Impact Type", "type": "select", "required": true, "allowedValues": ["Direct Change", "Impacted", "Related", "Rollback Target"] },
+        { "name": "Notes", "type": "textarea", "required": false }
+      ]
+    },
+    {
+      "name": "IncidentRecord",
+      "description": "Links CIs to Incident records for impact tracking and problem identification.",
+      "attributes": [
+        { "name": "Incident Number", "type": "text", "required": true, "unique": true },
+        { "name": "Summary", "type": "text", "required": true },
+        { "name": "Status", "type": "status", "required": true, "allowedValues": ["New", "In Progress", "Pending", "Resolved", "Closed"] },
+        { "name": "Priority", "type": "select", "required": true, "allowedValues": ["Critical", "High", "Medium", "Low"] },
+        { "name": "Reported By", "type": "object", "required": true, "referenceObjectType": "Person", "cardinality": "single" },
+        { "name": "Assigned To", "type": "object", "required": false, "referenceObjectType": "Person", "cardinality": "single" },
+        { "name": "Support Group", "type": "object", "required": false, "referenceObjectType": "SupportGroup", "cardinality": "single" },
+        { "name": "Opened Date", "type": "date", "required": true },
+        { "name": "Resolved Date", "type": "date", "required": false },
+        { "name": "JSM Issue Key", "type": "text", "required": false, "notes": "Link to JSM Incident issue" },
+        { "name": "Notes", "type": "textarea", "required": false }
+      ]
+    },
+    {
+      "name": "CIIncident",
+      "description": "Join object linking CIs to Incident Records - tracks which CIs are affected by incidents.",
+      "attributes": [
+        { "name": "Incident", "type": "object", "required": true, "referenceObjectType": "IncidentRecord", "cardinality": "single" },
+        { "name": "CI Type", "type": "select", "required": true, "allowedValues": ["BusinessService", "Application", "Server", "Database", "NetworkDevice", "StorageDevice"] },
+        { "name": "CI", "type": "text", "required": true, "notes": "Reference to affected CI" },
+        { "name": "Impact Type", "type": "select", "required": true, "allowedValues": ["Root Cause", "Contributing Factor", "Impacted", "Related"] },
+        { "name": "Notes", "type": "textarea", "required": false }
+      ]
+    }
+  ],
+  "exampleData": {
+    "businessServices": [
+      {
+        "objectType": "BusinessService",
+        "key": "SVC-001",
+        "attributes": {
+          "Name": "Customer Portal",
+          "Service ID": "SVC-PORTAL-001",
+          "Service Type": "Customer Facing",
+          "Criticality": "Mission Critical",
+          "Operational Status": "Operational",
+          "Lifecycle Status": "Operational",
+          "SLA Target": "99.9% uptime"
+        }
+      }
+    ],
+    "applications": [
+      {
+        "objectType": "Application",
+        "key": "APP-001",
+        "attributes": {
+          "Name": "Portal Web Application",
+          "Application Type": "Custom Built",
+          "Version": "2.5.1",
+          "Environment": "Production",
+          "Criticality": "Mission Critical",
+          "Operational Status": "Operational",
+          "Lifecycle Status": "Production"
+        }
+      }
+    ],
+    "servers": [
+      {
+        "objectType": "Server",
+        "key": "SVR-001",
+        "attributes": {
+          "Name": "WEBPROD01",
+          "Hostname": "webprod01.example.com",
+          "IP Address": "10.10.1.50",
+          "Server Type": "Virtual",
+          "Operating System": "Ubuntu Linux",
+          "OS Version": "22.04 LTS",
+          "Environment": "Production",
+          "Criticality": "Mission Critical",
+          "Operational Status": "Operational"
+        }
+      }
+    ],
+    "databases": [
+      {
+        "objectType": "Database",
+        "key": "DB-001",
+        "attributes": {
+          "Name": "PortalDB Production",
+          "Database Type": "Relational",
+          "Database Platform": "PostgreSQL",
+          "Version": "15.2",
+          "Environment": "Production",
+          "Criticality": "Mission Critical",
+          "Operational Status": "Operational"
+        }
+      }
+    ],
+    "ciRelationships": [
+      {
+        "objectType": "CIRelationship",
+        "key": "REL-001",
+        "attributes": {
+          "Source CI Type": "BusinessService",
+          "Source CI": "SVC-001",
+          "Target CI Type": "Application",
+          "Target CI": "APP-001",
+          "Relationship Type": "Depends On",
+          "Relationship Direction": "Downstream",
+          "Status": "Active"
+        }
+      },
+      {
+        "objectType": "CIRelationship",
+        "key": "REL-002",
+        "attributes": {
+          "Source CI Type": "Application",
+          "Source CI": "APP-001",
+          "Target CI Type": "Server",
+          "Target CI": "SVR-001",
+          "Relationship Type": "Runs On",
+          "Relationship Direction": "Downstream",
+          "Status": "Active"
+        }
+      },
+      {
+        "objectType": "CIRelationship",
+        "key": "REL-003",
+        "attributes": {
+          "Source CI Type": "Application",
+          "Source CI": "APP-001",
+          "Target CI Type": "Database",
+          "Target CI": "DB-001",
+          "Relationship Type": "Uses",
+          "Relationship Direction": "Downstream",
+          "Status": "Active"
+        }
+      }
+    ]
+  },
+  "implementationNotes": [
+    "This schema follows ITIL v4 Configuration Management best practices",
+    "CI Types support common infrastructure and application components",
+    "CIRelationship enables dependency mapping for impact analysis",
+    "Integration points for Incident and Change Management processes",
+    "Discovery Source tracking supports federated CMDB pattern",
+    "Criticality and Environment attributes support risk assessment",
+    "All CI types include lifecycle and operational status for state management",
+    "Support Group assignment enables proper routing and escalation",
+    "Relationship direction supports upstream/downstream impact analysis",
+    "Schema supports both manual and automated discovery workflows"
+  ],
+  "jsm_assets_mapping_notes": [
+    "In JSM Assets, each objectType becomes an Object Type",
+    "Use Dependencies feature to model CIRelationships",
+    "Enable Auto-Discovery via Insight Discovery or custom integrations",
+    "Link to JSM Issues using 'JSM Issue Key' fields",
+    "Use Assets Custom Fields in JSM Issue Types for CI selection",
+    "Implement automation rules for CI status updates based on incidents/changes",
+    "Use Assets AQL queries for impact analysis and reporting",
+    "Configure Object Type icons and colors for visual CI class distinction"
+  ]
+}
